@@ -1,0 +1,25 @@
+jquery-add2cart is a plugin that creates an animated shopping cart 
+experience. It creates and animates a visual effect of one item moving
+into another.
+
+This plugin is especially useful when a visual effect on shopping carts
+for eCommerce or related web applications.
+
+The fork of this plugin provides functionality that applies the source 
+image to the image being animated instead of a grey box that was found
+in the original plugin.
+
+Usage:
+
+$('#some_id).click(function(e) {
+    $.add2cart('source','target', function(){});
+});
+
+*** Please note that 'source' and 'target' must be ids ***
+
+Origins:
+This jQuery plugin is a fork of Skakunov Alexander's jQuery Add2Cart plugin.
+See http://i1t2b3.com/2009/01/29/add2cart/ for original plugin.
+
+
+

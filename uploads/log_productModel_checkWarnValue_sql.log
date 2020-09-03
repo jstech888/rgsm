@@ -1,0 +1,66 @@
+20180113014916:
+select * from `product_stock` WHERE `stockKey` = '0617richardtest' AND `formatType` = 'F'
+
+20180113014916:
+select * from `product_stock` WHERE `stockKey` = 'test111' AND `formatType` = 'F'
+
+20180113014916:
+select * from `product_stock` WHERE `stockKey` = 'Richard0606test1' AND `id` = '963'
+
+20180113014934:
+select * from `product_stock` WHERE `stockKey` = '0617richardtest' AND `formatType` = 'F'
+
+20180113014934:
+select * from `product_stock` WHERE `stockKey` = 'test111' AND `formatType` = 'F'
+
+20180113014934:
+select * from `product_stock` WHERE `stockKey` = 'Richard0606test1' AND `id` = '963'
+
+20180113015019:
+select * from `product_stock` WHERE `stockKey` = '0617richardtest' AND `formatType` = 'F'
+
+20180113015019:
+select * from `product_stock` WHERE `stockKey` = 'test111' AND `formatType` = 'F'
+
+20180113015019:
+select * from `product_stock` WHERE `stockKey` = 'Richard0606test1' AND `id` = '963'
+
+20180113015249:
+select * from `product_stock` WHERE `stockKey` = '0617richardtest' AND `formatType` = 'F'
+
+20180113015249:
+select * from `product_stock` WHERE `stockKey` = 'test111' AND `formatType` = 'F'
+
+20180113015249:
+select * from `product_stock` WHERE `stockKey` = 'Richard0606test1' AND `id` = '963'
+
+20180113021007:
+select * from `product_stock` WHERE `stockKey` = 'CreamHorseOilOrange' AND `formatType` = 'F'
+
+20180113021054:
+select * from `product_stock` WHERE `stockKey` = 'CreamHorseOilOrange' AND `formatType` = 'F'
+
+20180113021143:
+select * from `product_stock` WHERE `stockKey` = 'CreamHorseOilOrange' AND `formatType` = 'F'
+
+20180113021218:
+select * from `product_stock` WHERE `stockKey` = 'CreamHorseOilOrange' AND `formatType` = 'F'
+
+20180504105617:
+select * from `product_stock` WHERE `stockKey` = 'CCsensewatercushion' AND `formatType` = 'F'
+
+20180504105723:
+select * from `product_stock` WHERE `stockKey` = 'ZeroPowdershinyCCwater1' AND `formatType` = 'F'
+
+20190527123553:
+select * from `product_stock` WHERE `stockKey` = 'eggshellfirming' AND `formatType` = 'F'
+
+20190527123553:
+select * from `product_stock` WHERE `stockKey` = 'CCsensewatercushion' AND `formatType` = 'F'
+
+20190527133305:
+select * from `product_stock` WHERE `stockKey` = 'eggshellfirming' AND `formatType` = 'F'
+
+20190527133305:
+select * from `product_stock` WHERE `stockKey` = 'CCsensewatercushion' AND `formatType` = 'F'
+

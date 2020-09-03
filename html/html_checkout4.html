@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta http-equiv="Content-Language" content="zh-hant" />
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+    <meta charset="utf-8">
+    <meta name="keywords" content="" />
+    <meta name="description" content="">
+    <meta name="google" content="notranslate" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:site_name" content="安法舞鞋" />
+    <meta property="fb:app_id" content="850316548389503">
+    <meta name="author" content="">
+
+    <title></title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/theme/assets/img/favicon.ico">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="css/frontend.css" />
+    <link rel="stylesheet" type="text/css" href="css/frontend_style.css" />
+
+  </head>
+  <!-- BEGIN: PAGE SCRIPTS -->
+  <body sCurrency="TWD" sLanguage="zh-hant" class="index">
+
+    <script type="text/javascript" src="js/frontend.js"></script>
+
+    <!-- facebok like -->
+    <!-- 將這個標記放在標頭中，或放在內文結尾標記前面。 -->
+    <div id="fb-root"></div>
+
+    <script>
+      ( function( d, s, id )
+        {
+          var js, fjs = d.getElementsByTagName(s)[ 0 ];
+          if ( d.getElementById( id ) )
+            return;
+          js = d.createElement( s );
+          js.id = id;
+          js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.3";
+          fjs.parentNode.insertBefore( js, fjs );
+        }( document, 'script', 'facebook-jssdk' ) );
+    </script>
+
+    <!-- google+ -->
+    <!-- 將這個標記放在標頭中，或放在內文結尾標記前面。
+    繁中 zh-TW
+    簡中 zh-CN
+    美國 空白
+    英國 en-GB
+    -->
+    <script src="https://apis.google.com/js/platform.js" async defer>
+      { lang:'zh-TW';
+      }
+    </script>
+
+    <div class="">
+
+      <div class="header top container-fluid hidden-xs hidden-sm menu-container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="container">
+              <div class="navbar-branding"></div>
+              <div class="row">
+                <div class="language col-md-12">
+                  <div class="select-wrapper btn-group btn-fMenu fMenu first">
+                    <a href="#" class="btn btn-link btn-switcher dropdown-toggle" data-toggle="dropdown"> <img src="images/flags/us.png" alt="English"> <span>&nbsp;&nbsp;</span>English<span>&nbsp;</span><span class="caret"></span> </a>
+                    <ul class="dropdown-menu pull-right list">
+
+                      <li>
+                        <a href="http://medicalbeauty.mooo.com/?lang=fr"> <img src="images/flags/fr.png" alt="法文"> <span>&nbsp;&nbsp;</span>法文 </a>
+                      </li>
+
+                    </ul>
+                  </div>
+                  <div class="select-wrapper btn-group btn-fMenu fMenu">
+                    <p class="btn">
+                      $USD
+                    </p>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header sec container hidden-xs hidden-sm menu-container">
+        <div class="row">
+          <div class="service col-md-12">
+            <div class="btn-group btn-fMenu fMenu">
+              <a href="/user/login" class="btn btn-link">會員紅利查詢</a>
+            </div>
+            <div class="btn-group btn-fMenu fMenu">
+              <a href="/user/login" class="btn btn-link">會員註冊</a>
+            </div>
+            <div class="btn-group btn-fMenu fMenu">
+              <a href="/user/login" class="btn btn-link">登入</a>
+            </div>
+            <div class="btn-group btn-fMenu fMenu">
+              <a href="/user/login" class="btn btn-link">訂閱電子報</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <header class="navbar navbar-default navbar-fixed-top yamm container hidden-xs hidden-sm" style="overflow: visible;">
+
+        <div class="row mobile text-center">
+          <div class="logo">
+            <a href="/"><img class="img-responsive img-logo" src="images/LOGO.png" alt="Beauty Women 妝美麗" /></a>
+          </div>
+        </div>
+        <!-- hight-light-block AND Search Bar -->
+        <div class="row logo-row desktop">
+
+          <div class="logo">
+            <a href="/"><img class="img-responsive img-logo" src="images/LOGO.png" alt="Beauty Women 妝美麗" /></a>
+          </div>
+
+          <div class="pullRight">
+            <div class="hight-light-block">
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="product-keyword-desktop">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">
+                      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </button> </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="functionBar-cart btn-group btn-fMenu fMenu last">
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle shopping-cart-block" aria-expanded="true">
+              <div class="shopping-cart hightlight">
+                <span class="fa fa-shopping-cart"></span>
+                CART <span class="qtyo">(<span class="qty">0</span>)</span><span class="amount">0.00</span>
+                <b class="caret"></b>
+              </div> </a>
+              <ul class="dropdown-menu cart pull-right">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle shopping-cart-block" aria-expanded="true"> </a>
+                <li>
+                  <a href="#" data-toggle="dropdown" class="dropdown-toggle shopping-cart-block" aria-expanded="true">
+                  <div class="yamm-content">
+                    <ul class="media-list">
+                      <li class="title">
+                        購物車
+                      </li>
+                      <p class="total empty-hide">
+                        小計TWD <span class="amount fcurrency">$0</span>
+                      </p>
+                      <li class="empty">
+                        沒有商品
+                      </li>
+                    </ul>
+                  </div> </a><a class="btn btn-default btn-viewcart" href="/shoppingcart"> 查看購物車 </a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+        <!-- /hight-light-block AND Search Bar -->
+      </header>
+
+      <div class="main-menu-row desktop">
+        <div class="container">
+          <div class="row">
+            <div class="col-me-12">
+
+              <nav id="vel-megamenu" class="navbar navbar-default" role="navigation">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div id="megamenu" class="vel-megamenu clearfix">
+                  <span id="click-remove" class="icon-remove"></span>
+                  <ul class="nav navbar-nav  menu level1">
+
+                    <li class="item full-width parent group show">
+                      <a href="/%E6%B8%85%E6%BD%94" title="清潔">清潔</a>
+
+                      <div class="dropdown-menu">
+                        <ul>
+                          <ul>
+
+                            <li>
+                              <a href="/%E8%9D%B8%E7%89%9B%E6%BA%AB%E5%92%8C%E9%80%9F%E6%B7%A8%E5%8D%B8%E5%A6%9D%E6%B0%B4">蝸牛溫和速淨卸妝水</a>
+                            </li>
+
+                            <li>
+                              <a href="/%E6%BE%84%E6%B7%A8%E7%84%A1%E6%B2%B9%E5%8D%B8%E5%A6%9D%E5%87%9D%E9%9C%B2">澄淨無油卸妝凝露</a>
+                            </li>
+
+                            <li>
+                              <a href="/%E6%AF%9B%E5%AD%94%E6%B7%A8%E5%8C%96%E6%BD%94%E9%9D%A2%E5%88%B7">毛孔淨化潔面刷</a>
+                            </li>
+
+                          </ul>
+                        </ul>
+                      </div>
+
+                    <li class="item full-width parent group show">
+                      <a href="/%E4%BF%9D%E9%A4%8A" title="保養">保養</a>
+
+                      <div class="dropdown-menu">
+                        <ul>
+                          <ul>
+
+                            <li>
+                              <a href="/%E8%97%8D%E8%97%BB%E4%BF%9D%E6%BF%95%E7%82%B8%E5%BD%88%E9%9C%9C">藍藻保濕炸彈霜</a>
+                            </li>
+
+                            <li>
+                              <a href="/%E9%A6%AC%E6%B2%B9%E6%B5%B8%E6%BD%A4%E4%BF%9D%E6%BF%95%E5%8C%96%E5%A6%9D%E6%B0%B4">馬油浸潤保濕化妝水</a>
+                            </li>
+
+                            <li>
+                              <a href="/%E9%A6%AC%E6%B2%B9bomb%E9%9C%9C">馬油bomb霜</a>
+                            </li>
+
+                            <li>
+                              <a href="/%E9%A6%AC%E6%B2%B9%E5%A5%87%E8%B9%9F%E9%9C%9C">馬油奇蹟霜</a>
+                            </li>
+
+                            <li>
+                              <a href="/%E8%9D%B8%E7%89%9B%E4%BF%9D%E6%BF%95%E7%B2%BE%E8%8F%AF%E9%9C%B2">蝸牛保濕精華露</a>
+                            </li>
+
+                            <li>
+                              <a href="/%E8%9D%B8%E7%89%9Bbomb%E9%9C%9C">蝸牛bomb霜</a>
+                            </li>
+
+                            <li>
+                              <a href="/%E8%9D%B8%E7%89%9B%E5%A5%87%E8%B9%9F%E9%9C%9C">蝸牛奇蹟霜</a>
+                            </li>
+
+                            <li>
+                              <a href="/%E8%9B%8B%E8%82%8C%E4%B9%B3%E9%9C%9C%E4%BF%9D%E6%BF%95%E5%99%B4%E9%9C%A7%E9%9D%A2%E8%86%9C">蛋肌乳霜保濕噴霧面膜</a>
+                            </li>
+
+                            <li>
+                              <a href="/%E8%9B%8B%E8%82%8C%E7%B7%8A%E7%B7%BB%E5%8D%B5%E6%AE%BC%E8%86%9C">蛋肌緊緻卵殼膜</a>
+                            </li>
+
+                            <li>
+                              <a href="/%E9%A6%AC%E6%B2%B9%E8%AD%B7%E6%89%8B%E9%9C%9C">馬油護手霜</a>
+                            </li>
+
+                            <li>
+                              <a href="/%E5%86%B0%E6%B2%B3%E6%B0%B4%E6%84%9F%E6%B2%81%E6%B6%BC%E9%98%B2%E6%9B%AC%E5%99%B4%E9%9C%A7">冰河水感沁涼防曬噴霧</a>
+                            </li>
+
+                            <li>
+                              <a href="/%E6%B5%B7%E6%B4%8B%E8%86%A0%E5%8E%9F%E4%BA%AE%E8%82%8C%E9%98%B2%E6%9B%AC%E5%99%B4%E9%9C%A7">海洋膠原亮肌防曬噴霧</a>
+                            </li>
+
+                            <li>
+                              <a href="/%E8%B6%85%E9%98%B2%E6%B0%B4%E9%81%8B%E5%8B%95%E9%98%B2%E6%9B%AC%E5%99%B4%E9%9C%A7">超防水運動防曬噴霧</a>
+                            </li>
+
+                            <li>
+                              <a href="/%E6%97%A5%E6%9C%AC%E5%85%A8%E6%95%88%E4%BF%9D%E6%BF%95%E4%BF%AE%E8%AD%B7%E9%A6%AC%E6%B2%B9%E9%9C%9C(%E6%A9%98)">日本全效保濕修護馬油霜(橘)</a>
+                            </li>
+
+                          </ul>
+                        </ul>
+                      </div>
+
+                    <li class="item full-width parent group show">
+                      <a href="/%E5%9F%BA%E7%A4%8E%E5%BA%95%E5%A6%9D" title="基礎底妝">基礎底妝</a>
+
+                      <div class="dropdown-menu">
+                        <ul>
+                          <ul>
+
+                            <li>
+                              <a href="/%E6%B0%B4%E9%80%8F%E4%BA%AEcc%E9%9C%9C">水透亮cc霜</a>
+                            </li>
+
+                            <li>
+                              <a href="/%E8%9B%8B%E8%82%8C%E6%B0%B4%E6%84%9FCC%E9%9C%9C">蛋肌水感CC霜</a>
+                            </li>
+
+                          </ul>
+                        </ul>
+                      </div>
+
+                    <li class="item full-width parent group show">
+                      <a href="/%E9%87%8D%E9%BB%9E%E5%BD%A9%E5%A6%9D" title="重點彩妝">重點彩妝</a>
+
+                      <div class="dropdown-menu">
+                        <ul>
+                          <ul>
+
+                            <li>
+                              <a href="/%E8%9B%8B%E8%82%8CCC%20%E6%B0%B4%E6%84%9F%E6%B0%A3%E5%A2%8A%E7%B2%89%E9%A4%85">蛋肌CC 水感氣墊粉餅</a>
+                            </li>
+
+                            <li>
+                              <a href="/%E9%9B%B6%E6%B2%B9%E5%85%89CC%E6%B0%B4%E8%9C%9C%E7%B2%89">零油光CC水蜜粉</a>
+                            </li>
+
+                            <li>
+                              <a href="/%E6%B0%B4%E9%80%8F%E4%BA%AE%E9%9B%99%E6%95%88%E9%81%AE%E7%91%95%E7%B5%84">水透亮雙效遮瑕組</a>
+                            </li>
+
+                            <li>
+                              <a href="/%E6%B0%B4%E9%80%8F%E4%BA%AE%E9%9B%AA%E7%B4%97BC%E7%B2%89%E5%BA%95">水透亮雪紗BC粉底</a>
+                            </li>
+
+                            <li>
+                              <a href="/%E7%B5%B2%E6%9F%94%E6%8C%81%E5%A6%9D%E6%B0%A3%E5%A2%8A%E8%9C%9C%E7%B2%89">絲柔持妝氣墊蜜粉</a>
+                            </li>
+
+                          </ul>
+                        </ul>
+                      </div>
+
+                    <li class="item full-width parent group">
+                      <a href="/%E9%83%A8%E8%90%BD%E6%A0%BC%E5%B0%88%E5%B1%AC">部落格專屬</a>
+                    </li>
+                    <li class="item full-width parent group">
+                      <a href="/%E9%97%9C%E6%96%BC%E6%88%91%E5%80%91">關於我們</a>
+                    </li>
+
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container mb-header">
+      <div class="row combine-row mobile mb15">
+
+        <div class="menubar">
+          <div class="menubar-content">
+            <button id="show-onclick" type="button" class="navbar-toggle" onclick="showMobileMenu()">
+              <span class="sr-only">Menu</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="center-block">
+          <a href="/"><img class="img-responsive img-logo" src="images/LOGO.png" alt="安法舞鞋"></a>
+        </div>
+
+        <div class="service">
+          <div class="btn-group btn-fMenu fMenu login">
+            <a href="/user/login" class="btn btn-link"><i class="fa fa-users"></i></a>
+          </div>
+          <div class="functionBar-cart btn-group btn-fMenu fMenu last">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle shopping-cart-block" aria-expanded="true">
+            <div class="shopping-cart hightlight">
+              <span class="fa fa-shopping-cart"></span>
+              <span class="qtyo"><span class="qty">0</span></span><span class="amount">0.00</span>
+              <b class="caret"></b>
+            </div> </a>
+            <ul class="dropdown-menu cart pull-right">
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle shopping-cart-block" aria-expanded="true"> </a>
+              <li>
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle shopping-cart-block" aria-expanded="true">
+                <div class="yamm-content">
+                  <ul class="media-list">
+                    <li class="title">
+                      購物車
+                    </li>
+                    <p class="total empty-hide">
+                      小計TWD <span class="amount fcurrency">$0</span>
+                    </p>
+                    <li class="empty">
+                      沒有商品
+                    </li>
+                  </ul>
+                </div> </a><a class="btn btn-default btn-viewcart" href="/shoppingcart"> 查看購物車 </a>
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+        <div class="clearfix"></div>
+      </div>
+    </div>
+
+    <ul id="shopping-cart-menu" class="dropdown-menu shopping-cart-menu-content">
+      <li>
+        <div class="yamm-content">
+          <ul class="media-list"></ul>
+        </div>
+        <p class="total text-right empty-hide">
+          小計TWD <span class="amount fcurrency"></span>
+        </p>
+        <a class="btn btn-default btn-viewcart" href="/shoppingcart"> 檢視購物車 <span class="glyphicon glyphicon-arrow-right bknone" aria-hidden="true"></span> </a>
+        <div class="clearfix"></div>
+      </li>
+    </ul>
+    <div id="megamenu" class="vel-megamenu clearfix vel-megamenu-active mobile">
+      <span id="click-remove" class="icon-remove"></span>
+
+      <div class="search">
+        <div class="hight-light-block">
+          <div class="form-group">
+            <!--
+            <a onclick="enterSearch('desktop')"><span class="append-icon right"><i class="fa fa-search"></i></span></a>
+            <input type="text" class="form-control" id="product-keyword-desktop"
+            placeholder="請輸入商品關鍵字">-->
+
+            <div class="input-group">
+              <input type="text" class="form-control" id="product-keyword-desktop">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">
+                  <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                </button> </span>
+            </div><!-- /input-group -->
+          </div>
+
+        </div>
+      </div>
+
+      <div class="regions">
+        <div class="select-wrapper btn-group btn-fMenu fMenu first">
+          <a class="btn" role="button"  data-toggle="collapse" href="#languageList" aria-expanded="false" aria-controls="languageList"> <img src="images/flags/us.png" alt="English"> <span>&nbsp;&nbsp;</span>English<span>&nbsp;</span><span class="caret"></span> </a>
+
+          <div class="collapse" id="languageList">
+            <ul>
+
+              <li>
+                <a href="http://medicalbeauty.mooo.com/?lang=fr"> <img src="images/flags/fr.png" alt="法文"> <span>&nbsp;&nbsp;</span>法文 </a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+        <div class="select-wrapper btn-group btn-fMenu fMenu">
+          <p class="btn">
+            $USD
+          </p>
+        </div>
+      </div>
+
+      <ul class="nav navbar-nav  menu level1">
+
+        <li class="item full-width parent group show">
+          <a href="/%E6%B8%85%E6%BD%94" title="清潔">清潔
+          <div class="expand collapsed" role="button" data-toggle="collapse" data-target="#item1" aria-expanded="false" aria-controls="item1">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"> </span>
+
+          </div></a>
+
+          <div class="dropdown-menu collapse" id="item1">
+            <ul>
+              <ul class="row">
+
+                <li class="col-sm-4">
+                  <ul class="items">
+
+                    <li>
+                      <a href="/%E8%9D%B8%E7%89%9B%E6%BA%AB%E5%92%8C%E9%80%9F%E6%B7%A8%E5%8D%B8%E5%A6%9D%E6%B0%B4">蝸牛溫和速淨卸妝水</a>
+                    </li>
+
+                    <li>
+                      <a href="/%E6%BE%84%E6%B7%A8%E7%84%A1%E6%B2%B9%E5%8D%B8%E5%A6%9D%E5%87%9D%E9%9C%B2">澄淨無油卸妝凝露</a>
+                    </li>
+
+                    <li>
+                      <a href="/%E6%AF%9B%E5%AD%94%E6%B7%A8%E5%8C%96%E6%BD%94%E9%9D%A2%E5%88%B7">毛孔淨化潔面刷</a>
+                    </li>
+
+                  </ul>
+                </li>
+
+              </ul>
+            </ul>
+          </div>
+
+        <li class="item full-width parent group show">
+          <a href="/%E4%BF%9D%E9%A4%8A" title="保養">保養
+          <div class="expand collapsed" role="button" data-toggle="collapse" data-target="#item2" aria-expanded="false" aria-controls="item2">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"> </span>
+
+          </div></a>
+
+          <div class="dropdown-menu collapse" id="item2">
+            <ul>
+              <ul class="row">
+
+                <li class="col-sm-4">
+                  <ul class="items">
+
+                    <li>
+                      <a href="/%E8%97%8D%E8%97%BB%E4%BF%9D%E6%BF%95%E7%82%B8%E5%BD%88%E9%9C%9C">藍藻保濕炸彈霜</a>
+                    </li>
+
+                    <li>
+                      <a href="/%E9%A6%AC%E6%B2%B9%E6%B5%B8%E6%BD%A4%E4%BF%9D%E6%BF%95%E5%8C%96%E5%A6%9D%E6%B0%B4">馬油浸潤保濕化妝水</a>
+                    </li>
+
+                    <li>
+                      <a href="/%E9%A6%AC%E6%B2%B9bomb%E9%9C%9C">馬油bomb霜</a>
+                    </li>
+
+                    <li>
+                      <a href="/%E9%A6%AC%E6%B2%B9%E5%A5%87%E8%B9%9F%E9%9C%9C">馬油奇蹟霜</a>
+                    </li>
+
+                    <li>
+                      <a href="/%E8%9D%B8%E7%89%9B%E4%BF%9D%E6%BF%95%E7%B2%BE%E8%8F%AF%E9%9C%B2">蝸牛保濕精華露</a>
+                    </li>
+
+                    <li>
+                      <a href="/%E8%9D%B8%E7%89%9Bbomb%E9%9C%9C">蝸牛bomb霜</a>
+                    </li>
+
+                    <li>
+                      <a href="/%E8%9D%B8%E7%89%9B%E5%A5%87%E8%B9%9F%E9%9C%9C">蝸牛奇蹟霜</a>
+                    </li>
+
+                    <li>
+                      <a href="/%E8%9B%8B%E8%82%8C%E4%B9%B3%E9%9C%9C%E4%BF%9D%E6%BF%95%E5%99%B4%E9%9C%A7%E9%9D%A2%E8%86%9C">蛋肌乳霜保濕噴霧面膜</a>
+                    </li>
+
+                    <li>
+                      <a href="/%E8%9B%8B%E8%82%8C%E7%B7%8A%E7%B7%BB%E5%8D%B5%E6%AE%BC%E8%86%9C">蛋肌緊緻卵殼膜</a>
+                    </li>
+
+                    <li>
+                      <a href="/%E9%A6%AC%E6%B2%B9%E8%AD%B7%E6%89%8B%E9%9C%9C">馬油護手霜</a>
+                    </li>
+
+                    <li>
+                      <a href="/%E5%86%B0%E6%B2%B3%E6%B0%B4%E6%84%9F%E6%B2%81%E6%B6%BC%E9%98%B2%E6%9B%AC%E5%99%B4%E9%9C%A7">冰河水感沁涼防曬噴霧</a>
+                    </li>
+
+                    <li>
+                      <a href="/%E6%B5%B7%E6%B4%8B%E8%86%A0%E5%8E%9F%E4%BA%AE%E8%82%8C%E9%98%B2%E6%9B%AC%E5%99%B4%E9%9C%A7">海洋膠原亮肌防曬噴霧</a>
+                    </li>
+
+                    <li>
+                      <a href="/%E8%B6%85%E9%98%B2%E6%B0%B4%E9%81%8B%E5%8B%95%E9%98%B2%E6%9B%AC%E5%99%B4%E9%9C%A7">超防水運動防曬噴霧</a>
+                    </li>
+
+                    <li>
+                      <a href="/%E6%97%A5%E6%9C%AC%E5%85%A8%E6%95%88%E4%BF%9D%E6%BF%95%E4%BF%AE%E8%AD%B7%E9%A6%AC%E6%B2%B9%E9%9C%9C(%E6%A9%98)">日本全效保濕修護馬油霜(橘)</a>
+                    </li>
+
+                  </ul>
+                </li>
+
+              </ul>
+            </ul>
+          </div>
+
+        <li class="item full-width parent group show">
+          <a href="/%E5%9F%BA%E7%A4%8E%E5%BA%95%E5%A6%9D" title="基礎底妝">基礎底妝
+          <div class="expand collapsed" role="button" data-toggle="collapse" data-target="#item3" aria-expanded="false" aria-controls="item3">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"> </span>
+
+          </div></a>
+
+          <div class="dropdown-menu collapse" id="item3">
+            <ul>
+              <ul class="row">
+
+                <li class="col-sm-4">
+                  <ul class="items">
+
+                    <li>
+                      <a href="/%E6%B0%B4%E9%80%8F%E4%BA%AEcc%E9%9C%9C">水透亮cc霜</a>
+                    </li>
+
+                    <li>
+                      <a href="/%E8%9B%8B%E8%82%8C%E6%B0%B4%E6%84%9FCC%E9%9C%9C">蛋肌水感CC霜</a>
+                    </li>
+
+                  </ul>
+                </li>
+
+              </ul>
+            </ul>
+          </div>
+
+        <li class="item full-width parent group show">
+          <a href="/%E9%87%8D%E9%BB%9E%E5%BD%A9%E5%A6%9D" title="重點彩妝">重點彩妝
+          <div class="expand collapsed" role="button" data-toggle="collapse" data-target="#item4" aria-expanded="false" aria-controls="item4">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"> </span>
+
+          </div></a>
+
+          <div class="dropdown-menu collapse" id="item4">
+            <ul>
+              <ul class="row">
+
+                <li class="col-sm-4">
+                  <ul class="items">
+
+                    <li>
+                      <a href="/%E8%9B%8B%E8%82%8CCC%20%E6%B0%B4%E6%84%9F%E6%B0%A3%E5%A2%8A%E7%B2%89%E9%A4%85">蛋肌CC 水感氣墊粉餅</a>
+                    </li>
+
+                    <li>
+                      <a href="/%E9%9B%B6%E6%B2%B9%E5%85%89CC%E6%B0%B4%E8%9C%9C%E7%B2%89">零油光CC水蜜粉</a>
+                    </li>
+
+                    <li>
+                      <a href="/%E6%B0%B4%E9%80%8F%E4%BA%AE%E9%9B%99%E6%95%88%E9%81%AE%E7%91%95%E7%B5%84">水透亮雙效遮瑕組</a>
+                    </li>
+
+                    <li>
+                      <a href="/%E6%B0%B4%E9%80%8F%E4%BA%AE%E9%9B%AA%E7%B4%97BC%E7%B2%89%E5%BA%95">水透亮雪紗BC粉底</a>
+                    </li>
+
+                    <li>
+                      <a href="/%E7%B5%B2%E6%9F%94%E6%8C%81%E5%A6%9D%E6%B0%A3%E5%A2%8A%E8%9C%9C%E7%B2%89">絲柔持妝氣墊蜜粉</a>
+                    </li>
+
+                  </ul>
+                </li>
+
+              </ul>
+            </ul>
+          </div>
+
+        </li>
+
+        <li class="item full-width parent group">
+          <a href="/%E9%83%A8%E8%90%BD%E6%A0%BC%E5%B0%88%E5%B1%AC">部落格專屬</a>
+        </li>
+        <li class="item full-width parent group">
+          <a href="/%E9%97%9C%E6%96%BC%E6%88%91%E5%80%91">關於我們</a>
+        </li>
+
+      </ul>
+    </div>
+
+    <script>
+      function showMobileMenu( )
+      {
+        if ( $( "#megamenu.mobile" ).is( ":visible" ) === true )
+        {
+          $( "#megamenu.mobile" ).fadeOut( );
+        }
+        else
+        {
+          $( "#megamenu.mobile" ).fadeIn( );
+        }
+      }
+
+      $( function( )
+      {
+        $( '.dropdown-toggle' ).dropdown( );
+
+        $( ".vel-megamenu-active #click-remove" ).click( function( )
+        {
+          $( "#megamenu.mobile" ).fadeOut( );
+
+        } );
+      } );
+
+    </script>
+    <style>
+      .right-clear {
+        padding-right: 5px;
+      }
+
+      .block .title_block {
+        font: 700 14px/22px "Open Sans", sans-serif;
+        color: #1d1f1f;
+        padding: 0px 11px 15px 0;
+        text-transform: uppercase;
+        margin: 0 0 2px 0;
+      }
+
+      .block .title_block a, .block h4 a {
+        color: #1d1f1f;
+        font: 700 14px/22px "Open Sans", sans-serif;
+        color: #1d1f1f;
+        padding: 0px 11px 15px 0;
+        text-transform: uppercase;
+        margin: 0 0 2px 0;
+      }
+
+      /*.block .title_block a:hover, .block h4 a:hover {
+       color: #fbc800;
+       text-decoration: none;
+       }*/
+
+      .clearfix:before, .clearfix:after {
+        content: " ";
+        /* 1 */
+        display: table;
+        /* 2 */
+      }
+
+      .clearfix:after {
+        clear: both;
+      }
+
+      #center_column {
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      .product_img_link {
+
+      }
+
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="/libs/devrama.slider/devrama-slider.css" />
+    <script type="text/javascript" src="/libs/devrama.slider/jquery.devrama.slider.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/libs/raty/jquery.raty.css" />
+    <script type="text/javascript" src="/libs/raty/jquery.raty.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/libs/cloud-zoom/cloudzoom.css">
+    <script type="text/javascript" src="/libs/cloud-zoom/cloudzoom.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/libs/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css">
+    <script type="text/javascript" src="/libs/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+    <!-- Slick.js CSS -->
+    <!--
+    <link rel="stylesheet" type="text/css" href="/libs/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="/libs/slick/slick-theme.css">-->
+
+    <!-- Slick JS -->
+    <!--<script type="text/javascript" src="/libs/slick/slick.js"></script>-->
+
+    <!-- <script type="text/javascript" src="/assets/jquery.countdown.min.js"></script> -->
+
+    <script src="/libs/addr/json2.js"></script>
+    <script src="/libs/addr/json2ext.js"></script>
+    <script src="/libs/addr/jquery.twAddrHelper.js"></script>
+    <script src="/libs/addr/jquery.twzipcode-1.7.8.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/libs/devrama.slider/devrama-slider.css" />
+    <script type="text/javascript" src="/libs/devrama.slider/jquery.devrama.slider.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/libs/raty/jquery.raty.css" />
+    <script type="text/javascript" src="/libs/raty/jquery.raty.js"></script>
+
+    <div id="columns" class="container self detail">
+      <div class="row mt25">
+
+        <div class="col-md-12 orders">
+
+          <!-- 商品 主要區塊 -->
+          <div class="col-sm-12">
+
+            <div class="main title">
+              購物車
+            </div>
+
+            <div class="steps">
+              <div class="step">
+                <span class="stp">STEP</span>
+                <span class="title"><span class="n">01</span> 確認購物明細與折扣</span>
+              </div>
+              <div class="step">
+                <span class="stp">STEP</span>
+                <span class="title"><span class="n">02</span> 選擇付款方式</span>
+              </div>
+              <div class="step">
+                <span class="stp">STEP</span>
+                <span class="title"><span class="n">03</span> 填寫配送資訊</span>
+              </div>
+              <div class="step active">
+                <span class="stp">STEP</span>
+                <span class="title"><span class="n">04</span> 購物完成</span>
+              </div>
+            </div>
+
+            <div class="order">
+
+              <div class="row block">
+                <h3 style="text-align: center;color: #ad2b29;font-size: 20px;">我們會將訂單通知信寄到您的信箱!</h3>
+                <p style="text-align: center;font-size: 20px;font-size: 16px;">
+                  -以下是您這次的訂單明細-
+                </p>
+                <div class="col-md-12 image-logo">
+                  <img src="images/LOGO.png" class="img-responsive center-block mt10 mw100 col-hidden-xs" alt="Beauty Women 妝美麗">
+                </div>
+              </div>
+
+              <div class="row block">
+                <div class="col-md-12 order-about">
+                  <div class="order-status">
+                    <div class="in title">
+                      訂單狀態
+                    </div>
+                    <div class="in">
+                      <span class="label label-default">等待</span>
+                    </div>
+                  </div>
+                  <div class="order-time">
+                    <div class="in">
+                      2016-06-07 18:25:54
+                    </div>
+                    <div class="in">
+                      TSC00000000000000112
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row" id="invoice-info">
+                <div class="col-md-12 text-right print-invoice">
+                  <div class="invoice-buttons">
+                    <a href="javascript:window.print()" class="btn btn-default btn-print mr10"><i class="fa fa-print pr5"></i> 列印</a>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <span class="panel-title"> <i class="fa fa-user"></i> 訂貨人</span>
+                    </div>
+                    <div class="panel-body">
+                      <address>
+                        信箱：richard@chentron.com
+                        <br>
+                        姓名：Fendy
+                        <br>
+                        電話：25186543
+                      </address>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <span class="panel-title" style="font-size: 18px;"> <img src="images/shipping-address.png" style="height: 23px;font-size: 18px;margin-right: 8px;float: left;width: 25px;"> 配送方式</span>
+                    </div>
+                    <div class="panel-body">
+                      <address>
+
+                        Fendy
+                        <br>
+                        (100)台北市中正區12345
+                      </address>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <span class="panel-title" style="font-size: 18px;"> <span class="glyphicon glyphicon-credit-card" style="top: 4px;"></span> 付款方式 </span>
+                    </div>
+                    <div class="panel-body">
+                      <address>
+                        銀行匯款
+
+                        <br>
+                        匯款資訊1234
+                      </address>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row" style="margin-top: 10px; margin-bottom: 10px;">
+                <img src="images/dollars.png" style="margin-left: 31px;height: 25px;font-size: 20px;float: left;width: 20px;">
+                <p style="width: 137px;margin-left: 57px;font-size: 18px;margin-bottom: 0px;">
+                  匯款資訊
+                </p>
+                <div class="col-md-12">
+                  <style>
+                    .shop-account-info-content {
+                      margin-bottom: 15px;
+                    }
+                    .shop-account-info {
+                      margin: 0 auto !important;
+                      float: none !important;
+                    }
+                    .shop-account-info-desp {
+                      width: 316px;
+                      text-align: left;
+                    }
+                  </style>
+                  <div class="col-xs-12 col-sm-12 shop-account-info-content">
+                    <center>
+                      <h2></h2>
+                    </center>
+                    <div class="table-responsive">
+                      <table class="table table-hover table-bordered shop-account-info">
+                        <thead>
+                          <tr>
+                            <th>銀行名稱</th>
+                            <th>帳戶名稱</th>
+                            <th>帳戶編號</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>中國信託商業銀行</td>
+                            <td>xx科技</td>
+                            <td>1111-111-1111-1111</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mainbuy products table-responsive" style="margin-top: 25px; margin-bottom: 15px;">
+                <table class="table table-hover table-striped">
+                  <thead>
+                    <tr>
+                      <th>商品照片</th>
+                      <th>名稱</th>
+                      <th>售價</th>
+                      <th>會員價</th>
+                      <th>規格</th>
+                      <th>數量</th>
+                      <th>總價</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    <tr>
+                      <td class="photo"><img src="images/demo/product1.jpg"></td>
+                      <td class="product-description">
+                      <div class="content">
+                        <a href="/%E3%80%90LEGERE%20%E8%98%AD%E5%90%89%E5%85%92%E3%80%91%E8%9D%B8%E7%89%9BBomb%E6%B0%B4%E9%9C%9C%20(50ml)">
+                        <p>
+                          【LEGERE 蘭吉兒】蝸牛Bomb水霜 (50ml)
+                        </p> </a>
+                      </div></td>
+                      <td class="price">450</td>
+                      <td class="price2">300</td>
+                      <td class="spec">--</td>
+                      <td class="qty"> 1 </td>
+                      <td class="total">450</td>
+                    </tr>
+
+                    <tr>
+                      <td class="photo"><img src="images/demo/product2.jpg"></td>
+                      <td class="product-description">
+                      <div class="content">
+                        <a href="/%E3%80%90%E5%8A%A0%E8%B3%BC%E3%80%91%E9%9F%93%E5%9C%8B%E7%99%BE%E8%90%AC%E7%86%B1%E9%8A%B7%E8%97%8D%E8%97%BB%E4%BF%9D%E6%BF%95%E7%82%B8%E5%BD%88%E9%9C%9C%2010ml">
+                        <p>
+                          【加購】韓國百萬熱銷藍藻保濕炸彈霜 10ml
+                        </p> </a>
+                      </div></td>
+                      <td class="price">150</td>
+                      <td class="price2">150</td>
+                      <td class="spec">--</td>
+                      <td class="qty"> 1 </td>
+                      <td class="total">150</td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="total-box">
+                <div class="list">
+                  <div class="name">
+                    (共1件主商品及1件加價商品) 購物金額總計
+                  </div>
+                  <div class="val">
+                    $450
+                  </div>
+                </div>
+                <div class="list">
+                  <div class="name">
+                    優惠券折抵
+                  </div>
+                  <div class="val">
+                    -$0
+                  </div>
+                </div>
+                <div class="list">
+                  <div class="name">
+                    購物金
+                  </div>
+                  <div class="val">
+                    -$20
+                  </div>
+                </div>
+                <div class="list">
+                  <div class="name">
+                    運費
+                  </div>
+                  <div class="val">
+                    $30
+                  </div>
+                </div>
+                <div class="list">
+                  <div class="name">
+                    手續費
+                  </div>
+                  <div class="val">
+                    $150
+                  </div>
+                </div>
+
+                <div class="list all">
+                  <div class="name">
+                    <div class="n1">
+                      應付金額
+                    </div>
+
+                  </div>
+                  <div class="val">
+                    $610
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <script>
+      $( function( )
+      {
+        $( '.touch-raty' ).raty(
+        {
+          readOnly: true,
+          score: function( )
+          {
+            return $( this ).attr( 'data-score' );
+          }
+        } );
+      } );
+    </script>
+    <script>
+      $( function( )
+      {
+        init_thumbnail( );
+      } );
+      $( window ).load( init_thumbnail );
+      $( window ).resize( init_thumbnail );
+      function init_thumbnail( )
+      {
+        $( ".product_img_linksssss" ).each( function( )
+        {
+          var w = $( this ).outerWidth( );
+          var h = w;
+          //$(this).outerHeight();
+          $( this ).css(
+          {
+            "width": w + "px",
+            "height": w + "px"
+          } );
+
+          var img = $( this ).find( "img" ).eq( 0 );
+          var imgW = img[ 0 ].naturalWidth;
+          var imgH = img[ 0 ].naturalHeight;
+          var imgRate = imgW / imgH;
+          $( this ).css(
+          {
+            "overflow": "hidden"
+          } );
+          var frameRate = w / h;
+          var imageRate = imgW / imgH;
+
+          var gridLayout = $( this ).parent( ).parent( ).hasClass( "grid-artical" );
+          if ( gridLayout === false )
+          {
+            if ( frameRate > imageRate )
+            {
+              var newImgH = imgH * ( w / imgW );
+              var marginTop = ( parseInt( newImgH ) - parseInt( h ) ) / 2;
+              $( this ).find( "img" ).css(
+              {
+                "width": w + "px",
+                "height": newImgH + "px",
+                "margin-top": "-" + marginTop + "px"
+              } );
+            }
+            else
+            {
+              var newImgW = imgW * ( h / imgH );
+              var marginLeft = ( parseInt( newImgW ) - parseInt( w ) ) / 2;
+              $( this ).find( "img" ).css(
+              {
+                "width": newImgW + "px",
+                "height": h + "px",
+                "margin-left": "-" + marginLeft + "px"
+              } );
+            }
+          }
+        } );
+      }
+    </script>
+    <style>
+      #footer {
+        background: #3a0003;
+      }
+
+      #footer ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .icon-envelope:before {
+        content: "\f0e0";
+        position: absolute;
+        left: 17px;
+      }
+
+      .icon-mobile-phone:before {
+        content: "\f10b";
+        position: absolute;
+        left: 20px;
+      }
+
+      .icon-map-marker:before {
+        content: "\f041";
+        position: absolute;
+        left: 20px;
+      }
+
+      .vel-contactinfo {
+        background: url(../img/bg-map.png) no-repeat;
+        background-position: left -47px;
+      }
+
+      .vel-contactinfo li .icon {
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        color: #fff;
+        display: inline-block;
+        font-size: 14px;
+        padding: 6px 0 6px 4px;
+        margin-right: 10px;
+        text-align: center;
+        background-color: #252424;
+        width: 25px;
+        height: 25px;
+        -moz-transition: all 0.5s ease;
+        -webkit-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+      }
+
+      .rtl .vel-contactinfo li .icon {
+        padding: 6px 4px 6px 0;
+      }
+
+      .rtl .vel-contactinfo li .icon {
+        margin-left: 10px;
+        margin-right: inherit;
+      }
+
+      .vel-contactinfo li > a {
+        position: relative;
+      }
+
+      .vel-contactinfo li:hover .icon {
+        background-color: #0C0C0C;
+      }
+
+      @media (max-width: 1024px) {
+        .banner-support {
+          margin-top: 0;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .banner-support {
+          margin-top: 0;
+        }
+        #vel-copyright .copyright {
+          position: static;
+          width: 100%;
+          margin-top: 20px;
+        }
+        #vel-copyright .block {
+          text-align: center;
+        }
+      }
+    </style>
+
+    <div class="footer-container clearfix">
+      <footer id="footer">
+        <div class="vel-footer-center clearfix">
+          <div class="container">
+            <div class="row">
+              <div class="t">
+                <ul>
+                  <li>
+                    <a href="">回首頁</a>
+                  </li>
+                  <li>
+                    <a href="">關於妝美麗</a>
+                  </li>
+                  <li>
+                    <a href="">購物說明</a>
+                  </li>
+                  <li>
+                    <a href="">部落文推薦</a>
+                  </li>
+                  <li>
+                    <a href="">Q&A</a>
+                  </li>
+                  <li>
+                    <a href="">隱私權政策</a>
+                  </li>
+                  <li>
+                    <a href="">聯絡我們</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="m">
+                超啟有限公司 COPYRIGHT © 2016 TSAO CHEE CO., LTD. ALL RIGHTS RESERVED. Website by <a href="http://www.ubestshop888.com/">UBestSHOP</a>.
+              </div>
+              <div class="b">
+                <div class="phone">
+                  消費者服務專線: 02- 22260828
+                </div>
+                <div class="addr">
+                  地址: 新北市中和區板南路492號6樓之6
+                </div>
+              </div>
+
+              <!--回到最上面的按鈕-->
+              <span id="back-top"> <img src="images/btn_top.png"> </span>
+
+            </div>
+          </div>
+        </div>
+        <div class="vel-footer-bottom clearfix"></div>
+      </footer>
+    </div>
+    <!-- #footer -->
+
+    <script type="text/javascript">
+      $( function( )
+      {
+        $( "#footer .block_content.ul" ).each( function( )
+        {
+          $( this ).find( "ul" ).addClass( "toggle-footer" );
+          $( this ).find( "ul > li" ).addClass( "item" );
+        } );
+
+        $( "#back-top" ).hide( );
+        $( "#back-top" ).click( function( )
+        {
+          jQuery( "html,body" ).animate(
+          {
+            scrollTop: 0
+          }, 1000 );
+        } );
+        $( window ).scroll( function( )
+        {
+          if ( $( this ).scrollTop( ) > 100 )
+          {
+            $( '#back-top' ).fadeIn( "fast" );
+          }
+          else
+          {
+            $( '#back-top' ).stop( ).fadeOut( "fast" );
+          }
+        } );
+        $( ".article-desc, .story-desc" ).each( function( )
+        {
+          var temp = $( this ).find( ".pull-left.author-section" ).clone( );
+          var readMore = $( this ).find( ".readMore" ).clone( );
+          $( this ).find( ".pull-left.author-section" ).remove( );
+          $( this ).find( ".readMore" ).remove( );
+          $( this ).text( $( this ).text( ) );
+          $( temp ).appendTo( $( this ) );
+          $( readMore ).appendTo( $( this ) );
+        } );
+      } );
+    </script>
+
+    <script>
+      ( function( i, s, o, g, r, a, m )
+      {
+        i[ 'GoogleAnalyticsObject' ] = r;
+        i[ r ] = i[ r ] ||
+        function( )
+        {
+          ( i[ r ].q = i[ r ].q || [ ] ).push( arguments );
+        }, i[ r ].l = 1 * new Date( );
+        a = s.createElement( o ), m = s.getElementsByTagName(o)[ 0 ];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore( a, m );
+      } )( window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga' );
+
+      ga( 'create', 'UA-72126719-1', 'auto' );
+      ga( 'send', 'pageview' );
+
+    </script>
+
+  </body>
+</html>

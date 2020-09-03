@@ -1,0 +1,271 @@
+Array
+(
+    [id] => 231
+    [iso_code] => TWD
+    [rate] => 1
+    [unique_id] => TSC00000000000000001
+    [GatewayType] => allpay
+    [GatewayId] => 
+    [updateTime] => 2018-01-12 11:12:18
+    [createTime] => 2018-01-13 02:12:18
+    [type] => -1
+    [orderTypeTime] => 2018-01-13 02:12:18
+    [paymentType] => -1
+    [paymentTypeTime] => 2018-01-13 02:12:26
+    [shipType] => 0
+    [shipTypeTime] => 0000-00-00 00:00:00
+    [isSend] => 0
+    [isPushNotify] => 0
+    [isAllot] => 0
+    [isRefundStock] => 0
+    [status] => Array
+        (
+            [html] => <span class="label label-default">成立</span>
+            [text] => 成立
+        )
+
+    [callback] => 
+    [notifyback] => 
+    [offlineback] => 
+    [userId] => 108
+    [hostId] => 0
+    [nonUserInfo] => {}
+    [currenciesIsoCode] => TWD
+    [cashFlow] => Allpay
+    [cashData] => Array
+        (
+            [callback] => Array
+                (
+                    [MerchantID] => 2000132
+                    [MerchantTradeNo] => TSC00000000000000001
+                    [PaymentDate] => 2018/01/13 02:12:22
+                    [PaymentType] => _
+                    [PaymentTypeChargeFee] => 0
+                    [RtnCode] => 0
+                    [RtnMsg] => 訂單編號重覆，建立失敗(100002)
+                    [SimulatePaid] => 0
+                    [TradeAmt] => 486
+                    [TradeDate] => 2018/01/13 02:12:22
+                    [TradeNo] => 
+                )
+
+        )
+
+    [shipFlow] => CompleteAddress
+    [shipData] => Array
+        (
+            [reciverName] => Hank
+            [region] => 0
+            [zip] => 106
+            [address] => 台北市大安區忠孝東路四段25巷七號2樓
+            [city] => 台北市
+            [district] => 大安區
+        )
+
+    [invoiceData] => Array
+        (
+            [type] => InvoiceTypeOne
+            [title] => 
+            [number] => 
+        )
+
+    [shoppingPoint] => 0
+    [promotionObj] => Array
+        (
+            [type] => CheckoutDiscount
+            [value] => Array
+                (
+                    [discountAmout] => 0
+                )
+
+        )
+
+    [transFee] => 36
+    [transFare] => 0
+    [total] => 450
+    [clearTotal] => 486
+    [country] => 台北市
+    [region] => 0
+    [zip] => 106
+    [district] => 大安區
+    [address] => 台北市大安區忠孝東路四段25巷七號2樓
+    [extraInfoObj] => 
+    [memo] => 
+    [memo_modifiedtime] => 
+    [userMail] => hankyu1012@gmail.com
+    [dataUser] => Array
+        (
+            [id] => 108
+            [name] => 
+            [mail] => hankyu1012@gmail.com
+            [password] => 8c656637ced58d2a80caa230ed53323c43aab2bc
+            [nickname] => Hank
+            [phone] => 0988670970
+            [birthday] => 1976-10-12
+            [gender] => M
+            [region] => 0
+            [county] => 台北市
+            [district] => 大安區
+            [zip] => 106
+            [address] => 台北市大安區忠孝東路四段25巷七號2樓
+            [point] => 200
+            [picture] => {"name":"sample.png","thumbnailUrl":"http:\/\/tsaocheeb2ctest.mooo.com\/uploads\/avatar.png","mediumUrl":"http:\/\/tsaocheeb2ctest.mooo.com\/uploads\/avatar.png","url":"http:\/\/tsaocheeb2ctest.mooo.com\/uploads\/avatar.png"}
+            [langCode] => zh-hant
+            [currenciesIsoCode] => TWD
+            [SSID] => 
+            [flag] => 1
+            [subscript] => 0
+            [is_newsletter_ordered] => 0
+            [isAdmin] => 0
+            [lastLoginTime] => 2018-01-13 02:09:37
+            [updateTime] => 2018-01-12 11:09:37
+            [createTime] => 2016-05-31 00:29:38
+            [group_id] => 6
+            [host_id] => 0
+            [unique_host] => 
+            [unique_mobile] => 
+            [mobile_info] => 
+        )
+
+    [detail] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 299
+                    [transactionId] => 231
+                    [productId] => 166
+                    [qty] => 1
+                    [price] => 450
+                    [formatType] => F
+                    [updateTime] => 2018-01-12 11:12:18
+                    [createTime] => 2018-01-13 02:12:18
+                    [productMainKey] => CreamHorseOilOrange
+                    [productName] => 日本全效保濕修護馬油霜(橘)
+                    [productPhoto] => /ckfinder/userfiles/files/product/%E6%97%A5%E6%9C%AC%E5%85%A8%E6%95%88%E4%BF%9D%E6%BF%95%E4%BF%AE%E8%AD%B7%E9%A6%AC%E6%B2%B9%E9%9C%9C-1.jpg
+                    [dataDetail] => Array
+                        (
+                            [en] => Array
+                                (
+                                    [id] => 406
+                                    [detailKey] => CreamHorseOilOrange
+                                    [name] => 
+                                    [src] => /uploads/sample-icon.png
+                                    [alt] => sample
+                                    [tag] => 
+                                    [value] => 
+                                    [langCode] => en
+                                )
+
+                            [zh-hans] => Array
+                                (
+                                    [id] => 407
+                                    [detailKey] => CreamHorseOilOrange
+                                    [name] => 
+                                    [src] => /uploads/sample-icon.png
+                                    [alt] => sample
+                                    [tag] => 
+                                    [value] => 
+                                    [langCode] => zh-hans
+                                )
+
+                            [zh-hant] => Array
+                                (
+                                    [id] => 408
+                                    [detailKey] => CreamHorseOilOrange
+                                    [name] => 日本全效保濕修護馬油霜(橘)
+                                    [src] => /ckfinder/userfiles/files/product/%E6%97%A5%E6%9C%AC%E5%85%A8%E6%95%88%E4%BF%9D%E6%BF%95%E4%BF%AE%E8%AD%B7%E9%A6%AC%E6%B2%B9%E9%9C%9C-1.jpg
+                                    [alt] => sample
+                                    [tag] => 
+                                    [value] => Array
+                                        (
+                                            [image] => Array
+                                                (
+                                                    [0] => Array
+                                                        (
+                                                            [url] => /ckfinder/userfiles/files/product/%E6%97%A5%E6%9C%AC%E5%85%A8%E6%95%88%E4%BF%9D%E6%BF%95%E4%BF%AE%E8%AD%B7%E9%A6%AC%E6%B2%B9%E9%9C%9C-1.jpg
+                                                            [thubnailUrl] => /ckfinder/userfiles/_thumbs/files/product/%E6%97%A5%E6%9C%AC%E5%85%A8%E6%95%88%E4%BF%9D%E6%BF%95%E4%BF%AE%E8%AD%B7%E9%A6%AC%E6%B2%B9%E9%9C%9C-1.jpg
+                                                            [src] => ckfinder/userfiles/files/product/%E6%97%A5%E6%9C%AC%E5%85%A8%E6%95%88%E4%BF%9D%E6%BF%95%E4%BF%AE%E8%AD%B7%E9%A6%AC%E6%B2%B9%E9%9C%9C-1.jpg
+                                                        )
+
+                                                    [1] => Array
+                                                        (
+                                                            [url] => /ckfinder/userfiles/files/product/%E6%97%A5%E6%9C%AC%E5%85%A8%E6%95%88%E4%BF%9D%E6%BF%95%E4%BF%AE%E8%AD%B7%E9%A6%AC%E6%B2%B9%E9%9C%9C-2.jpg
+                                                            [thubnailUrl] => /ckfinder/userfiles/_thumbs/files/product/%E6%97%A5%E6%9C%AC%E5%85%A8%E6%95%88%E4%BF%9D%E6%BF%95%E4%BF%AE%E8%AD%B7%E9%A6%AC%E6%B2%B9%E9%9C%9C-2.jpg
+                                                            [src] => ckfinder/userfiles/files/product/%E6%97%A5%E6%9C%AC%E5%85%A8%E6%95%88%E4%BF%9D%E6%BF%95%E4%BF%AE%E8%AD%B7%E9%A6%AC%E6%B2%B9%E9%9C%9C-2.jpg
+                                                        )
+
+                                                    [2] => Array
+                                                        (
+                                                            [url] => /ckfinder/userfiles/files/product/%E6%97%A5%E6%9C%AC%E5%85%A8%E6%95%88%E4%BF%9D%E6%BF%95%E4%BF%AE%E8%AD%B7%E9%A6%AC%E6%B2%B9%E9%9C%9C-3.jpg
+                                                            [thubnailUrl] => /ckfinder/userfiles/_thumbs/files/product/%E6%97%A5%E6%9C%AC%E5%85%A8%E6%95%88%E4%BF%9D%E6%BF%95%E4%BF%AE%E8%AD%B7%E9%A6%AC%E6%B2%B9%E9%9C%9C-3.jpg
+                                                            [src] => ckfinder/userfiles/files/product/%E6%97%A5%E6%9C%AC%E5%85%A8%E6%95%88%E4%BF%9D%E6%BF%95%E4%BF%AE%E8%AD%B7%E9%A6%AC%E6%B2%B9%E9%9C%9C-3.jpg
+                                                        )
+
+                                                )
+
+                                            [section] => Array
+                                                (
+                                                    [0] => Array
+                                                        (
+                                                            [title] => 商品特色
+                                                            [content] => 
+                                                        )
+
+                                                    [1] => Array
+                                                        (
+                                                            [title] => 如何使用
+                                                            [content] => 
+                                                        )
+
+                                                    [2] => Array
+                                                        (
+                                                            [title] => 影片介紹
+                                                            [content] => 
+                                                        )
+
+                                                    [3] => Array
+                                                        (
+                                                            [title] => 退/換貨或須知
+                                                            [content] => 
+                                                        )
+
+                                                )
+
+                                            [title] => 日本全效保濕修護馬油霜(橘)
+                                            [description] => <p><span style="font-family:microsoft jhenghei; font-size:14px">&bull; 水解膠原蛋白可是肌膚光澤</span><br />
+<span style="font-family:microsoft jhenghei; font-size:14px">&bull; 防止肌膚老化、保濕、修護</span><br />
+<span style="font-family:microsoft jhenghei; font-size:14px">&bull; 加強保濕作用，幫肌膚「鎖水」</span></p>
+
+                                        )
+
+                                    [langCode] => zh-hant
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [orderStatus] => Array
+        (
+            [text] => 訂單成立
+        )
+
+    [paymentStatus] => Array
+        (
+            [text] => 
+        )
+
+    [shipStatus] => Array
+        (
+            [text] => 
+        )
+
+    [coupon] => Array
+        (
+            [ticketNumber] => 
+            [amount] => 0
+        )
+
+)
