@@ -93,7 +93,6 @@ input[type="search"]{
                         <li class="crumb-active">
                             <a> <?php echo $bkm_name;?> </a>
                         </li>
-
                     </ol>
                 </div>
                 <div class="topbar-right">
@@ -224,8 +223,8 @@ input[type="search"]{
 													?>
 													</td>
 													<td>
-                                                        <a href="/admin/user/detail?id=<?php echo $rec["id"];?>" class="btn btn-info btn-xs">編輯資料</a>
-                                                        <a href="/admin/user/changePW?id=<?php echo $rec["id"];?>" class="btn btn-warning btn-xs">修改密碼</a>
+                                                        <a href="/admin/user/detail?id=<?php echo $rec["id"];?>" class="btn btn-info btn-xs">Details</a>
+                                                        <a href="/admin/user/changePW?id=<?php echo $rec["id"];?>" class="btn btn-warning btn-xs">Change Password</a>
 													</td>
 												</tr>
 											<?php

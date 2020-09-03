@@ -85,24 +85,24 @@
                                         {
                                             if( $group["id"] != 5 )
                                             {
-                                                ( $selector === false ) ? $selector = "<select class=\"form-control\" onchange=\"changeGroup('{$rec["id"]}', this);\">" : "";
+                                                ( $selector === false ) ? $selector = "<select name='group_id' id='group_id' class=\"form-control\" onchange=\"saveTempData( 'group_id', this );\">" : "";
 
                                                 if( $group["id"] == 2 )
                                                 {
-                                                    if( $group["id"] == $rec["group_id"] )
+                                                    if( $group["id"] == $selfData["group_id"] )
                                                     {
                                                         $groupLabel = $group["html"];
                                                     }
-                                                    $isSed = ( $group["id"] == $rec["group_id"] ) ? "selected" : "";
+                                                    $isSed = ( $group["id"] == $selfData["group_id"] ) ? "selected" : "";
                                                     $selector.= "<option value=\"{$group["id"]}\" {$isSed}>{$group["name"]}</option>";
                                                 }
                                                 else
                                                 {
-                                                    $isSed = ( $group["id"] == $rec["group_id"] ) ? "selected" : "";
+                                                    $isSed = ( $group["id"] == $selfData["group_id"] ) ? "selected" : "";
                                                     $selector.= "<option value=\"{$group["id"]}\" {$isSed}>{$group["name"]}</option>";
                                                 }
                                             }
-                                            else if ( $admin["group_id"] == 5 && $rec["group_id"] == 5 ){
+                                            else if ( $admin["group_id"] == 5 && $selfData["group_id"] == 5 ){
                                                 $groupLabel = $group["html"];
                                             }
                                         }

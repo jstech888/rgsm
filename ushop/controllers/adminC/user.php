@@ -3,25 +3,25 @@ class User extends Admin_Controller {
 
 	private $jsonRS = array(
 		"code" 		=> "-1",
-		"message"	=> "操作失敗"
+		"message"	=> "Failure"
 	);
 	
 	public $arr_flag = array(
 		0 => array(
-			"title" => "審核",
-			"html"	=> "<a class=\"btn btn-default btn-xs\">審核</a>"
+			"title" => "Review",
+			"html"	=> "<a class=\"btn btn-default btn-xs\">Review</a>"
 		),
 		1 =>  array(
-			"title" => "啟用",
-			"html"	=> "<a class=\"btn btn-info btn-xs\">啟用</a>"
+			"title" => "Enable",
+			"html"	=> "<a class=\"btn btn-info btn-xs\">Enable</a>"
 		),
 		2 =>  array(
-			"title" => "停用",
-			"html"	=> "<a class=\"btn btn-warning btn-xs\">停用</a>"
+			"title" => "Disable",
+			"html"	=> "<a class=\"btn btn-warning btn-xs\">Disable</a>"
 		),
 		3 =>  array(
-			"title" => "異常",
-			"html"	=> "<a class=\"btn btn-danger btn-xs\">異常</a>"
+			"title" => "abnormal",
+			"html"	=> "<a class=\"btn btn-danger btn-xs\">abnormal</a>"
 		)
 	);
 
@@ -653,9 +653,13 @@ class User extends Admin_Controller {
 		
 	public function create()
 	{
-		
 		$this->data["css_include"] 	= "user";
 		$this->data['widget'] 		= array();
+
+        $bkm_data = $this->mBKM->find($_SERVER['REQUEST_URI']);
+        $bkmt_data = $this->mBKMT->find($bkm_data[0]['type_id']);
+        $this->data["bkm_name"] = $bkm_data[0]['name'];
+        $this->data["bkmt_name"] = $bkmt_data[0]['name'];
 		
 		$this->load->model("User_model");	
 		$this->data["selfData"] = $this->User_model->sample;
@@ -707,7 +711,8 @@ class User extends Admin_Controller {
 		{
 			$this->data["css_include"] 	= "user";
 			$this->data['widget'] 		= array();
-			
+
+            $this->load->model("Auth_model");
 			$this->load->model("User_model");	
 			$listData = $this->User_model->findUserById( $_GET["id"]);
 			//get gender
@@ -718,7 +723,8 @@ class User extends Admin_Controller {
 			{
 				$gender = json_decode($genderResult[0]["value"]) ;
 			}*/
-            $listGroup = $this->Auth_model->getAllGroup($this->admin["group_id"]);
+
+			$listGroup = $this->Auth_model->getAllGroup($this->admin["group_id"]);
             foreach($listGroup AS &$group )
             {
                 $btnStyle = ( array_key_exists($group["id"],$this->groupColor)) ? $this->groupColor[$group["id"]] : "btn-default";

@@ -28,11 +28,11 @@
                 <div class="topbar-left">
                     <ol class="breadcrumb">
                         <li class="crumb-active">
-                            <a>會員管理</a>
+                            <a> <?php echo $bkmt_name;?> </a>
                         </li>
                         <li class="crumb-active">
-							<a>創建新會員</a>
-						</li>
+                            <a> <?php echo $bkm_name;?> </a>
+                        </li>
                     </ol>
                 </div>
                 <div class="topbar-right">
@@ -47,63 +47,63 @@
 
                 <div class="panel panel-primary panel-border top">
                     <div class="panel-heading">
-                        <span class="panel-title"> <span class="glyphicon glyphicon-user"></span> 會員個人資訊</span>
+                        <span class="panel-title"> <span class="glyphicon glyphicon-user"></span> Account Info</span>
                     </div>
                     <div class="panel-body p20" id="invoice-item">
 					
 						<form class="form-horizontal" role="form">
 							<div class="form-group">
-								<label for="inputName" class="col-lg-2 control-label">帳號</label>
+								<label for="inputName" class="col-lg-2 control-label">Account</label>
 								<div class="col-lg-8">
 									<input class="form-control" value="" onkeyup="saveTempData( 'name', this );"/>
 									<span class="help-block mt5">*此為必填項目 <p style="color:red;display:inline-block;">網站後台登入使用(此為後台帳號)</p></span>
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="inputMail" class="col-lg-2 control-label">信箱</label>
+								<label for="inputMail" class="col-lg-2 control-label">Email</label>
 								<div class="col-lg-8">
 									<input class="form-control" value="" onkeyup="saveTempData( 'mail', this );"/>
 									<span class="help-block mt5">*此為必填項目 <p style="color:red;display:inline-block;">網站前台會員登入使用(會員帳號)</p></span>
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="inputGender" class="col-lg-2 control-label">性別</label>
+								<label for="inputGender" class="col-lg-2 control-label">Gender</label>
 								<div class="col-lg-8">
-									<input  type="radio" name="gender" id="gender" value="M" onclick="saveTempData( 'gender', this );" required> 男
-									<input  type="radio" name="gender" id="gender" value="F" onclick="saveTempData( 'gender', this );" required> 女
+									<input  type="radio" name="gender" id="gender" value="M" onclick="saveTempData( 'gender', this );" required> Male
+									<input  type="radio" name="gender" id="gender" value="F" onclick="saveTempData( 'gender', this );" required> Female
 									<span class="help-block mt5">*此為必填項目</span>
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="inputPassword" class="col-lg-2 control-label">密碼</label>
+								<label for="inputPassword" class="col-lg-2 control-label">Password</label>
 								<div class="col-lg-8">
 									<input type="password" class="form-control" value="" onkeyup="saveTempData( 'password', this );"/>
 									<span class="help-block mt5">*此為必填項目</span>
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="inputRetypePW" class="col-lg-2 control-label">重新輸入密碼</label>
+								<label for="inputRetypePW" class="col-lg-2 control-label">Repeat Password</label>
 								<div class="col-lg-8">
 									<input type="password" id="inputRetypePW" class="form-control" value=""/>
 									<span class="help-block mt5">*此為必填項目</span>
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="input-nickname" class="col-lg-2 control-label">姓名</label>
+								<label for="input-nickname" class="col-lg-2 control-label">Name</label>
 								<div class="col-lg-8">
 									<input id="input-nickname" class="form-control" value="" onkeyup="saveTempData( 'nickname', this );"/>
 									<span class="help-block mt5">*此為必填項目</span>
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="input-phone" class="col-lg-2 control-label">電話</label>
+								<label for="input-phone" class="col-lg-2 control-label">Phone</label>
 								<div class="col-lg-8">
 									<input id="input-phone" class="form-control" value="" onkeyup="saveTempData( 'phone', this );" maxlength="15"/>
 									<span class="help-block mt5">*此為必填項目</span>
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="input-birthday" class="col-lg-2 control-label">生日</label>
+								<label for="input-birthday" class="col-lg-2 control-label">Birthday</label>
 								<div class="col-lg-8">
 									<input id="input-birthday" class="form-control date birthday" value="" onchange="saveTempData( 'birthday', this );"/>
 									<span class="help-block mt5">*此為必填項目</span>
@@ -113,8 +113,8 @@
                     </div>					
 					<div class="panel-footer">	
 						<div class="btn-group pull-right">
-							<a class="btn btn-info" onclick="pageSave();">儲存</a>	
-							<a class="btn btn-default" onclick="location.href = '/admin/user/listPage';">返回</a>	
+							<a class="btn btn-info" onclick="pageSave();">Save</a>
+							<a class="btn btn-default" onclick="location.href = '/admin/user/listPage';">Back</a>
 						</div>
 						<div class="clearfix"></div>
 					</div>
