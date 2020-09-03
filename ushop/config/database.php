@@ -49,9 +49,9 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = 'iverson3';
-$db['default']['database'] = 'rgsm';
+$db['default']['username'] = 'hankyu19_dbadm';
+$db['default']['password'] = 'Hankyudinghan123.';
+$db['default']['database'] = 'hankyu19_rgsm';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
