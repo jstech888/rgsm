@@ -107,7 +107,7 @@ body.external-page #content .admin-form {
 
                                         <div class="section">
                                             <label for="username" class="field prepend-icon">
-                                                <input type="text" name="username" id="username" class="gui-input" placeholder="帳號">
+                                                <input type="text" name="username" id="username" class="gui-input" placeholder="Account">
                                                 <label for="username" class="field-icon"><i class="fa fa-user"></i>
                                                 </label>
                                             </label>
@@ -116,7 +116,7 @@ body.external-page #content .admin-form {
 
                                         <div class="section">
                                             <label for="password" class="field prepend-icon">
-                                                <input type="password" name="password" id="password" class="gui-input" placeholder="密碼">
+                                                <input type="password" name="password" id="password" class="gui-input" placeholder="Password">
                                                 <label for="password" class="field-icon"><i class="fa fa-lock"></i>
                                                 </label>
                                             </label>
