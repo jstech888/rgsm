@@ -63,4 +63,10 @@ class Bkmenu_model extends My_Model {
 		return (count($rest) == 0)?false:true;
 	}
 
+    public function find($path)
+    {
+        $rest = $this->read_RecordByWhereCase(array( "path"=>$path ));
+        return $rest;
+    }
+
 }

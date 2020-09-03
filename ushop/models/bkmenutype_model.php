@@ -60,4 +60,10 @@ class Bkmenutype_model extends My_Model {
 		return (count($rest) == 0)?false:true;
 	}
 
+    public function find($id)
+    {
+        $rest = $this->read_RecordByWhereCase(array( "id"=>$id ));
+        return $rest;
+    }
+
 }

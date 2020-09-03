@@ -87,8 +87,13 @@ input[type="search"]{
                 <div class="topbar-left">
                     <ol class="breadcrumb">
                         <li class="crumb-active">
-                            <a>會員管理</a>
+                            <a> <?php echo $bkmt_name;?> </a>
                         </li>
+
+                        <li class="crumb-active">
+                            <a> <?php echo $bkm_name;?> </a>
+                        </li>
+
                     </ol>
                 </div>
                 <div class="topbar-right">
@@ -104,42 +109,42 @@ input[type="search"]{
 					<div class="panel">
 						<div class="panel-heading">
 							<!-- title -->
-							<h3 class="panel-title text-muted text-center mt10 fw400">會員管理</h3>
+							<h3 class="panel-title text-muted text-center mt10 fw400"> <?php echo $bkmt_name;?> </h3>
 							<!-- /title -->
 						</div>
 						<div class="panel-body">
 							<div class="panel">
 								<div class="panel-heading text-center">
 									<div class="caption">
-										操作區塊
+										Zone
 									</div>
 								</div>
 								<div class="panel-body">
 							
 									<div class="panel-heading">
 										<div class="panel-title hidden-xs">
-											<span class="glyphicon glyphicon-tasks"></span>會員/帳號列表</div>
+											<span class="glyphicon glyphicon-tasks"></span> <?php echo $bkm_name;?> </div>
 									</div>
 									<div class="panel-body pn">
 										<table class="table table-striped table-hover" id="datatable3" cellspacing="0" width="100%">
 											<thead>
 												<tr>
-													<th>編號</th>
-													<th>帳號</th>
-													<th>身分</th>
-													<th>電話</th>
-													<th>狀態</th>
-													<th>操作</th>
+													<th>#</th>
+													<th>Account</th>
+													<th>Role</th>
+													<th>Phone</th>
+													<th>Status</th>
+													<th>Action</th>
 												</tr>
 											</thead>
 											<tfoot>
 												<tr>
-													<th>編號</th>
-													<th>帳號</th>
-													<th>身分</th>
-													<th>電話</th>
-													<th>狀態</th>
-													<th>操作</th>
+                                                    <th>#</th>
+                                                    <th>Account</th>
+                                                    <th>Role</th>
+                                                    <th>Phone</th>
+                                                    <th>Status</th>
+                                                    <th>Action</th>
 												</tr>
 											</tfoot>
 											<tbody>
@@ -371,12 +376,12 @@ input[type="search"]{
 		$('#datatable3').dataTable({
 			"order": [[ 0, "desc" ]],
 			"language": {
-				"lengthMenu"		: "每頁顯示 _MENU_ 筆",
-				"search"			: "關鍵字　",
-				"zeroRecords"		: "找不到任何相對應資料",
-				"info"				: "目前 _PAGE_ 頁，共 _PAGES_ 頁",
-				"infoEmpty"			: "資料是空的",
-				"infoFiltered"		: "(從 _MAX_ 筆資料中篩選)"
+				"lengthMenu"		: "Each Page _MENU_ items",
+				"search"			: "Keyword　",
+				"zeroRecords"		: "Could not find any corresponding information",
+				"info"				: "Now _PAGE_ page，total _PAGES_ pages",
+				"infoEmpty"			: "Data is empty",
+				"infoFiltered"		: "(Select from _MAX_ items)"
 			}
 		});
 	}

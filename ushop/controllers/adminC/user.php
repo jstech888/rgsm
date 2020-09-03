@@ -24,8 +24,7 @@ class User extends Admin_Controller {
 			"html"	=> "<a class=\"btn btn-danger btn-xs\">異常</a>"
 		)
 	);
-	
-	
+
 	public $groupColor = array( "5" => "btn-danger", "1" => "btn-info", "2" => "btn-warning" );
 	public $infoSample = array("id","nickname","name","mail",'gender',"point","phone","birthday","picture","region","county","district","zip","address");
 	
@@ -642,9 +641,13 @@ class User extends Admin_Controller {
 		}		
 		
 		$this->data["FlagSelOpt"] = $this->arr_flag;
-		
 		$this->data["listData"] = $listData;
-		$this->load->view('admin/inc/head',$this->data);
+        $bkm_data = $this->mBKM->find($_SERVER['REQUEST_URI']);
+        $bkmt_data = $this->mBKMT->find($bkm_data[0]['type_id']);
+        $this->data["bkm_name"] = $bkm_data[0]['name'];
+        $this->data["bkmt_name"] = $bkmt_data[0]['name'];
+
+        $this->load->view('admin/inc/head',$this->data);
 		$this->load->view('admin/user/index',$this->data);
 	}
 		
