@@ -38,10 +38,10 @@
                 <div class="topbar-left">
                     <ol class="breadcrumb">
                         <li class="crumb-active">
-                            <a>商店管理</a>
+                            <a> <?php echo $bkmt_name;?> </a>
                         </li>
                         <li class="crumb-active">
-                            <a>商店設定</a>
+                            <a> <?php echo $bkm_name;?> </a>
                         </li>
                     </ol>
                 </div>

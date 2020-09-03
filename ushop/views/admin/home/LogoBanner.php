@@ -28,10 +28,10 @@
                 <div class="topbar-left">
                     <ol class="breadcrumb">
                         <li class="crumb-active">
-                            <a>WIDGET管理</a>
+                            <a> <?php echo $bkmt_name;?> </a>
                         </li>
-                        <li class="crumb-link">
-                            <a href="<?php echo base_url("/admin/widget/LogoBanner");?>">商店LOGO</a>
+                        <li class="crumb-active">
+                            <a> <?php echo $bkm_name;?> </a>
                         </li>
                     </ol>
                 </div>
@@ -57,7 +57,7 @@
 					<div class="panel">
 						<div class="panel-heading">
 							<!-- title -->
-							<h3 class="panel-title text-muted text-center mt10 fw400">商店LOGO</h3>
+							<h3 class="panel-title text-muted text-center mt10 fw400"> <?php echo $bkm_name;?> </h3>
 							<!-- /title -->
 						</div>
 						<div class="panel-body">

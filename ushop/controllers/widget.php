@@ -7,6 +7,11 @@ class Widget extends Admin_Controller {
 		parent::__construct();	
 		$this->forceLogin();	
 		$this->data['sampleImage'] = $this->sampleImage;
+
+        $bkm_data = $this->mBKM->find($_SERVER['REQUEST_URI']);
+        $bkmt_data = $this->mBKMT->find($bkm_data[0]['type_id']);
+        $this->data["bkm_name"] = $bkm_data[0]['name'];
+        $this->data["bkmt_name"] = $bkmt_data[0]['name'];
 	}
 	
 	private $jsonRS = array(

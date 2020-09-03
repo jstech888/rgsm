@@ -48,10 +48,10 @@
                 <div class="topbar-left">
                     <ol class="breadcrumb">
                         <li class="crumb-active">
-                            <a>商店管理</a>
+                            <a> <?php echo $bkmt_name;?> </a>
                         </li>
                         <li class="crumb-active">
-                            <a>消費說明</a>
+                            <a> <?php echo $bkm_name;?> </a>
                         </li>
                     </ol>
                 </div>
@@ -68,14 +68,14 @@
 					<div class="panel">
 						<div class="panel-heading">
 							<!-- title -->
-							<h3 class="panel-title text-muted text-center mt10 fw400">消費說明</h3>
+							<h3 class="panel-title text-muted text-center mt10 fw400"><?php echo $bkm_name;?></h3>
 							<!-- /title -->
 						</div>
 						<div class="panel-body">
 							<div class="panel">
 								<div class="panel-heading text-center">
 									<div class="caption">
-										編輯區塊
+										Edit Zone
 										<div class="pull-right">
 											<!--
 											<div class="btn btn-success fileinput-button">

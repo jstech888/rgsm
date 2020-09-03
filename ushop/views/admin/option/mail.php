@@ -44,10 +44,10 @@
                 <div class="topbar-left">
                     <ol class="breadcrumb">
                         <li class="crumb-active">
-                            <a>商店管理</a>
+                            <a> <?php echo $bkmt_name;?> </a>
                         </li>
                         <li class="crumb-active">
-                            <a>信件管理</a>
+                            <a> <?php echo $bkm_name;?> </a>
                         </li>
                     </ol>
                 </div>
@@ -64,21 +64,21 @@
 					<div class="panel">
 						<div class="panel-heading">
 							<!-- title -->
-							<h3 class="panel-title text-muted text-center mt10 fw400">信件管理</h3>
+							<h3 class="panel-title text-muted text-center mt10 fw400"><?php echo $bkm_name;?></h3>
 							<!-- /title -->
 						</div>
 						<div class="panel-body">
 							<div class="panel">
 								<div class="panel-heading text-center">
 									<div class="caption">
-										編輯區塊
+										Edit Zone
 									</div>
 								</div>
 								<div class="panel-body">
 									<div class="panel panel-info panel-border top" id="spy2">
 										<div class="panel-heading">
 											<span class="panel-title">
-												<span class="glyphicons glyphicons-table"></span>信件列表
+												<span class="glyphicons glyphicons-table"></span>Mail List
 											</span>
 										</div>
 										<div class="panel-body pn">
@@ -86,8 +86,8 @@
 												<thead>
 													<tr>
 														<th>#</th>
-														<th>寄送時機</th>
-														<th>操作</th>
+														<th>Send Time</th>
+														<th>Action</th>
 													</tr>
 												</thead>
 												<tbody>
@@ -117,11 +117,11 @@
 									</div>
 									<div class="panel panel-info panel-border top">
 										<div class="panel-heading">
-											<span class="panel-title">信件內文編輯器</span>
+											<span class="panel-title">Letter Editor</span>
 										</div>
 										<div class="panel-body">
 											<div class="empty-block">
-												<center><H3>請先選擇 信件列表 其中一項</H3></center>
+												<center><H3>First, choose one of items above</H3></center>
 											</div>
 											<div class="edit-block">
 												<div class="form-group">

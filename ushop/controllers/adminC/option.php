@@ -3,7 +3,12 @@ class Option extends Admin_Controller {
 	function __construct()
 	{
 		parent::__construct();	
-		$this->forceLogin();	
+		$this->forceLogin();
+
+        $bkm_data = $this->mBKM->find($_SERVER['REQUEST_URI']);
+        $bkmt_data = $this->mBKMT->find($bkm_data[0]['type_id']);
+        $this->data["bkm_name"] = $bkm_data[0]['name'];
+        $this->data["bkmt_name"] = $bkmt_data[0]['name'];
 	}
 
 	private $cashflowMethod = array(
@@ -213,7 +218,8 @@ class Option extends Admin_Controller {
 	{
 		$this->data["css_include"] 	= "product";
 		$this->data['widget'] 		= array();
-		
+
+
 		
 		$data = $this->Option->find("privacy");	
 		$this->data["privacy"] = json_decode($data[0]["value"],true);
