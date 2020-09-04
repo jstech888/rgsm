@@ -93,12 +93,12 @@
 												<tbody>
 													<tr>
 														<td>1</td>
-														<td>客戶忘記密碼確認信件</td>
+														<td>User forget password</td>
 														<td class="text-center"><a class="btn btn-warning btn-xs" onclick="editMail('forgotPassword');">編輯</a></td>
 													</tr>
 													<tr>
 														<td>2</td>
-														<td>會員帳號啟用信</td>
+														<td>Activation Letter</td>
 														<td class="text-center"><a class="btn btn-warning btn-xs" onclick="editMail('memberActive');">編輯</a></td>
 													</tr>
 												</tbody>
