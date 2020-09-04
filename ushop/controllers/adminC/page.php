@@ -10,7 +10,12 @@ class Page extends Admin_Controller {
 	function __construct()
 	{
 		parent::__construct();	
-		$this->forceLogin();				
+		$this->forceLogin();
+
+        $bkm_data = $this->mBKM->find($_SERVER['REQUEST_URI']);
+        $bkmt_data = $this->mBKMT->find($bkm_data[0]['type_id']);
+        $this->data["bkm_name"] = $bkm_data[0]['name'];
+        $this->data["bkmt_name"] = $bkmt_data[0]['name'];
 	}
 	
 	public function create()

@@ -58,14 +58,14 @@
 					<div class="panel">
 						<div class="panel-heading">
 							<!-- title -->
-							<h3 class="panel-title text-muted text-center mt10 fw400">一般設定</h3>
+							<h3 class="panel-title text-muted text-center mt10 fw400"><?php echo $bkm_name;?></h3>
 							<!-- /title -->
 						</div>
 						<div class="panel-body">
 							<div class="panel">
 								<div class="panel-heading text-center">
 									<div class="caption">
-										編輯區塊
+										Edit Zone
 										<div class="pull-right">
 											<!--
 											<div class="btn btn-success fileinput-button">
@@ -76,98 +76,21 @@
 											</div>
 											-->
 											<button type="button" class="btn ladda-button btn-info page-save" data-style="zoom-in">
-												<span class="ladda-label"><span class="glyphicons glyphicons-file_import"></span> 儲存</span>
+												<span class="ladda-label"><span class="glyphicons glyphicons-file_import"></span> Save </span>
 												<span class="ladda-spinner"></span>
 											</button>
 										</div>
 									</div>
 								</div>
 								<div class="panel-body">
-									<div class="panel panel-dark">
-										<div class="panel-heading">
-											<span class="panel-title">限時結帳（全館）促銷設定；訂單結帳時顯示折扣</span>
-										</div>
-										<div class="panel-body">		
-											<p class="help-block text-center">不在期間內或折扣率小於0.1，全館折扣都不會被執行。</p>
-											<div class="row" style="margin:0;padding:0;">										
-												<label for="product-discount-start-date" class="col-sm-2 control-label" style="padding-left: 0;padding-right: 0;">起始日</label>
-												<div class="col-sm-6">
-													<div class="input-group date" id="datetimepicker2">
-														<span class="input-group-addon cursor"><i class="fa fa-calendar"></i>
-														</span>
-														<input type="text" id="product-discount-start-date" class="form-control" value="<?php echo $DateLimitCheckoutDiscount["StartDate"];?>">
-													</div>
-												</div>
-											</div>
-											
-											<div class="row" style="margin:0;padding:0;">										
-												<label for="product-discount-end-date" class="col-sm-2 control-label" style="padding-left: 0;padding-right: 0;">結數日</label>
-												<div class="col-sm-6">
-													<div class="input-group date" id="datetimepicker2">
-														<span class="input-group-addon cursor"><i class="fa fa-calendar"></i>
-														</span>
-														<input type="text" id="product-discount-end-date" class="form-control" value="<?php echo $DateLimitCheckoutDiscount["EndDate"];?>">
-													</div>
-												</div>
-											</div>
-											<div class="row" style="margin:0;padding:0;">										
-												<label for="product-discount-rate" class="col-sm-2 control-label" style="padding-left: 0;padding-right: 0;">滿額設定</label>
-												<div class="col-sm-6">
-													<div class="input-group">
-														<span class="input-group-addon"><i class="fa fa-key"></i>
-														</span>
-														<input type="text" id="product-discount-limitamount" class="form-control product" maxlength="8" autocomplete="off" placeholder="0.00"
-														 value="<?php echo $DateLimitCheckoutDiscount["LimitAmount"];?>" onkeyup="saveDateLimitCheckoutDiscountTempData('LimitAmount',this);"/>
-													</div>
-												</div>
-											</div>
-											<div class="row" style="margin:0;padding:0;">										
-												<label for="product-discount-rate" class="col-sm-2 control-label" style="padding-left: 0;padding-right: 0;">折扣率</label>
-												<div class="col-sm-6">
-													<div class="input-group">
-														<span class="input-group-addon"><i class="fa fa-key"></i>
-														</span>
-														<input type="text" id="product-discount-rate" class="form-control product" maxlength="4" autocomplete="off" placeholder="0.00"
-														 value="<?php echo $DateLimitCheckoutDiscount["Rate"];?>" onkeyup="saveDateLimitCheckoutDiscountTempData('Rate',this);"/>
-													</div>
-												</div>
-												<label class="col-sm-2 " style="padding-left: 0;padding-right: 0;">(ex: 全館9折 請輸入 “0.90”)</label>
-											</div>
-											<div class="row" style="margin:0;padding:0;">										
-												<label for="product-discount-message" class="col-sm-2 control-label" style="padding-left: 0;padding-right: 0;">跑馬燈訊息</label>
-												<div class="col-sm-6">
-													<input class="form-control" id="product-discount-message" value="<?php echo $DateLimitCheckoutDiscount["Message"];?>" onkeyup="saveDateLimitCheckoutDiscountTempData('Message',this);"/>
-												</div>
-											</div>
-
-											<div class="tab-block mb25">
-										        <ul class="nav nav-tabs tabs-border">
-										          <li class="active">
-										            <a href="#tab5_1" data-toggle="tab">說明簡介</a>
-										          </li>
-										        </ul>
-										        <div class="tab-content">
-										          <div id="tab5_1" class="tab-pane active">
-										            <div class="col-sm-12 mb15">
-										              <textarea name="ckeditor1" id="ckeditor1" rows="5">
-										              <?php echo (isset($data_detail[$DEFAULTLANG]["value"]["description"]))?$data_detail[$DEFAULTLANG]["value"]["description"]:"";?>
-										              </textarea>
-										              <div class="clearfix"></div>
-										            </div>
-										            <div class="clearfix"></div>
-										          </div>
-										        </div>
-										    </div>
-										</div>
-									</div>
 
 									<div class="panel panel-dark">
 										<div class="panel-heading">
-											<span class="panel-title">語言 相關</span>
+											<span class="panel-title">Language</span>
 										</div>
 										<div class="panel-body">		
 											<div class="row">
-												<label for="default-lang" class="col-sm-2 control-label">預設語言</label>
+												<label for="default-lang" class="col-sm-2 control-label">Default</label>
 												<div class="col-sm-4">
 													<select class="form-control" id="default-lang">
 													<?php 
@@ -183,13 +106,13 @@
 												</div>
 											</div>	
 											<div class="row">
-												<label for="member-discount" class="col-sm-2 control-label">語言切換器</label>
+												<label for="member-discount" class="col-sm-2 control-label">Switch option</label>
 												<div class="col-sm-4">
 													<div class="switch switch-primary round switch-inline inline">											
 														<input id="isShowLangSelector" type="checkbox" <?php echo ($isShowLangSelector == 1) ? "checked" : "";?>>
 														<label for="isShowLangSelector"></label>
 													</div>
-													<p class="help-block">決定前台是否顯示，語言切換器。</p>
+													<p class="help-block">If it show or not in front page.</p>
 												</div>
 											</div>	
 										</div>
@@ -197,23 +120,23 @@
 									
 									<div class="panel panel-dark">
 										<div class="panel-heading">
-											<span class="panel-title">信件設定</span>
+											<span class="panel-title">Letter Setting</span>
 										</div>
 										<div class="panel-body">		
 										
 											<div class="row" style="margin:0;padding:0;">										
-												<label for="mailsetting-mail" class="col-sm-2 control-label" style="padding-left: 0;padding-right: 0;">收件人設定</label>
+												<label for="mailsetting-mail" class="col-sm-2 control-label" style="padding-left: 0;padding-right: 0;">Receiver</label>
 												<div class="col-sm-6">
 													<input class="form-control" id="mailsetting-mail" value="<?php echo (isset($AdminMail["mail"]))?$AdminMail["mail"]:"";?>"/>
-													<p class="help-block">多個收件人請用<span style="color:black;font-weight: bold;"> ; </span>分隔，對應前台“聯絡我們表單” (如有此功能) 之收件人</p>
+<!--													<p class="help-block">多個收件人請用<span style="color:black;font-weight: bold;"> ; </span>分隔，對應前台“聯絡我們表單” (如有此功能) 之收件人</p>-->
 												</div>
 											</div>
 											
 											<div class="row" style="margin:0;padding:0;">										
-												<label for="mailsetting-account" class="col-sm-2 control-label" style="padding-left: 0;padding-right: 0;">寄件人帳號</label>
+												<label for="mailsetting-account" class="col-sm-2 control-label" style="padding-left: 0;padding-right: 0;">Sender</label>
 												<div class="col-sm-6">
 													<input class="form-control" id="mailsetting-account" value="<?php echo (isset($AdminMail["account"]))?$AdminMail["account"]:"";?>"/>
-													<p class="help-block"> 此為必填帳號，作為寄送email、電子報、訂單訊息的代表帳戶名稱 (建議使用實際email帳號)。</p>
+<!--													<p class="help-block"> 此為必填帳號，作為寄送email、電子報、訂單訊息的代表帳戶名稱 (建議使用實際email帳號)。</p>-->
 												</div>
 											</div>
 											<!--
@@ -227,110 +150,14 @@
 											-->
 										</div>
 									</div>
-								
+
 									<div class="panel panel-dark">
 										<div class="panel-heading">
-											<span class="panel-title">貨幣 相關</span>
-										</div>
-										<div class="panel-body">
-											<div class="row">
-												<label for="default-currency" class="col-sm-2 control-label">預設貨幣</label>
-												<div class="col-sm-4">
-													<select class="form-control" id="default-currency">
-													<?php 
-														foreach( $widgetCurrency AS $currency )
-														{
-															$isSelected = $currency["iso_code"] == $Currency ? "selected" : "";
-													?>
-															<option value="<?php echo $currency["iso_code"];?>" <?php echo $isSelected;?>><?php echo $currency["iso_code"];?></option>
-													<?php
-														}
-													?>
-													</select>
-												</div>
-											</div>	
-											<div class="row">
-												<label for="member-discount" class="col-sm-2 control-label">貨幣切換器</label>
-												<div class="col-sm-4">
-													<div class="switch switch-primary round switch-inline inline">											
-														<input id="isShowCurrencySelector" type="checkbox" <?php echo ($isShowCurrencySelector == 1) ? "checked" : "";?>>
-														<label for="isShowCurrencySelector"></label>
-													</div>
-													<p class="help-block">決定前台是否顯示，語言切換器。</p>
-												</div>
-											</div>	
-											<table class="table table-striped table-bordered table-hover" id="datatable3">
-												<thead>
-													<tr>
-														<th>基礎匯率</th>
-														<?php 
-															foreach( $widgetCurrency AS $currency )
-															{
-														?>
-														<th><?php echo $currency["iso_code"];?></th>														
-														<?php
-															}
-														?>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td><?php echo $Currency;?></td>
-														<?php
-															foreach( $ExchangeRate AS $isoCode => &$currency )
-															{
-														?>
-														<td><input type="text" value="<?php echo $currency["rate"];?>" class="form-control" onkeyup="saveExchangeRate('<?php echo $isoCode;?>',this);"/></td>
-														<?php
-															}
-														?>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-									</div>
-									<div class="panel panel-dark">
-										<div class="panel-heading">
-											<span class="panel-title">購物金相關</span>
-										</div>
-										<div class="panel-body">
-											<div class="row" style="margin:0;padding:0;">
-												<label for="ShoppingPointRateName" class="col-sm-2 control-label">購物金分配比例</label>
-												<div class="col-sm-6">
-													<input class="form-control bfh-number" id="ShoppingPointRate" maxlength="6" onkeyup="value=value.replace(/[^\d]/g,'')" value="<?php echo isset($ShoppingPointRate)?$ShoppingPointRate:"";?>" />
-												</div>
-												<label class="col-sm-4 " style="text-align: left;padding-top: 12px;">（如 300元 一點 請輸入300；如不啟用請輸入 ”0“ ）</label>
-											</div>
-											<div class="row" style="margin:0;padding:0;">
-												<label for="ShoppingPointRateName" class="col-sm-2 control-label">購物金折抵上限</label>
-												<div class="col-sm-6">
-													<input class="form-control bfh-number" id="ShoppingPointMaxRate" maxlength="3" onkeyup="value=value.replace(/[^\d]/g,'')" value="<?php echo isset($ShoppingPointMaxRate)? $ShoppingPointMaxRate:"";?>" style="width:98%;display:initial;" /> %
-												</div>
-												<label class="col-sm-4 " style="text-align: left;padding-top: 12px;">（若購物金額為100元，折抵上限為50%，則只能折抵50點購物金 ; 空白為不限制）</label>
-											</div>
-											<div class="row" style="margin:0;padding:0;">
-												<label for="RegisterMoneyName" class="col-sm-2 control-label">新會員購物金</label>
-												<div class="col-sm-6">
-													<input class="form-control bfh-number" id="RegisterMoney" maxlength="6" onkeyup="value=value.replace(/[^\d]/g,'')" value="<?php echo isset($RegisterMoney)?$RegisterMoney:"";?>" />
-												</div>
-												<label class="col-sm-4 " style="text-align: left;padding-top: 12px;">（會員註冊時分配之購物金）</label>
-											</div>
-											<div class="row" style="margin:0;padding:0;">
-												<label for="BirthdayMonenyName" class="col-sm-2 control-label">會員生日購物金</label>
-												<div class="col-sm-6">
-													<input class="form-control bfh-number" id="BirthdayMoneny" maxlength="6" onkeyup="value=value.replace(/[^\d]/g,'')" value="<?php echo isset($BirthdayMoneny)?$BirthdayMoneny:"";?>" />
-												</div>
-												<label class="col-sm-4 " style="text-align: left;padding-top: 12px;">（會員生日當天有登入方可得到）</label>
-											</div>
-										</div>
-									</div>
-									<div class="panel panel-dark">
-										<div class="panel-heading">
-											<span class="panel-title">新會員註冊設定</span>
+											<span class="panel-title">New member registration settings</span>
 										</div>
 										<div class="panel-body">
 											<div class="row" style="margin:0;padding:0;" >
-												<label for="isMemberCheckEmailTitle" class="col-sm-3 control-label">是否啟用會員認證信機制</label>
+												<label for="isMemberCheckEmailTitle" class="col-sm-3 control-label">Certification letter check ?</label>
 												<div class="col-sm-9">
 													<div class="switch switch-primary round switch-inline inline">
 														<input id="isMemberCheckEmail" type="checkbox" <?php echo ($isMemberCheckEmail == 1) ? "checked" : "";?>>
@@ -340,125 +167,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="panel panel-dark">
-										<div class="panel-heading">
-											<span class="panel-title">會員登入設定</span>
-										</div>
-										<div class="panel-body">
-											<div class="row" style="margin:0;padding:0;" >
-												<label for="isMemberCheckFacebookTitle" class="col-sm-3 control-label">是否使用Facebook登入機制</label>
-												<div class="col-sm-9">
-													<div class="switch switch-primary round switch-inline inline">
-														<input id="isMemberCheckFacebook" type="checkbox" <?php echo ($isMemberCheckFacebook == 1) ? "checked" : "";?>>
-														<label for="isMemberCheckFacebook"></label>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>	
 
-									<div class="panel panel-dark">
-										<div class="panel-heading">
-											<span class="panel-title">銀行帳號設定</span>
-										</div>
-										<div class="panel-body">
-											<div class="row" style="margin:0;padding:0;">
-												<label for="bankname" class="col-sm-2 control-label">銀行名稱</label>
-												<div class="col-sm-6">
-													<input class="form-control" id="bank-name" value="<?php echo isset($BankRemittancesInfo["BankNameValue"])?$BankRemittancesInfo["BankNameValue"]:"";?>" onkeyup="saveBankRemittancesInfoTempData('BankNameValue',this);"/>
-												</div>
-											</div>
-											<div class="row" style="margin:0;padding:0;">
-												<label for="bankname" class="col-sm-2 control-label">分行名稱</label>
-												<div class="col-sm-6">
-													<input class="form-control" id="bank-branch" value="<?php echo isset($BankRemittancesInfo["BranchNameValue"])?$BankRemittancesInfo["BranchNameValue"]:"";?>" onkeyup="saveBankRemittancesInfoTempData('BranchNameValue',this);"/>
-												</div>
-											</div>	
-											<div class="row" style="margin:0;padding:0;">
-												<label for="bankname" class="col-sm-2 control-label">銀行地址</label>
-												<div class="col-sm-6">
-													<input class="form-control" id="bank-addr" value="<?php echo isset($BankRemittancesInfo["BankAddrValue"])?$BankRemittancesInfo["BankAddrValue"]:"";?>" onkeyup="saveBankRemittancesInfoTempData('BankAddrValue',this);"/>
-												</div>
-											</div>	
-											<div class="row" style="margin:0;padding:0;">
-												<label for="bankname" class="col-sm-2 control-label">帳號名稱</label>
-												<div class="col-sm-6">
-													<input class="form-control" id="bank-account-name" value="<?php echo isset($BankRemittancesInfo["BankACValue"])?$BankRemittancesInfo["BankACValue"]:"";?>" onkeyup="saveBankRemittancesInfoTempData('BankACValue',this);"/>
-												</div>
-											</div>	
-											<div class="row" style="margin:0;padding:0;">
-												<label for="bankname" class="col-sm-2 control-label">帳戶編號</label>
-												<div class="col-sm-6">
-													<input class="form-control" id="bank-account-no" value="<?php echo isset($BankRemittancesInfo["BankACNoValue"])?$BankRemittancesInfo["BankACNoValue"]:"";?>" onkeyup="saveBankRemittancesInfoTempData('BankACNoValue',this);"/>
-												</div>
-											</div>
-											<div class="row" style="margin:0;padding:0;">
-												<label for="bankname" class="col-sm-2 control-label">Bank Name</label>
-												<div class="col-sm-6">
-													<input class="form-control" id="bank-name-en" value="<?php echo isset($BankRemittancesInfo["BankNameEnValue"])?$BankRemittancesInfo["BankNameEnValue"]:"";?>" onkeyup="saveBankRemittancesInfoTempData('BankNameEnValue',this);"/>
-												</div>
-											</div>
-											<div class="row" style="margin:0;padding:0;">
-												<label for="bankname" class="col-sm-2 control-label">Branch Name</label>
-												<div class="col-sm-6">
-													<input class="form-control" id="bank-name-en" value="<?php echo isset($BankRemittancesInfo["BranchNameEnValue"])?$BankRemittancesInfo["BranchNameEnValue"]:"";?>" onkeyup="saveBankRemittancesInfoTempData('BranchNameEnValue',this);"/>
-												</div>
-											</div>	
-											<div class="row" style="margin:0;padding:0;">
-												<label for="bankname" class="col-sm-2 control-label">Bank Add</label>
-												<div class="col-sm-6">
-													<input class="form-control" id="bank-addr-en" value="<?php echo isset($BankRemittancesInfo["BankAddrEnValue"])?$BankRemittancesInfo["BankAddrEnValue"]:"";?>" onkeyup="saveBankRemittancesInfoTempData('BankAddrEnValue',this);"/>
-												</div>
-											</div>	
-											<div class="row" style="margin:0;padding:0;">
-												<label for="bankname" class="col-sm-2 control-label">A/C Name</label>
-												<div class="col-sm-6">
-													<input class="form-control" id="bank-account-enname" value="<?php echo isset($BankRemittancesInfo["BankACEnValue"])?$BankRemittancesInfo["BankACEnValue"]:"";?>" onkeyup="saveBankRemittancesInfoTempData('BankACEnValue',this);"/>
-												</div>
-											</div>	
-											<div class="row" style="margin:0;padding:0;">
-												<label for="bankname" class="col-sm-2 control-label">A/C No</label>
-												<div class="col-sm-6">
-													<input class="form-control" id="bank-account-enno" value="<?php echo isset($BankRemittancesInfo["BankACEnNoValue"])?$BankRemittancesInfo["BankACEnNoValue"]:"";?>" onkeyup="saveBankRemittancesInfoTempData('BankACEnNoValue',this);"/>
-												</div>
-											</div>	
-										</div>
-									</div>
-									<div class="panel panel-dark">
-										<div class="panel-heading">
-											<span class="panel-title">頁尾 社群鏈結</span>
-										</div>
-										<div class="panel-body">		
-										<?php 
-											foreach( $socialLink AS $ind=>$link )
-											{
-										?>
-											<div class="row" style="margin:0;padding:0;">										
-												<label for="socialLink-<?php echo $ind;?>" class="col-sm-2 control-label" style="padding-left: 0;padding-right: 0;"><?php echo $link["name"];?></label>
-												<div class="col-sm-6">
-													<input class="form-control" id="socialLink-<?php echo $ind;?>" onkeyup="saveSocialLink('<?php echo $ind;?>',this);" name="socialLink-<?php echo $ind;?>" value="<?php echo $link["href"];?>"/>
-													<p class="help-block">空白前台則不顯示。</p>
-												</div>
-											</div>	
-										<?php
-											}
-										?>
-										</div>
-									</div>
-									<div class="panel panel-dark">
-										<div class="panel-heading">
-											<span class="panel-title">Google Analytics</span>
-										</div>
-										<div class="panel-body">		
-											<div class="row" style="margin:0;padding:0;">										
-												<label for="googleAnalytics-<?php echo $ind;?>" class="col-sm-2 control-label" style="padding-left: 0;padding-right: 0;">追蹤編號</label>
-												<div class="col-sm-6">
-													<input class="form-control" id="GoogleId" name="GoogleId" onkeyup="saveGoogleAnalyticsInfoTempData('id',this);"  value="<?php echo isset($GoogleAnalyticsInfo["id"])?$GoogleAnalyticsInfo["id"]:"";?>"/>
-													<p class="help-block">空白則不統計。</p>
-												</div>
-											</div>	
-										</div>
-									</div>
 								</div>
 							</div>
 							
