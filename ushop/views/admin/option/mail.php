@@ -93,21 +93,11 @@
 												<tbody>
 													<tr>
 														<td>1</td>
-														<td>產出訂單</td>
-														<td class="text-center"><a class="btn btn-warning btn-xs" onclick="editMail('OrderSuccessMail');">編輯</a></td>
-													</tr>
-													<tr>
-														<td>2</td>
-														<td>管理員切換訂單狀態，為已寄送</td>
-														<td class="text-center"><a class="btn btn-warning btn-xs" onclick="editMail('OrderSend');">編輯</a></td>
-													</tr>
-													<tr>
-														<td>3</td>
 														<td>客戶忘記密碼確認信件</td>
 														<td class="text-center"><a class="btn btn-warning btn-xs" onclick="editMail('forgotPassword');">編輯</a></td>
 													</tr>
 													<tr>
-														<td>4</td>
+														<td>2</td>
 														<td>會員帳號啟用信</td>
 														<td class="text-center"><a class="btn btn-warning btn-xs" onclick="editMail('memberActive');">編輯</a></td>
 													</tr>
