@@ -394,8 +394,12 @@ class User extends Web_Controller {
 				}
 				else
 				{
-					$this->data['opt']['status'] 	= true;
-					$this->data['opt']['message'][] = "[name] OR [password] error!";
+//					$this->data['opt']['status'] 	= true;
+//					$this->data['opt']['message'][] = "[name] OR [password] error!";
+                    $this->data['opt']['status'] 	= true;
+                    $this->data['opt']['type']      = "alert";
+                    $this->data['opt']['alertType'] = "danger";
+                    $this->data['opt']['message'][] = "帳號或密碼錯誤!";
 				}
 			}
 			return;
