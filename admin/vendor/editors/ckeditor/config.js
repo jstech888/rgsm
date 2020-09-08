@@ -33,8 +33,8 @@ CKEDITOR.editorConfig = function( config ) {
 	//config.removeButtons = 'Underline,Subscript,Superscript';
 
 	config.baseFloatZIndex = 102000;
-	config.defaultLanguage = 'zh-tw';
-	config.language = 'zh-tw';
+	config.defaultLanguage = 'en';          //'zh-tw';
+	config.language = 'en';                 //'zh-tw';
 
 	// Set the most common block elements.
 	config.format_tags = 'p;h1;h2;h3;pre';
@@ -48,6 +48,15 @@ CKEDITOR.editorConfig = function( config ) {
 	config.allowedContent = true;
 	config.extraAllowedContent = 'iframe[*] style script class p';
 
+    config.extraAllowedContent = 'p(*)[*]{*};div(*)[*]{*};li(*)[*]{*};ul(*)[*]{*};i(*)[*]{*}';
+    CKEDITOR.dtd.$removeEmpty.i = 0;
+
+    // CKEDITOR.dtd.$removeEmpty.span = false;
+    // CKEDITOR.dtd.$removeEmpty['i'] = false;
+
+    // config.disallowedContent = '';
+    // config.extraAllowedContent = '*(*);*{*};*[*]';
+
 };
 
-CKEDITOR.config.allowedContent = true;
+// CKEDITOR.config.allowedContent = true;

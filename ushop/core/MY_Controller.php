@@ -1,7 +1,6 @@
 <?php
 class Admin_Controller extends CI_Controller
 {
-
 	public $currentLang  = false;
 	public $DEFAULTLANG  = false;	
 	

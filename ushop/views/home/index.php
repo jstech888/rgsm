@@ -1,37 +1,3 @@
-<!-- Preloader -->
-<div class="spinner-wrapper">
-    <div class="spinner">
-        <div class="bounce1"></div>
-        <div class="bounce2"></div>
-        <div class="bounce3"></div>
-    </div>
-</div>
-<!-- end of preloader -->
-
-
-<!-- Navbar -->
-<nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
-    <div class="container">
-        <!-- Text Logo - Use this if you don't have a graphic logo -->
-        <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">RSGM</a> -->
-
-        <!-- Image Logo -->
-        <a class="navbar-brand logo-image page-scroll" href="/"><img src="/images/logo.svg" alt="alternative"></a>
-
-        <!-- Mobile Menu Toggle Button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-awesome fas fa-bars"></span>
-            <span class="navbar-toggler-awesome fas fa-times"></span>
-        </button>
-        <!-- end of mobile menu toggle button -->
-
-        <?php include( VIEWPATH . "widget" . DIRECTORY_SEPARATOR ."home" . DIRECTORY_SEPARATOR ."mainmenu.php"); ?>
-
-    </div> <!-- end of container -->
-</nav> <!-- end of navbar -->
-<!-- end of navbar -->
-
-
 <!-- Header -->
 <header id="header" class="header">
 
@@ -263,25 +229,9 @@
                 </div> <!-- end of image-container -->
             </div> <!-- end of col -->
             <div class="col-lg-7">
-                <div class="counter-container">
-                    <h2>關於我們</h2>
-                    <p class="p-large">RGSM 總部位於美國紐澤西州，與紐約曼哈頓金融中心僅僅一橋之隔。在台灣台北、巴西聖保羅設有辦公室，我們的國際資深顧問團隊來自於德國、愛爾蘭、越南和巴西。<br>
 
-                        我們是2020年成立的人力招募創投公司，主要服務項目有科技人才、理工人才、精密儀器製造業人才、醫護人才、生物科技高端人才等…。<br>
+                <?php echo $infopage['content']; //關於我們 ?>
 
-                        我們的使命：人才供應鏈「AI+數位化」，有效迅速且精準的把人才送到合作的國際企業/跨國企業。<br>
-                        我們提供高標準的完整人才招聘解決方案，具有穩定緊密合作的國際伙伴與高效率的e化平台，可即時協助勞資雙方完成跨國性的任務，使人才獲得高薪和健全勞工法的保障。<br>
-                        我們涵蓋全世界最受歡迎的海外求職目的地 (德國/英國/愛爾蘭/美國) 。倘若您有進擊國際企業的雄心，那您就是我們要找的人。
-                    </p>
-                    <h5>RGSM任務</h5>
-                    <p>把對的人才與對的企業緊密結合</p>
-                    <h5>RGSM永遠不變的價值觀</h5>
-                    <p>信任/卓越/責任心/倡導/合作</p>
-
-                    <!-- Counter -->
-                    <!-- end of counter -->
-
-                </div> <!-- end of counter-container -->
             </div> <!-- end of col -->
         </div> <!-- end of row -->
     </div> <!-- end of container -->
@@ -349,101 +299,3 @@
 </div> <!-- end of form-2 -->
 <!-- end of contact -->
 
-
-<!-- Footer -->
-<div class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="footer-col">
-                    <h4>About Viso</h4>
-                    <p>我們是2020年成立的人力招募創投公司，主要服務項目有科技人才、理工人才、精密儀器製造業人才、醫護人才、生物科技高端人才等…。</p>
-                </div>
-            </div> <!-- end of col -->
-            <div class="col-md-4">
-                <div class="footer-col mx-auto">
-                    <h4>News</h4>
-                    <ul class="list-unstyled v-space-lg">
-                        <li class="media">
-                            <i class="fas fa-chevron-right"></i>
-                            <div class="media-body">
-                                Web Designer With Photoshop And Illustrator
-                            </div>
-                        </li>
-                        <li class="media">
-                            <i class="fas fa-chevron-right"></i>
-                            <div class="media-body">
-                                UI Developer For Great Ecommerce Sites
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div> <!-- end of col -->
-            <div class="col-md-4">
-                <div class="footer-col float-lg-right">
-                    <h4>Social Media</h4>
-                    <span class="fa-stack fa-lg">
-                            <a href="#your-link">
-                                <i class="fas fa-circle fa-stack-2x facebook"></i>
-                                <i class="fab fa-facebook-f fa-stack-1x"></i>
-                            </a>
-                        </span>
-                    <span class="fa-stack fa-lg">
-                            <a href="#your-link">
-                                <i class="fas fa-circle fa-stack-2x twitter"></i>
-                                <i class="fab fa-twitter fa-stack-1x"></i>
-                            </a>
-                        </span>
-                    <span class="fa-stack fa-lg">
-                            <a href="#your-link">
-                                <i class="fas fa-circle fa-stack-2x google-plus"></i>
-                                <i class="fab fa-google-plus-g fa-stack-1x"></i>
-                            </a>
-                        </span>
-                    <span class="fa-stack fa-lg">
-                            <a href="#your-link">
-                                <i class="fas fa-circle fa-stack-2x instagram"></i>
-                                <i class="fab fa-instagram fa-stack-1x"></i>
-                            </a>
-                        </span>
-                    <span class="fa-stack fa-lg">
-                            <a href="#your-link">
-                                <i class="fas fa-circle fa-stack-2x linkedin"></i>
-                                <i class="fab fa-linkedin-in fa-stack-1x"></i>
-                            </a>
-                        </span>
-                    <span class="fa-stack fa-lg">
-                            <a href="#your-link">
-                                <i class="fas fa-circle fa-stack-2x dribbble"></i>
-                                <i class="fab fa-dribbble fa-stack-1x"></i>
-                            </a>
-                        </span>
-                </div>
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-    </div> <!-- end of container -->
-    <div class="copyright">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p class="p-small text-center">Copyright © Viso - HR Recruiting Landing Page Template by <a class="underline" href="http://www.inovatik.com">Inovatik</a></p>
-                </div> <!-- end of col -->
-            </div> <!-- enf of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of copyright -->
-</div> <!-- end of footer -->
-<!-- end of footer -->
-
-
-<!-- Scripts -->
-<script src="/js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
-<script src="/js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
-<script src="/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
-<script src="/js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
-<script src="/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
-<script src="/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
-<script src="/js/isotope.pkgd.min.js"></script> <!-- Isotope for filter -->
-<script src="/js/jquery.countTo.js"></script> <!-- jQuery countTo for counting animation -->
-<script src="/js/morphext.min.js"></script> <!-- Morphtext rotating text in the header-->
-<script src="/js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
-<script src="/js/scripts.js"></script> <!-- Custom scripts -->

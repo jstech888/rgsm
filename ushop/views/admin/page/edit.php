@@ -73,10 +73,13 @@ label {
                 <div class="topbar-left">
                     <ol class="breadcrumb">
                         <li class="crumb-active crumb-link">
-                            <a href="<?php echo base_url("/admin/page/listPage");?>">頁面管理</a>
+                            <a> <?php echo $bkmt_name;?> </a>
                         </li>
                         <li class="crumb-active">
-                            <a>編輯 <?php echo $_GET["id"];?></a>
+                            <a> <?php echo $bkm_name;?> </a>
+                        </li>
+                        <li class="crumb-active">
+                            <a>Edit "<?php echo $_GET["id"];?>" page</a>
                         </li>
                     </ol>
                 </div>
@@ -385,6 +388,8 @@ label {
 							width: "290px",
 							delay: 1400
 						});
+
+						location.href='/admin/page/listPage';
 					},
 					error:function(xhr, stauts, err){
 						console.log(xhr, stauts, err);

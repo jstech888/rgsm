@@ -85,6 +85,9 @@ $route['admin/brand/(:any)']  	 	= 'adminC/brand/$1';
 $route['admin/news/']  	 			= 'adminC/news/';
 $route['admin/news/(:any)']  	 	= 'adminC/news/$1';
 
+$route['admin/faq/']  	 			= 'adminC/faq/';
+$route['admin/faq/(:any)']  	 	= 'adminC/faq/$1';
+
 $route['admin/mainmenu']  	 		= 'adminC/mainmenu';
 $route['admin/mainmenu/(:any)']  	= 'adminC/mainmenu/$1';
 

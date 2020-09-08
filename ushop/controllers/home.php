@@ -82,44 +82,13 @@ class Home extends Web_Controller {
 		$this->data["NewsTitle"] = isset($hotNews[0]["value"]["title"])?$hotNews[0]["value"]["title"]:"";
 		$this->data["itemListNews"] = $itemListNews;
 
-		//單格影音廣告
-		$this->data["SingleVideo"] = $this->mWidget->find("SingleVideo");
-
-		//促銷區塊
-		$promotionBlock = $this->mWidget->find("promotionBlock");
-		$viewPromotionBlock = array();
-		if( is_array($promotionBlock[0]["value"]) && count($promotionBlock[0]["value"]) )
-		{
-			foreach($promotionBlock[0]["value"]["block"] AS $k=>$block)
-			{
-				$productList = array();
-				if( is_array($block["ids"]) && count($block["ids"]) > 0 )
-				{
-					$str_ids = implode(",",$block["ids"]);
-					$productList = $this->mProduct->find($str_ids);
-				}
-				$promotionBlock[0]["value"]["block"][$k]["productList"] = $productList;
-			}
-
-			$viewPromotionBlock = $promotionBlock[0];
-		}
-		$this->data["promotionBlock"] = $viewPromotionBlock;
-
 		//會員權益
 		$this->data["MemberRight"] = $this->mWidget->find("MemberRight");
 
-		//品牌列表
-		$this->data["BrandList"] = $this->mWidget->find("BrandList");
-
-		//商品 目錄
-		$this->data["ProductSlider"] = $this->mWidget->find("ProductSlider");
-		$listChild = $this->mProduct->listAllCatelogForFrontEnd();
-		$this->data['listChild'] = $listChild;
-
-		// 活動館
-		$this->load->model("hall_model","hallM");
-		// 取得所有館別
-		$this->data['halls'] = $this->hallM->findEffectHall();
+        // 關於我們
+		$this->load->model("Page_model","mPage");
+        $infopage =  $this->mPage->find('about', $this->currentLang);
+        $this->data["infopage"] = $infopage[$this->currentLang];
 
 		$this->load->view('inc/head',$this->data);
 		$this->load->view('home/index',$this->data);

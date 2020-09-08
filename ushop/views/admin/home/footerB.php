@@ -18,7 +18,7 @@
   background: #FFF;
 }
 .embed-responsive {
-	height:600px;
+	height:350px;
 }
 .media-left {
   padding: 0;
@@ -64,10 +64,10 @@ ul {
                 <div class="topbar-left">
                     <ol class="breadcrumb">
                         <li class="crumb-active">
-                            <a>WIDGET管理</a>
+                            <a> <?php echo $bkmt_name;?> </a>
                         </li>
-                        <li class="crumb-link">
-                            <a href="<?php echo base_url("/admin/widget/".$title);?>"><?php echo $title;?></a>
+                        <li class="crumb-active">
+                            <a> <?php echo $bkm_name;?> </a>
                         </li>
                     </ol>
                 </div>
@@ -84,7 +84,7 @@ ul {
 					<div class="panel">
 						<div class="panel-heading">
 							<!-- title -->
-							<h3 class="panel-title text-muted text-center mt10 fw400"><?php echo $title;?></h3>
+							<h3 class="panel-title text-muted text-center mt10 fw400"> <?php echo $bkm_name;?> </h3>
 							<!-- /title -->
 						</div>
 						<div class="panel-body">
@@ -95,10 +95,10 @@ ul {
 							
 							<div class="panel">
 								<div class="panel-heading text-center">
-									 <span class="panel-title"> 預覽結果</span>
+									 <span class="panel-title"> Preview</span>
 									<div class="pull-right">
 										<button type="button" class="btn ladda-button btn-info page-reload" data-style="zoom-in">
-											<span class="ladda-label"><span class="glyphicons glyphicons-refresh"></span> 更新預覽畫面</span>
+											<span class="ladda-label"><span class="glyphicons glyphicons-refresh"></span> Update Preview</span>
 											<span class="ladda-spinner"></span>
 										</button>
 									</div>
@@ -199,12 +199,12 @@ ul {
     <script type="text/javascript" src="/libs/jquery.switchButton.js"></script>
 	
     
-		<!-- Fileupload included -->
-		<script type="text/javascript" src="/libs/jqfileupload/js/vendor/jquery.ui.widget.js"></script>
-		<script type="text/javascript" src="//blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
-		<script type="text/javascript" src="//blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
-		<script type="text/javascript" src="/libs/jqfileupload/js/jquery.iframe-transport.js"></script>
-		<script type="text/javascript" src="/libs/jqfileupload/js/jquery.fileupload.js"></script>
+    <!-- Fileupload included -->
+    <script type="text/javascript" src="/libs/jqfileupload/js/vendor/jquery.ui.widget.js"></script>
+    <script type="text/javascript" src="//blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
+    <script type="text/javascript" src="//blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
+    <script type="text/javascript" src="/libs/jqfileupload/js/jquery.iframe-transport.js"></script>
+    <script type="text/javascript" src="/libs/jqfileupload/js/jquery.fileupload.js"></script>
 	
 
     <!-- Admin Forms Javascript -->
@@ -222,7 +222,7 @@ ul {
 	
     <script type="text/javascript">
         jQuery(document).ready(function() {
-			
+            // console.log(CKEDITOR.config);
             // Init Theme Core    
             Core.init();
 

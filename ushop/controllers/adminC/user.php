@@ -653,6 +653,8 @@ class User extends Admin_Controller {
 		
 	public function create()
 	{
+        $this->load->model("Auth_model");
+
 		$this->data["css_include"] 	= "user";
 		$this->data['widget'] 		= array();
 
@@ -663,6 +665,14 @@ class User extends Admin_Controller {
 		
 		$this->load->model("User_model");	
 		$this->data["selfData"] = $this->User_model->sample;
+
+        $listGroup = $this->Auth_model->getAllGroup($this->admin["group_id"]);
+        foreach($listGroup AS &$group )
+        {
+            $btnStyle = ( array_key_exists($group["id"],$this->groupColor)) ? $this->groupColor[$group["id"]] : "btn-default";
+            $group["html"] = "<a class=\"btn {$btnStyle} btn-xs\">{$group["name"]}</a>";
+        }
+        $this->data["listGroup"] = $listGroup;
 			
 		$this->load->view('admin/inc/head',$this->data);
 		$this->load->view('admin/user/create',$this->data);

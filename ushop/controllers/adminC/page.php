@@ -11,11 +11,6 @@ class Page extends Admin_Controller {
 	{
 		parent::__construct();	
 		$this->forceLogin();
-
-        $bkm_data = $this->mBKM->find($_SERVER['REQUEST_URI']);
-        $bkmt_data = $this->mBKMT->find($bkm_data[0]['type_id']);
-        $this->data["bkm_name"] = $bkm_data[0]['name'];
-        $this->data["bkmt_name"] = $bkmt_data[0]['name'];
 	}
 	
 	public function create()
@@ -83,10 +78,15 @@ class Page extends Admin_Controller {
 	public function listPage()
 	{
 		$this->data["css_include"] = "product";
-		$this->data["title"] = "頁面管理";
+		$this->data["title"] = "Page Manage";
 		
 		$this->load->model("Page_model","mPage");
 		$this->data['listPage'] = $this->mPage->loadAll();
+
+        $bkm_data = $this->mBKM->find("/admin/page/listPage");
+        $bkmt_data = $this->mBKMT->find($bkm_data[0]['type_id']);
+        $this->data["bkm_name"] = $bkm_data[0]['name'];
+        $this->data["bkmt_name"] = $bkmt_data[0]['name'];
 		
 		$this->load->view('admin/inc/head',$this->data);
 		$this->load->view('admin/page/index',$this->data);
@@ -94,9 +94,13 @@ class Page extends Admin_Controller {
 	
 	public function edit()
 	{
-		
 		$this->data["css_include"] = "infopage";
-		$this->data["title"] = "頁面編輯";
+		$this->data["title"] = "Page Edit";
+
+        $bkm_data = $this->mBKM->find("/admin/page/listPage");
+        $bkmt_data = $this->mBKMT->find($bkm_data[0]['type_id']);
+        $this->data["bkm_name"] = $bkm_data[0]['name'];
+        $this->data["bkmt_name"] = $bkmt_data[0]['name'];
 		
 		$this->load->model("Pagemeta_model","mPageMeta");
 		$this->load->model("Page_model","mPage");

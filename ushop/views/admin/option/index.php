@@ -247,13 +247,13 @@
 			 $('.date').mask('9999/99/99');
 			 $('#product-discount-rate').mask('0.99');
 
-			 CKEDITOR.disableAutoInline = true;
+            // CKEDITOR.disableAutoInline = true;
 
             // Init Ckeditor
-            var editorContent1 = CKEDITOR.replace('ckeditor1', {
-                filebrowserBrowseUrl:     '/admin/vendor/editors/ckfinder/ckfinder.html?type=files',
-                height: 400
-            });
+            // var editorContent1 = CKEDITOR.replace('ckeditor1', {
+            //     filebrowserBrowseUrl:     '/admin/vendor/editors/ckfinder/ckfinder.html?type=files',
+            //     height: 400
+            // });
 
         });
     </script>
@@ -314,8 +314,8 @@
 				};
 				DateLimitCheckoutDiscount.StartDate = $("#product-discount-start-date").val();
 				DateLimitCheckoutDiscount.EndDate = $("#product-discount-end-date").val();
-// alert('ckeditor1='+CKEDITOR.instances.ckeditor1.getData()); return;
-				DateLimitCheckoutDiscount.description = CKEDITOR.instances.ckeditor1.getData();
+
+				// DateLimitCheckoutDiscount.description = CKEDITOR.instances.ckeditor1.getData();
 				ShoppingPointRate = $("#ShoppingPointRate").val();
 				ShoppingPointMaxRate = $("#ShoppingPointMaxRate").val();
 				RegisterMoney = $("#RegisterMoney").val();
@@ -379,8 +379,8 @@
 	$(function(){
 		init_pageSave();
 
-		var desc = DateLimitCheckoutDiscount.description;
-        CKEDITOR.instances.ckeditor1.setData(desc);
+		// var desc = DateLimitCheckoutDiscount.description;
+        // CKEDITOR.instances.ckeditor1.setData(desc);
 		
 		$("input[name='member-discount']").TouchSpin({
 			min: 0,

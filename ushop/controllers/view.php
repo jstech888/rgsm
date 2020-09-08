@@ -56,7 +56,7 @@ class View extends Web_Controller {
 		$this->data["ProductSlider"] = $this->mWidget->find("ProductSlider");
 		
 		$this->load->view('widget/home/'.($query),$this->data);
-		$this->load->view('inc/footer',$this->data);
+//		$this->load->view('inc/footer',$this->data);
 	}
 	
 }

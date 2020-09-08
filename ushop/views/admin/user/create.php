@@ -52,6 +52,44 @@
                     <div class="panel-body p20" id="invoice-item">
 					
 						<form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label for="inputMail" class="col-lg-2 control-label">群組</label>
+                                <div class="col-lg-8">
+                                    <?php
+                                    $selector = false;
+                                    $groupLabel = false;
+                                    foreach( $listGroup as &$group )
+                                    {
+                                        if( $group["id"] != 5 )
+                                        {
+                                            ( $selector === false ) ? $selector = "<select name='group_id' id='group_id' class=\"form-control\" onchange=\"saveTempData( 'group_id', this );\"><option value=''>--- please select ---</option>" : "";
+
+                                            if( $group["id"] == 2 )
+                                            {
+                                                if( $group["id"] == $selfData["group_id"] )
+                                                {
+                                                    $groupLabel = $group["html"];
+                                                }
+                                                $isSed = ( $group["id"] == $selfData["group_id"] ) ? "selected" : "";
+                                                $selector.= "<option value=\"{$group["id"]}\" {$isSed}>{$group["name"]}</option>";
+                                            }
+                                            else
+                                            {
+                                                $isSed = ( $group["id"] == $selfData["group_id"] ) ? "selected" : "";
+                                                $selector.= "<option value=\"{$group["id"]}\" {$isSed}>{$group["name"]}</option>";
+                                            }
+                                        }
+                                        else if ( $admin["group_id"] == 5 && $selfData["group_id"] == 5 ){
+                                            $groupLabel = $group["html"];
+                                        }
+                                    }
+                                    $selector.= "</select>";
+
+                                    echo $selector;
+                                    ?>
+                                    <span class="help-block mt5"><i class="fa fa-bell"></i> 此為不可修改欄位！ <p style="color:red;display:inline-block;">網站前台會員登入使用(會員帳號)</p></span>
+                                </div>
+                            </div>
 							<div class="form-group">
 								<label for="inputName" class="col-lg-2 control-label">Account</label>
 								<div class="col-lg-8">

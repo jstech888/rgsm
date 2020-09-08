@@ -18,80 +18,70 @@ class News extends Web_Controller {
 		$this->data["layout"] = $this->layout = isset($_GET["ly"])? urldecode($_GET["ly"]):"grid";
 	}
 
-	public function index($class=false)
-	{		
-		if( $class !== false )
-		{
-			$this->data['objLang']['catelog'] = $this->loadLang( "page/catelog/" );
-			
-			$this->data["objLang"]["function_bar"] = $this->loadLang("widget/function_bar/");
-			$this->data["objLang"]["bloger"] = $this->loadLang("widget/blog/");
-			$this->load->model("News_model");	
-			$allClass = $this->News_model->allClass();			
-			$newAllClass = array();
-			$currentClass = array();
-			foreach( $allClass AS $record )
-			{
-				$newAllClass[$record["key"]] = $record;
-				if( $record["key"] == $class )
-				{
-					$currentClass = $record;
-				}
-			}
+	public function index()
+	{
+        $this->data['objLang']['catelog'] = $this->loadLang( "page/catelog/" );
 
-			if( array_key_exists($class, $newAllClass) )
-			{
-				$this->data['objLang']['catelog'] = $this->loadLang( "page/catelog/" );
-			
-				rsort($newAllClass);
-				$this->data["allClass"]  = $newAllClass;
-				$this->data["currentClass"] = $currentClass;
-				
-				$page  = isset($_GET["p"])? $_GET["p"]:1;
-				$limit = isset($_GET["l"])? $_GET["l"]:4;
-				$start = ( $page - 1 ) * $limit;
-				
-				$coutClassArtical = $this->News_model->countClassHome( $currentClass["id"] );
-				$lastPage = ceil( $coutClassArtical  / $limit );
-				
-				$showPrev = ( $page - 1 === 0 ) ? false : true;
-				$showNext = ( $page >= $lastPage ) ? false : true;				
-				
-				$this->data["listStory"] = $this->News_model->classHome( $currentClass["id"], $start, $limit, "markDate" );
-				$listStory = $this->News_model->classHome( $currentClass["id"], $start, $limit, "markDate" );
-				$this->maxPage = $lastPage;
-				$this->init_pagination();
-				
-				$this->data["hotStory"]  = $this->News_model->classHome( $currentClass["id"], 0, 5 );
-				
-				$allBloger  = $this->News_model->allBloger();
-				$classBloger = array();
-				foreach($allBloger AS $bloger)
-				{ ( in_array($currentClass["id"], $bloger["arrBClass"]))?$classBloger[]=$bloger:""; }
-				$this->data["classBloger"]  = $classBloger;
-				
-				$this->data["layout"] = isset($_GET["lyt"])?$_GET["lyt"]:"list";
+        $this->data["objLang"]["function_bar"] = $this->loadLang("widget/function_bar/");
+        $this->data["objLang"]["bloger"] = $this->loadLang("widget/blog/");
+        $this->load->model("News_model");
+        $allClass = $this->News_model->allClass();
+        $newAllClass = array();
+        $currentClass = array();
+        foreach( $allClass AS $record )
+        {
+            $newAllClass[$record["key"]] = $record;
+            if( $record["key"] == $class )
+            {
+                $currentClass = $record;
+            }
+        }
 
-				if($_GET['s_year']!=''){
-					$this->data['s_year'] = $_GET['s_year'];
-				}
-				
-				$this->load->view('inc/head',$this->data);
-				$this->load->view('news/_newslist',$this->data);
-				// $this->load->view('news/home',$this->data);
-				$this->load->view('inc/footer',$this->data);				
-			}
-			else
-			{
-				redirect("/","location",301);
-			}
-		}
-		else
-		{
-			$this->load->model("News_model");
-			$allClass = $this->News_model->allClass();
-			redirect("/news/index/".$allClass[0]['key'],"location","301");
-		}
+        if( array_key_exists($class, $newAllClass) )
+        {
+            $this->data['objLang']['catelog'] = $this->loadLang( "page/catelog/" );
+
+            rsort($newAllClass);
+            $this->data["allClass"]  = $newAllClass;
+            $this->data["currentClass"] = $currentClass;
+
+            $page  = isset($_GET["p"])? $_GET["p"]:1;
+            $limit = isset($_GET["l"])? $_GET["l"]:4;
+            $start = ( $page - 1 ) * $limit;
+
+            $coutClassArtical = $this->News_model->countClassHome( $currentClass["id"] );
+            $lastPage = ceil( $coutClassArtical  / $limit );
+
+            $showPrev = ( $page - 1 === 0 ) ? false : true;
+            $showNext = ( $page >= $lastPage ) ? false : true;
+
+            $this->data["listStory"] = $this->News_model->classHome( $currentClass["id"], $start, $limit, "markDate" );
+            $listStory = $this->News_model->classHome( $currentClass["id"], $start, $limit, "markDate" );
+            $this->maxPage = $lastPage;
+            $this->init_pagination();
+
+            $this->data["hotStory"]  = $this->News_model->classHome( $currentClass["id"], 0, 5 );
+
+            $allBloger  = $this->News_model->allBloger();
+            $classBloger = array();
+            foreach($allBloger AS $bloger)
+            { ( in_array($currentClass["id"], $bloger["arrBClass"]))?$classBloger[]=$bloger:""; }
+            $this->data["classBloger"]  = $classBloger;
+
+            $this->data["layout"] = isset($_GET["lyt"])?$_GET["lyt"]:"list";
+
+            if($_GET['s_year']!=''){
+                $this->data['s_year'] = $_GET['s_year'];
+            }
+
+            $this->load->view('inc/head',$this->data);
+            $this->load->view('news/list',$this->data);
+            $this->load->view('inc/footer',$this->data);
+        }
+        else
+        {
+            redirect("/","location",301);
+        }
 	}
 	
 	public function detail($id = false)
