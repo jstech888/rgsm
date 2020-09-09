@@ -14,6 +14,7 @@ class User_model extends My_Model {
     {
         parent::__construct();		
 		$this->table = "user";
+        $this->table2 = "user_resume";
     }
 
 	function distributeShoppingPoint($userId,$value)
@@ -138,7 +139,15 @@ class User_model extends My_Model {
 		$result = $this->db->query($sql)->result_array();
 		return $result;
 	}
-	
+
+	function findAllResumeOfUser()
+	{
+		$sql = "SELECT * FROM `".$this->table2."` WHERE 1 ORDER BY id ";
+		$result = $this->db->query($sql)->result_array();
+
+		return $result;
+	}
+
 	function findHostIdByCode($code)
 	{
 		$this->table 	= "user";
@@ -150,6 +159,14 @@ class User_model extends My_Model {
 	{
 		$this->table 	= "user";
 		$result 		= $this->read_RecordByWhereCase( array( "id" => $id ) );		
+		return $result;
+	}
+
+	function findUserResumeById($id)
+	{
+		$this->table 	= "user_resume";
+		$result 		= $this->read_RecordByWhereCase( array( "id" => $id ) );
+
 		return $result;
 	}
 
@@ -211,6 +228,33 @@ class User_model extends My_Model {
 		}
 		return $result;
 	}
+
+	public function save_resume($data)
+    {
+//var_dump($data);
+        if(!isset($data))  return "缺少必要欄位";
+
+        if( $data["id"] == "" )
+        {
+            $insertData = array();
+            $insertData = $data;
+            $insertData['createdtime'] = date("Y-m-d H:i:s");
+            unset($insertData['id']);
+
+            $this->db->insert($this->table2, $insertData);
+
+            return $this->db->insert_id();
+        }
+        else
+        {
+            $updateData = array();
+            $updateData = $data;
+            $updateData['updatedtime'] = date("Y-m-d H:i:s");
+
+            $this->db->update($this->table2, $updateData, array("id" => $data['id']));
+            return $this->db->affected_rows();
+        }
+    }
 		
 	public function save($data)
 	{

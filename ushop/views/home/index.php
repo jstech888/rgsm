@@ -107,7 +107,7 @@
         </div> <!-- end of row -->
         <div class="row">
             <div class="col-xs-12 col-lg-12 text-center">
-                <a class="btn-solid-reg page-scroll btn-solid-lg btn-lg" href="personal-information.html">如何申請</a>
+                <a class="btn-solid-reg page-scroll btn-solid-lg btn-lg" href="/user/apply">如何申請</a>
             </div>
         </div> <!-- end of row -->
     </div> <!-- end of container -->

@@ -15,9 +15,16 @@
         <li class="nav-item">
             <a class="nav-link page-scroll" href="/#contact">連絡我們</a>
         </li>
+
+        <?php if($self) { ?>
+            <li class="nav-item">
+                <a class="nav-link page-scroll" href="/user/logout">登出</a>
+            </li>
+        <?php } else { ?>
         <li class="nav-item">
             <a class="nav-link page-scroll" href="/user/login">登入</a>
         </li>
+        <?php } ?>
 
         <?php
             if ($isShowLangSelector) {

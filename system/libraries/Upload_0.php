@@ -141,10 +141,10 @@ class CI_Upload {
 	 *
 	 * @return	bool
 	 */
-	public function do_upload($field = 'userfile', $auto = false)
+	public function do_upload($field = 'userfile')
 	{
 
-	    // Is $_FILES[$field] set? If not, no reason to continue.
+	// Is $_FILES[$field] set? If not, no reason to continue.
 		if ( ! isset($_FILES[$field]))
 		{
 			$this->set_error('upload_no_file_selected');
@@ -152,7 +152,7 @@ class CI_Upload {
 		}
 
 		// Is the upload path valid?
-		if ( ! $this->validate_upload_path($auto))
+		if ( ! $this->validate_upload_path())
 		{
 			// errors will already be set by validate_upload_path() so just return FALSE
 			return FALSE;
@@ -699,7 +699,7 @@ class CI_Upload {
 	 *
 	 * @return	bool
 	 */
-	public function validate_upload_path($auto)
+	public function validate_upload_path()
 	{
 		if ($this->upload_path == '')
 		{
@@ -714,15 +714,8 @@ class CI_Upload {
 
 		if ( ! @is_dir($this->upload_path))
 		{
-		    if($auto)
-            {
-                mkdir($this->upload_path, 0777);
-            }
-		    else
-            {
-                $this->set_error('upload_no_filepath');
-			    return FALSE;
-            }
+			$this->set_error('upload_no_filepath');
+			return FALSE;
 		}
 
 		if ( ! is_really_writable($this->upload_path))

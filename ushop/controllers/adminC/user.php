@@ -650,8 +650,36 @@ class User extends Admin_Controller {
         $this->load->view('admin/inc/head',$this->data);
 		$this->load->view('admin/user/index',$this->data);
 	}
-		
-	public function create()
+
+    public function listResume()
+    {
+        $this->data["css_include"] 	= "user";
+        $this->data['widget'] 		= array();
+
+        $this->load->model("User_model");
+        $listData = $this->User_model->findAllResumeOfUser();
+
+        foreach( $listData  AS &$record )
+        {
+            $record["createTime"] 	 = date("Y/m/d",strtotime($record["createTime"]));
+            $lastLoginTime = strtotime($record["lastLoginTime"]);
+            $record["lastLoginTime"] = ( $lastLoginTime < 0 ) ? "<a class=\"btn btn-default btn-xs\">從未登入</a>" :  date("Y/m/d", $lastLoginTime );
+            $record["flag"] = $this->arr_flag[$record["flag"]];
+        }
+
+        $this->data["FlagSelOpt"] = $this->arr_flag;
+        $this->data["listData"] = $listData;
+
+        $bkm_data = $this->mBKM->find($_SERVER['REQUEST_URI']);
+        $bkmt_data = $this->mBKMT->find($bkm_data[0]['type_id']);
+        $this->data["bkm_name"] = $bkm_data[0]['name'];
+        $this->data["bkmt_name"] = $bkmt_data[0]['name'];
+
+        $this->load->view('admin/inc/head',$this->data);
+        $this->load->view('admin/user/listResume',$this->data);
+    }
+
+    public function create()
 	{
         $this->load->model("Auth_model");
 
@@ -767,7 +795,37 @@ class User extends Admin_Controller {
 			redirect("/admin/user/listPage","location","301");
 		}
 	}
-	
+
+	public function detailresume()
+	{
+		if( isset( $_GET["id"] ) )
+		{
+			$this->data["css_include"] 	= "user";
+			$this->data['widget'] 		= array();
+
+            $this->load->model("Auth_model");
+			$this->load->model("User_model");
+			$listData = $this->User_model->findUserResumeById($_GET["id"]);
+
+            if( count($listData) > 0 )
+			{
+				$selfData = $listData[0];
+
+				$this->data["selfData"] = $selfData;
+				$this->load->view('admin/inc/head',$this->data);
+				$this->load->view('admin/user/detailresume',$this->data);
+			}
+			else
+			{
+				redirect("/admin/user/listPage","location","301");
+			}
+		}
+		else
+		{
+			redirect("/admin/user/listPage","location","301");
+		}
+	}
+
 	public function changePW()
 	{
 		if( isset( $_GET["id"] ) )

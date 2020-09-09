@@ -1,31 +1,15 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class Home extends Web_Controller {
 
-	public function pushNotification()
-	{
-		$this->data['debugmode'] = true;
-		$this->data['viewmode'] = true;
+    function __construct()
+    {
+        parent::__construct();
+    }
 
-		if ($_SERVER['REQUEST_METHOD'] === 'POST')
-		{
-			if( isset($_POST["userId"]) &&
-				isset($_POST["message"])
-			)
-			{
-				$this->mUser->pushNotification($_POST["userId"],$_POST["message"]);
-			}
-		}
-
-		$this->data['userList'] = $this->mUser->findAll();
-		$this->load->view('inc/head',$this->data);
-		$this->load->view('home/pushNotification',$this->data);
-		$this->load->view('inc/footer',$this->data);
-	}
-
-	/*public function test01()
-	{
-		$this->load->view('home/index01',$this->data);
-	}*/
+    /*public function test01()
+    {
+        $this->load->view('home/index01',$this->data);
+    }*/
 
 	public function index()
 	{
@@ -166,6 +150,27 @@ class Home extends Web_Controller {
 			redirect("/","location","301");
 		}
 	}
+
+    public function pushNotification()
+    {
+        $this->data['debugmode'] = true;
+        $this->data['viewmode'] = true;
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST')
+        {
+            if( isset($_POST["userId"]) &&
+                isset($_POST["message"])
+            )
+            {
+                $this->mUser->pushNotification($_POST["userId"],$_POST["message"]);
+            }
+        }
+
+        $this->data['userList'] = $this->mUser->findAll();
+        $this->load->view('inc/head',$this->data);
+        $this->load->view('home/pushNotification',$this->data);
+        $this->load->view('inc/footer',$this->data);
+    }
 }
 
 /* End of file welcome.php */

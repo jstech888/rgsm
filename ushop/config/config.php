@@ -360,5 +360,7 @@ $config['proxy_ips'] = '';
 
 error_reporting(0);
 
+$config['upload_path_personal_information'] = "/Applications/MAMP/htdocs/rgsm/uploads/personal_information/";       // 人事資料
+
 /* End of file config.php */
 /* Location: ./application/config/config.php */

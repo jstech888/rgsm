@@ -756,9 +756,10 @@ class Web_Controller extends CI_Controller
 	function loadLang( $path )
 	{
 		$lang_path = LANGPATH . $path;
-		$temp_lang_path = $lang_path . $this->currentLang . ".json";		
+		$temp_lang_path = $lang_path . $this->currentLang . ".json";
 		$lang_path=(!file_exists($temp_lang_path))?$lang_path. DEFAULTLANG . ".json":$temp_lang_path;
 		$obj_lang = json_decode( file_get_contents($lang_path),true );
+//echo "<br>path=".$path; var_dump($obj_lang);
 		if( $this->debug  === true )
 		{
 			echo $lang_path . "<br/>\r\n";	
@@ -766,7 +767,7 @@ class Web_Controller extends CI_Controller
 			echo "<br/>\r\n";
 			var_dump( $obj_lang );		
 			echo "<br/>\r\n";
-		}		
+		}
 		return $obj_lang;
 	}
 	

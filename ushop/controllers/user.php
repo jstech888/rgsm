@@ -22,7 +22,11 @@ class User extends Web_Controller {
 		"code" 		=> "-1",
 		"message"	=> "操作失敗"
 	);
-	
+
+    function __construct()
+    {
+        parent::__construct();
+    }
 	
 	private function getOption($view)
 	{
@@ -61,11 +65,6 @@ class User extends Web_Controller {
 		}
 // error_log(print_r($data,true),3,"uploads/log_controller_user_getOption_data.log");
 		return $data;
-	}
-	
-	function __construct()
-	{
-		parent::__construct();				
 	}
 	
 	private function index($view)
@@ -813,14 +812,173 @@ class User extends Web_Controller {
 		$this->load->view('inc/footer',$this->data);
 	}
 	
-	public function profile()
+	public function apply()
+	{
+		$this->data["objLang"]["function_bar"] = $this->loadLang("widget/function_bar/");
+		$this->data["objLang"]["userapply"] = $this->loadLang("page/userapply/");
+
+		if( $this->self === false )
+		{
+			redirect("/","location",301);
+		}
+
+		$this->load->view('inc/head',$this->data);
+		$this->load->view('user/apply',$this->data);
+		$this->load->view('inc/footer',$this->data);
+	}
+
+	public function uploadcv($rid)
+	{
+		$this->data["objLang"]["function_bar"] = $this->loadLang("widget/function_bar/");
+		$this->data["objLang"]["useruploadcv"] = $this->loadLang("page/useruploadcv/");
+
+		if( $this->self === false )
+		{
+			redirect("/","location",301);
+		}
+
+//        $this->load->model("User_model");
+//        $result = $this->User_model->getResume($this->self[id]);
+        $this->data['resumeid'] = $rid;
+
+		$this->load->view('inc/head',$this->data);
+		$this->load->view('user/uploadcv',$this->data);
+		$this->load->view('inc/footer',$this->data);
+	}
+
+    public function add_resume()
+    {
+        $new_user = array();
+        $id = $this->input->post('id');
+
+        if($id == '')
+        {
+            $new_user['user_id'] 	    = $this->self['id'];
+            $new_user['ctcid'] 			= $this->input->post('ctcid');
+            $new_user['cname'] 	 		= $this->input->post('cname');
+            $new_user['cbirth'] 		= $this->input->post('cbirth');
+            $new_user['cplace'] 		= $this->input->post('cplace');
+            $new_user['caddress'] 		= $this->input->post('caddress');
+            $new_user['ccity'] 			= $this->input->post('ccity');
+            $new_user['cdistrict'] 		= $this->input->post('cdistrict');
+            $new_user['cnationality'] 	= $this->input->post('cnationality');
+            $new_user['ccitizenship'] 	= $this->input->post('ccitizenship');
+            $new_user['cgender'] 		= $this->input->post('cgender');
+            $new_user['cmobile'] 		= $this->input->post('cmobile');
+            $new_user['cemail'] 		= $this->input->post('cemail');
+            $new_user['education'] 		= $this->input->post('education');
+//var_dump($new_user);
+            $this->load->model("User_model");
+            $result = $this->User_model->save_resume($new_user);
+//echo "<br>result=".$result;
+            if($result > 0)
+            {
+                echo "<script>top.$('#wait').hide();top.$('#wait_content').hide();alert('新增成功！');</script>";
+                echo "<script>top.location.href='/user/uploadcv/".$result."';</script>";
+            }
+            else
+            {
+                echo "<script>top.$('#wait').hide();top.$('#wait_content').hide();alert('新增失敗，姓名或是身分證字號有重複，請聯絡管理員！');</script>";
+            }
+        }
+        else
+        {
+            $updatedata = array();
+
+            $this->load->model("User_model");
+            $result = $this->User_model->save_resume($updatedata);
+
+            if($result==1)
+            {
+                echo "<script>top.$('#wait').hide();top.$('#wait_content').hide();alert('編輯完成！');</script>";
+                echo "<script>top.location.href='/user/personal_information';</script>";
+            }
+            else
+            {
+                echo "<script>top.$('#wait').hide();top.$('#wait_content').hide();alert('新增失敗，姓名或是身分證字號有重複，請聯絡管理員！');</script>";
+            }
+        }
+    }
+
+    public function add_cv()
+    {
+        $resumeid = $this->input->post('id');
+        $isUpload = false;
+
+        if ($resumeid) {
+            $this->load->library('upload');
+            $root = $this->config->item('upload_path_personal_information');
+            $path = $root . $resumeid . "/";
+
+            $config['upload_path'] = $path;
+            $config['allowed_types'] = 'xlsx|xls|jpg|png|pdf';
+            $config['remove_spaces'] = TRUE;
+
+            $this->upload->initialize($config);
+            $this->load->library('upload', $config);
+
+            $uploadfile01_ori = $this->input->post('uploadfile01_ori');
+            $uploadfile02_ori = $this->input->post('uploadfile02_ori');
+
+            $uploadfiles = array();
+            isset($uploadfile01_ori) ? $uploadfiles['file01'] = $uploadfile01_ori : '';
+            isset($uploadfile02_ori) ? $uploadfiles['file02'] = $uploadfile02_ori : '';
+
+            for ($i=1; $i < 3 ; $i++)
+            {
+                $data = array();
+                $num = sprintf("%02d", $i);
+                $errorLabel = "error".$num;
+                $inputdata = "data".$num;
+                $importFileLabel = "inputFileName".$num;
+                $fileLabel = "file".$num;
+                $uploadfileLable = "uploadfile".$num;
+
+                if (!$this->upload->do_upload($uploadfileLable, true)) {
+                    $$errorLabel = array('error' => $this->upload->display_errors());
+                } else {
+                    $data = array('upload_data' => $this->upload->data());
+                }
+
+                if (!empty($data['upload_data']['file_name'])) {
+                    $$importFileLabel = $data['upload_data']['file_name'];
+                    $isUpload = true;
+                    $uploadfiles[$fileLabel] = $$importFileLabel;
+                } else {
+                    $$importFileLabel = '';
+                }
+            }
+
+            if($isUpload)
+            {
+                $updatedata['id'] 		    = $resumeid;
+                $updatedata['path'] 		= $path;                        //證件資料檔案路徑
+                $updatedata['uploadfiles']  = json_encode($uploadfiles);    //證件資料
+
+                $this->load->model("User_model");
+                $result = $this->User_model->save_resume($updatedata);
+
+                if($result==1)
+                {
+                    echo "<script>top.$('#wait').hide();top.$('#wait_content').hide();alert('上傳完成！');</script>";
+                    echo "<script>top.location.href='/';</script>";
+                }
+                else
+                {
+                    echo "<script>top.$('#wait').hide();top.$('#wait_content').hide();alert('新增失敗，姓名或是身分證字號有重複，請聯絡管理員！');</script>";
+                }
+            }
+        }
+    }
+
+    public function profile()
 	{
 		$this->data["objLang"]["profile"] = $this->loadLang("page/profile/");
 		if( $this->self === false )
 		{
 			redirect("/","location",301);
 		}
-		if ($_SERVER['REQUEST_METHOD'] === 'POST') 
+		if ($_SERVER['REQUEST_METHOD'] === 'POST')
 		{
 			$this->index("profile");
 		}
