@@ -37,7 +37,8 @@
 	.ushopmenuicon-icon2_5 { background: url('/admin/img/ushopmenu/icon2_5.png'); }
 	.ushopmenuicon-icon2_6 { background: url('/admin/img/ushopmenu/icon2_6.png'); }
 	.ushopmenuicon-icon2_7 { background: url('/admin/img/ushopmenu/icon2_7.png'); }
-	
+	.ushopmenuicon-icon2_8 { background: url('/admin/img/ushopmenu/icon2_8.png'); }
+
 	.ushopmenuicon-icon3   { background: url('/admin/img/ushopmenu/icon3.png'); }
 	.ushopmenuicon-icon3_1 { background: url('/admin/img/ushopmenu/icon3_1.png'); }
 	.ushopmenuicon-icon3_2 { background: url('/admin/img/ushopmenu/icon3_2.png'); }
