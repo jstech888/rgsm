@@ -39,13 +39,13 @@ $Body .= "\n";
 $Body .= "Message: ";
 $Body .= $message;
 $Body .= "\n";
-$Body .= "Terms: ";
-$Body .= $terms;
-$Body .= "\n";
+//$Body .= "Terms: ";
+//$Body .= $terms;
+//$Body .= "\n";
 
 // send email
 $success = mail($EmailTo, $Subject, $Body, "From:".$email);
-
+error_log(print_r($success, true),3,"uploads/log_mail_success.log");
 // redirect to success page
 if ($success && $errorMSG == ""){
    echo "success";
