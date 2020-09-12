@@ -253,10 +253,6 @@
                     <li><i class="fab fa-facebook-f"></i><a class="underline" href="#your-facebook">www.facebook.com</a></li>
                     <li><i class="fab fa-twitter"></i><a class="underline" href="#your-twitter">www.twitter.com</a></li>
                     <li><i class="fab fa-instagram"></i><a class="underline" href="#your-instagram">www.instagram.com</a></li>
-
-
-
-
                 </ul>
             </div> <!-- end of col -->
         </div> <!-- end of row -->
@@ -264,7 +260,7 @@
             <div class="col-lg-12">
 
                 <!-- Contact Form -->
-                <form id="ContactForm" data-toggle="validator" data-focus="false">
+                <form id="ContactForm" data-toggle="validator" data-focus="false" data-disable="false" method="post">
                     <div class="form-group">
                         <input type="text" class="form-control-input" id="cname" required>
                         <label class="label-control" for="cname">Name</label>
@@ -278,10 +274,6 @@
                     <div class="form-group">
                         <textarea class="form-control-textarea" id="cmessage" required></textarea>
                         <label class="label-control" for="cmessage">Your message</label>
-                        <div class="help-block with-errors"></div>
-                    </div>
-                    <div class="form-group checkbox">
-                        <input type="checkbox" id="cterms" value="Agreed-to-Terms" required>I have read and agree to Viso's <a class="underline" href="privacy-policy.html">Privacy Policy</a> and <a class="underline" href="terms-conditions.html">Terms Conditions</a>
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
@@ -298,4 +290,3 @@
     </div> <!-- end of container -->
 </div> <!-- end of form-2 -->
 <!-- end of contact -->
-

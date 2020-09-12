@@ -26,8 +26,10 @@ class Faq extends Web_Controller {
             $this->data["objLang"]["function_bar"] = $this->loadLang("widget/function_bar/");
 //            $this->data["objLang"]["bloger"] = $this->loadLang("widget/blog/");
 
-            $this->load->model("Faq_model");
-            $allClass = $this->Faq_model->allClass();
+//            $this->load->model("Faq_model");
+//            $allClass = $this->Faq_model->allClass();
+            $this->load->model("Faq_class_model");
+            $allClass = $this->Faq_class_model->loadAll();
             $newAllClass = array();
             $currentClass = array();
             foreach( $allClass AS $record )
@@ -43,7 +45,7 @@ class Faq extends Web_Controller {
             {
                 $this->data['objLang']['catelog'] = $this->loadLang( "page/catelog/" );
 
-                rsort($newAllClass);
+//                rsort($newAllClass);
                 $this->data["allClass"]  = $newAllClass;
                 $this->data["currentClass"] = $currentClass;
 

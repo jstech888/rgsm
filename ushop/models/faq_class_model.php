@@ -69,7 +69,7 @@ class Faq_class_model extends My_Model {
 	
 	public function loadAll()
 	{
-		$sql = "SELECT * FROM `".$this->table."`";
+		$sql = "SELECT * FROM `".$this->table."` ORDER BY id ASC ";
 		$result = $this->db->query($sql)->result_array();
 
 		foreach( $result as &$row )
