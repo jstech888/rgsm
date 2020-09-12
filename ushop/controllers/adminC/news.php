@@ -145,7 +145,7 @@ class News extends Admin_Controller {
 			"blog-content" => "",
 			"blog-title"   => "",
 			"id"		   => "-1",
-			"class"		   => 0,
+			"class"		   => 1,
 			"status"	   => "news",
 			"tag"	   	   => "",
 			"langCode"	   => $this->DEFAULTLANG,
@@ -159,18 +159,16 @@ class News extends Admin_Controller {
 		
 		$this->data["isNew"]   = true;
 		$this->data["article"] = $sample;
-		
+		$this->data["isBrand"] = false;
+		$this->data["hasMainPic"] = false;
+
 		$this->data["save_url"] = "/admin/news/save";		
 		$this->data["back_url"] = "/admin/news/listPage";
-		// $this->data["save_url"] = "/admin/blog/save";		
-		// $this->data["back_url"] = "/admin/blog/listPage";
-		
+
 		$this->data["self"] = true;
 		
 		$this->load->model("News_class_model");
 		$arr_class = $this->News_class_model->loadAll();
-		// $this->load->model("Article_class_model");
-		// $arr_class = $this->Article_class_model->loadAll();
 		$this->data['arr_class'] = $arr_class;
 			
 		$this->load->view('admin/inc/head',$this->data);
@@ -212,11 +210,12 @@ class News extends Admin_Controller {
 	public function save()
 	{
 		$this->jsonRS['post'] = $_POST;
+
 		if(
 			isset($_POST['id']) 			&&
-			isset($_POST['class']) 			&&
+//			isset($_POST['class']) 			&&
 			isset($_POST['blog-title']) 	&&
-			isset($_POST['tag']) 			&&
+//			isset($_POST['tag']) 			&&
 			isset($_POST['status']) 		&&
 			isset($_POST['raw-date']) 		&&
 			isset($_POST['raw-extra']) 		&&
@@ -229,9 +228,9 @@ class News extends Admin_Controller {
 				"id" 			=> $_POST['id'],
 				"blog-title"   	=> $_POST['blog-title'],
 				"markDate"     	=> $_POST['raw-date'],
-				"class"     	=> $_POST['class'],
+				"class"     	=> $_POST['class'] ? $_POST['class']:0,
 				"status"     	=> $_POST['status'],
-				"tag"     		=> $_POST['tag'],
+				"tag"     		=> $_POST['tag'] ? $_POST['tag']:0,
 				"author"     	=> isset($_POST['author'])?$_POST['author']:$this->admin["id"],
 				"flag"     		=> $_POST['flag'],
 				// "flag"     		=> isset($_POST['author'])?"1":"0",
@@ -262,6 +261,7 @@ class News extends Admin_Controller {
 			$this->jsonRS['code'] 		= '1';
 			$this->jsonRS['message'] 	= '操作完成';
 			$this->jsonRS['resp'] 		= $resp;
+
 			header('Content-Type: application/json; charset=utf-8');
 			echo json_encode($this->jsonRS);
 		}	
@@ -279,8 +279,9 @@ class News extends Admin_Controller {
 		$this->data['articles'] 	= $arr_article;
 		$this->data["edit_url"] 	= "/admin/news/edit";
 		$this->data["switch_url"] 	= "/admin/news/listPage";
-		$this->data["flag"] 		= "label";
-		
+		$this->data["flag"] 		= "switch";
+		$this->data["isBrand"] 		= true;
+
 		$this->load->model("News_class_model");
 		$arr_class = $this->News_class_model->loadAll();
 		$new_class = array();

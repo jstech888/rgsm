@@ -137,7 +137,7 @@ input[type="search"]{
 												<tr>
 													<th>日期</th>
 													<th>標題</th>
-													<th>首圖</th>
+<!--													<th>首圖</th>-->
 													<?php if( !isset($isBrand) ) { ?><th>分類</th><?php } ?>
 													<?php if($flag != "hide"){ ?><th>狀態</th><?php } ?>
 													<th>操作</th>
@@ -147,7 +147,7 @@ input[type="search"]{
 												<tr>
 													<th>日期</th>
 													<th>標題</th>
-													<th>首圖</th>
+<!--													<th>首圖</th>-->
 													<?php if( !isset($isBrand) ) { ?><th>分類</th><?php } ?>
 													<?php if($flag != "hide"){ ?><th>狀態</th><?php } ?>
 													<th>操作</th>
@@ -162,7 +162,7 @@ input[type="search"]{
 												<tr>
 													<td><?php echo $record["markDate"];?></td>
 													<td><?php echo $record["blog-title"];?></td>
-													<td><img src="<?php echo $record["value"]["url"];?>" class="img-responsive" style="max-width:120px;"/></td>
+<!--													<td><img src="--><?php //echo $record["value"]["url"];?><!--" class="img-responsive" style="max-width:120px;"/></td>-->
 													<?php if( !isset($isBrand) ) { ?>
 													<td>
 														<div class="btn btn-xs btn-default">
@@ -338,12 +338,12 @@ input[type="search"]{
 		$('#datatable3').dataTable({
 			"order": [[ 0, "desc" ]],
 			"language": {
-				"lengthMenu"		: "每頁顯示 _MENU_ 筆",
-				"search"			: "關鍵字　",
-				"zeroRecords"		: "找不到任何相對應資料",
-				"info"				: "目前 _PAGE_ 頁，共 _PAGES_ 頁",
-				"infoEmpty"			: "資料是空的",
-				"infoFiltered"		: "(從 _MAX_ 筆資料中篩選)"
+                "lengthMenu"		: "Each Page _MENU_ items",
+                "search"			: "Keyword　",
+                "zeroRecords"		: "Could not find any corresponding information",
+                "info"				: "Now _PAGE_ page，total _PAGES_ pages",
+                "infoEmpty"			: "Data is empty",
+                "infoFiltered"		: "(Select from _MAX_ items)"
 			}
 		});
 	}
@@ -354,7 +354,7 @@ input[type="search"]{
 		if(confirm("確定刪除？"))
 		{
 			$.ajax({
-				url: "<?php echo base_url('/admin/article/delete');?>",
+				url: "<?php echo base_url('/admin/news/delete');?>",
 				async:true,
 				cache:false,
 				method:"POST",

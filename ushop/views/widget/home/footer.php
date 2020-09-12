@@ -8,7 +8,9 @@
                 </div>
             </div> <!-- end of col -->
 
-            <?php echo (isset($footer[0]["value"][1])) ? $footer[0]["value"][1]["content"]:"";?>
+            <?php //echo (isset($footer[0]["value"][1])) ? $footer[0]["value"][1]["content"]:"";?>
+            <!--最新消息-->
+            <?php include_once( VIEWPATH . "widget" . DIRECTORY_SEPARATOR ."home" . DIRECTORY_SEPARATOR ."News.php");?>
 
             <div class="col-md-4">
                 <div class="footer-col float-lg-right">

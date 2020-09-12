@@ -40,8 +40,7 @@ class News_model extends My_Model {
 	
 	
 	public function findAll( $status, $langCode = false, $isBackend = false )
-	{	
-		
+	{
 		$lang = ($langCode == false)?$this->currentLang:$langCode;
 		
 		$sql = "SELECT *	
@@ -76,8 +75,8 @@ class News_model extends My_Model {
 	public function countClassHome( $class, $langCode = false, $flag = false )
 	{		
 		$lang = ($langCode == false)?$this->currentLang:$langCode;
-		
 		$flagVar = ($flag === false)?";":" AND `".$this->table."`.`flag` = 1;";
+
 		$sql = "SELECT *
 				  FROM `".$this->table."` 
 				  JOIN `".$this->table2."` ON `".$this->table2."`.id = `".$this->table."`.`class`
@@ -303,9 +302,10 @@ class News_model extends My_Model {
 	{
 		$this->check_RecordExistByWhereCase( array( 'id' => $id ),"`sortkey` ASC" );
 		$result = $this->last_result;
+
 		if( count($result) > 0 )
 		{
-			$this->db->delete('".$this->table."', array('id' => $id)); 
+			$this->db->delete($this->table, array('id' => $id));
 		}
 	}
 	
@@ -372,8 +372,7 @@ class News_model extends My_Model {
 	}
 
 	public function findBrand( $id, $langCode = false )
-	{	
-		
+	{
 		$lang = ($langCode == false)?$this->currentLang:$langCode;
 		
 		$sql = "SELECT *
@@ -394,11 +393,46 @@ class News_model extends My_Model {
 			$row['classIcon'] 	= json_decode($row['classIcon'],true);
 			$row['classBanner']	= json_decode($row['classBanner'],true);
 			$row['blog-extra'] 	= json_decode($row['value'],true);
-			$sql = "SELECT * FROM `user` WHERE `user`.`id` = ? ";	
+
+			$sql = "SELECT * FROM `user` WHERE `user`.`id` = ? ";
 			$res = $this->db->query($sql,array($row["author"]))->result_array();
 			//$res[0]["picture"] = json_decode($res[0]["picture"],true);
 			//$row['bloger'] = $res[0];
 		}
+
+		$this->last_result = $result;
+		return $this->last_result;
+	}
+
+	public function findNews( $id, $langCode = false )
+	{
+		$lang = ($langCode == false)?$this->currentLang:$langCode;
+
+		$sql = "SELECT *
+			, ( SELECT `key` FROM `".$this->table2."` WHERE `".$this->table2."`.`id` = `".$this->table."`.`class` LIMIT 1 ) AS 'classKey'
+			, ( SELECT `value` FROM `".$this->table2."` WHERE `".$this->table2."`.`id` = `".$this->table."`.`class` LIMIT 1 ) AS 'classValue'
+			, ( SELECT `icon` FROM `".$this->table2."` WHERE `".$this->table2."`.`id` = `".$this->table."`.`class` LIMIT 1 ) AS 'classIcon'
+			, ( SELECT `banner` FROM `".$this->table2."` WHERE `".$this->table2."`.`id` = `".$this->table."`.`class` LIMIT 1 ) AS 'classBanner'
+			, ( SELECT COUNT(*) FROM `message_board` WHERE `message_board`.`articleId` = `".$this->table."`.`id` LIMIT 1 ) AS msgCount
+				FROM `".$this->table."` WHERE `".$this->table."`.`id` in ($id) AND `".$this->table."`.`status` = 'news' AND `".$this->table."`.`langCode` = ?";
+
+		$result = $this->db->query($sql,array($lang))->result_array();
+
+		foreach( $result as &$row )
+		{
+			$row['blog-date'] 	= $this->format_date($row['markDate']);
+			$row['blog-href'] 	= base_url("article/".$row['id']);
+			$row['classValue'] 	= json_decode($row['classValue'],true);
+			$row['classIcon'] 	= json_decode($row['classIcon'],true);
+			$row['classBanner']	= json_decode($row['classBanner'],true);
+			$row['blog-extra'] 	= json_decode($row['value'],true);
+
+			$sql = "SELECT * FROM `user` WHERE `user`.`id` = ? ";
+			$res = $this->db->query($sql,array($row["author"]))->result_array();
+			//$res[0]["picture"] = json_decode($res[0]["picture"],true);
+			//$row['bloger'] = $res[0];
+		}
+
 		$this->last_result = $result;
 		return $this->last_result;
 	}

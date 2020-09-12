@@ -120,7 +120,8 @@ ul {
 											</div>
 											<div class="clearfix"></div>
 										</div>
-										<?php if(!isset($isBrand)) { ?>
+
+                                        <?php if(!isset($isBrand)) { ?>
 										<div class="col-sm-12" style="margin-bottom:15px;">
 											<div class="form-group">
 												<label for="blog-title" class="col-xs-4 col-md-3 col-lg-1 control-label" style="line-height: 38px;font-size: 20px;margin-bottom: 0;text-align: right;">標籤</label>
@@ -153,6 +154,7 @@ ul {
 											<div class="clearfix"></div>
 										</div>
 										<?php } ?>
+
 										<div class="col-sm-12" style="margin-bottom:15px;">
 											<div class="form-group">
 												<label for="blog-date" class="col-xs-4 col-md-3 col-lg-1 control-label" style="line-height: 38px;font-size: 20px;margin-bottom: 0;text-align: right;">日期</label>
@@ -174,6 +176,8 @@ ul {
 											</div>
 											<div class="clearfix"></div>
 										</div>
+
+                                        <?php if($hasMainPic) { ?>
 										<div class="col-sm-12" style="margin-bottom:15px;">
 											<div class="form-group">
 												<label for="blog-date" class="col-xs-4 col-md-3 col-lg-1 control-label" style="line-height: 38px;font-size: 20px;margin-bottom: 0;text-align: right;">首圖</label>
@@ -191,6 +195,8 @@ ul {
 											</div>
 											<div class="clearfix"></div>
 										</div>
+                                        <?php } ?>
+
 										<!--
 										<div class="col-sm-12" style="margin-bottom:15px;">
 											<div class="form-group">
@@ -262,13 +268,13 @@ ul {
     <script type="text/javascript" src="/libs/jquery.switchButton.js"></script>
 	
     
-		<!-- Fileupload included -->
-		<script type="text/javascript" src="/libs/jqfileupload/js/vendor/jquery.ui.widget.js"></script>
-		<script type="text/javascript" src="//blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
-		<script type="text/javascript" src="//blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
-		<script type="text/javascript" src="/libs/jqfileupload/js/jquery.iframe-transport.js"></script>
-		<script type="text/javascript" src="/libs/jqfileupload/js/jquery.fileupload.js"></script>
-	
+    <!-- Fileupload included -->
+    <script type="text/javascript" src="/libs/jqfileupload/js/vendor/jquery.ui.widget.js"></script>
+    <script type="text/javascript" src="//blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
+    <script type="text/javascript" src="//blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
+    <script type="text/javascript" src="/libs/jqfileupload/js/jquery.iframe-transport.js"></script>
+    <script type="text/javascript" src="/libs/jqfileupload/js/jquery.fileupload.js"></script>
+
 
     <!-- Admin Forms Javascript -->
     <script type="text/javascript" src="/admin/admin-tools/admin-forms/js/jquery-ui-monthpicker.min.js"></script>
@@ -348,7 +354,7 @@ ul {
 			obj_item["raw-extra"] 		= $("#blog-extra").val();
 			obj_item["tag"]				= $("#blog-tag").val();
 			obj_item["author"] 			= $("#blog-author").val();
-			obj_item["class"] 			= $("#blog-class").val();
+			obj_item["class"] 			= 1;    //$("#blog-class").val();
 			/* obj_item["blog-summary"] 	= $("#blog-summary").val(); */
 			obj_item["blog-content"] 	= CKEDITOR.instances.ckeditor1.getData();
 			obj_item["langCode"] 		= $("#langCode").val();
@@ -378,7 +384,7 @@ ul {
 					PM.erro();
 				}
 			}).always(function() { l.stop(); });
-			//l.stop();
+
 			return false;
 		});
 	}

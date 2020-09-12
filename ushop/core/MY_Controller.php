@@ -360,7 +360,6 @@ class Admin_Controller extends CI_Controller
 
 class Web_Controller extends CI_Controller
 {
-
 	/* 多國語言 變數 */
 	public $currentLang  = false;
 	public $DEFAULTLANG  = false;
@@ -404,6 +403,7 @@ class Web_Controller extends CI_Controller
 		$this->load->model("User_model","mUser");
 		$this->load->model("Pagemeta_model","mPageMeta");	
 		$this->load->model("Product_model","mProduct");
+        $this->load->model("News_model",'mNews');
 		
 		$this->webVar = $this->session->userdata('webVar');
 
@@ -475,8 +475,7 @@ class Web_Controller extends CI_Controller
 		$this->init_CurrencySelector();
 		($this->isShowCurrencySelector == false) ? $this->isShowCurrencySelector = $this->mOption->isShowCurrencySelector : "";		
 		$this->data["isShowCurrencySelector"] = $this->isShowCurrencySelector;
-				
-		
+
 		$this->data["socialLink"] = $this->mOption->readVal("socialLink");
 		
 		/* META DATA */
@@ -529,7 +528,15 @@ class Web_Controller extends CI_Controller
 			( time() >= $StartDate ) && ( $EndDate >= time() )?$DateLimitCheckoutDiscount["inTerm"] = true:"";	
 		}
 		$this->data["DateLimitCheckoutDiscount"] = $DateLimitCheckoutDiscount;
-		
+
+        //最新消息(頁尾)
+        $hotNews = $this->mWidget->find("News");
+        $listNews = ( count( $hotNews[0]["value"]["ids"] ) > 0 )? $this->mNews->findNews(implode(",",$hotNews[0]["value"]["ids"])):array();
+        $newsCount = ( count( $hotNews[0]["value"]["ids"] ) > 0 )?count(implode(",",$hotNews[0]["value"]["ids"])):1 ;
+        $itemListNews = array_chunk($listNews,2);
+        $this->data["NewsTitle"] = isset($hotNews[0]["value"]["title"])? $hotNews[0]["value"]["title"]:"";
+        $this->data["itemListNews"] = $itemListNews[0];
+
 		$this->setActiveTag();
 	}
 		

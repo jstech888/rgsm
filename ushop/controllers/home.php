@@ -28,9 +28,10 @@ class Home extends Web_Controller {
 
 		$this->load->model("Product_model",'mProduct');
 		$this->load->model("Article_model",'mArticle');
+
 		//大圖輪播
-		$this->data["HomeSlider"] = $this->mWidget->find("HomeSlider");
-		$this->data["WHSlidertEffect"] = $this->mOption->readVal("WHSlidert-Effect");
+//		$this->data["HomeSlider"] = $this->mWidget->find("HomeSlider");
+//		$this->data["WHSlidertEffect"] = $this->mOption->readVal("WHSlidert-Effect");
 
 		//小圖輪播
 		//$adList = $this->mWidget->find("adList");
@@ -51,20 +52,19 @@ class Home extends Web_Controller {
 		//$GridBlockOne = $this->mWidget->find("GridBlock1");
 		//$this->data["GridBlockOne"] = $GridBlockOne[0];
 
-		$GridBlock = $this->mWidget->find("GridBlock");
-		$this->data["GridBlock"] = $GridBlock[0];
+//		$GridBlock = $this->mWidget->find("GridBlock");
+//		$this->data["GridBlock"] = $GridBlock[0];
 
 		//美妝部落
-		$this->data["hotStory"]  = $this->mArticle->classHome( false, 0, 8 );
+		//$this->data["hotStory"]  = $this->mArticle->classHome( false, 0, 8 );
 
 		//最新消息
-		$hotNews = $this->mWidget->find("News");
-
-		$listNews = ( count( $hotNews[0]["value"]["ids"] ) > 0 )?$this->mArticle->findBrand(implode(",",$hotNews[0]["value"]["ids"])):array();
-		$newsCount = ( count( $hotNews[0]["value"]["ids"] ) > 0 )?count(implode(",",$hotNews[0]["value"]["ids"])):1 ;
-		$itemListNews = array_chunk($listNews,2);
-		$this->data["NewsTitle"] = isset($hotNews[0]["value"]["title"])?$hotNews[0]["value"]["title"]:"";
-		$this->data["itemListNews"] = $itemListNews;
+		//$hotNews = $this->mWidget->find("News");
+//		$listNews = ( count( $hotNews[0]["value"]["ids"] ) > 0 )?$this->mArticle->findBrand(implode(",",$hotNews[0]["value"]["ids"])):array();
+//		$newsCount = ( count( $hotNews[0]["value"]["ids"] ) > 0 )?count(implode(",",$hotNews[0]["value"]["ids"])):1 ;
+//		$itemListNews = array_chunk($listNews,2);
+//		$this->data["NewsTitle"] = isset($hotNews[0]["value"]["title"])?$hotNews[0]["value"]["title"]:"";
+//		$this->data["itemListNews"] = $itemListNews;
 
 		//會員權益
 		$this->data["MemberRight"] = $this->mWidget->find("MemberRight");

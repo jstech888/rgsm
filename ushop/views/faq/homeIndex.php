@@ -17,9 +17,9 @@
         <div class="row">
             <div class="col-md-12">
                 <ul class="breadcrumbs list-unstyled list-inline">
-                    <li class="list-inline-item"><a class="underline" href="index.html">Home</a></li>
+                    <li class="list-inline-item"><a class="underline" href="/">首頁</a></li>
                     <li class="list-inline-item"><i class="fa fa-angle-double-right"></i></li>
-                    <li class="list-inline-item">FAQ</li>
+                    <li class="list-inline-item">問與答</li>
                 </ul>
             </div> <!-- end of col -->
         </div> <!-- end of row -->
