@@ -180,16 +180,22 @@ class Faq extends Admin_Controller {
 
 	public function edit()
 	{
+        $bkm_data = $this->mBKM->find("/admin/faq/listPage");
+        $bkmt_data = $this->mBKMT->find($bkm_data[0]['type_id']);
+        $this->data["bkm_name"] = $bkm_data[0]['name'];
+        $this->data["bkmt_name"] = $bkmt_data[0]['name'];
+
 		if(isset($_GET['id']))
 		{
 			$this->data["css_include"] 	= "article";
 			$this->data['widget'] 		= array();
 			
-			$this->load->model("News_model");	
+			$this->load->model("Faq_model");
 			
-			$arr_article = $this->News_model->admin_find("news", $_GET['id'] );
+			$arr_article = $this->Faq_model->admin_find("faq", $_GET['id'] );
 			$this->data["article"] = $arr_article[0];			
-			$this->data["isNew"]   = false;
+			$this->data["isNew"]    = false;
+            $this->data["isBrand"]  = true;
 			
 			$this->data["refer_uri"] = "/admin/faq/listPage";
 			$this->data["save_url"]  = "/admin/faq/save";
@@ -281,7 +287,7 @@ class Faq extends Admin_Controller {
 		$this->data['articles'] 	= $arr_article;
 		$this->data["edit_url"] 	= "/admin/faq/edit";
 		$this->data["switch_url"] 	= "/admin/faq/listPage";
-		$this->data["flag"] 		= "label";
+		$this->data["flag"] 		= "switch";
 		
 		$this->load->model("Faq_class_model");
 		$arr_class = $this->Faq_class_model->loadAll();
@@ -295,7 +301,24 @@ class Faq extends Admin_Controller {
 		$this->load->view('admin/inc/head',$this->data);
 		$this->load->view('admin/faq/index',$this->data);
 	}
-	
+
+    public function changeFlag()
+    {
+        $this->jsonRS["POST"] = $_POST;
+        if( isset($_POST["id"]) && isset($_POST["flag"]) )
+        {
+            $this->jsonRS['code'] 		= '1';
+            $this->jsonRS['message'] 	= '操作完成';
+
+            $this->load->model("Faq_model");
+            $this->jsonRS['resp'] 		= $this->Faq_model->save( array(
+                "id" => $_POST["id"],
+                "flag" => $_POST["flag"]
+            ) );
+        }
+        header('Content-Type: application/json; charset=utf-8');
+        echo json_encode($this->jsonRS);
+    }
 	
 }
 /* End of file news.php */

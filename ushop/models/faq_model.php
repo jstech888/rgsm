@@ -78,14 +78,14 @@ class Faq_model extends My_Model {
 				  FROM `".$this->table."` 
 				  JOIN `".$this->table2."` ON `".$this->table2."`.id = `".$this->table."`.`class`
 				 WHERE `".$this->table."`.`class` = ? AND `".$this->table."`.`status` = ? AND `".$this->table."`.`langCode` = ? $flagVar";
-		$result = $this->db->query($sql,array($class,"news",$lang))->result_array();
+		$result = $this->db->query($sql,array($class,"faq",$lang))->result_array();
 		return count($result);
 	}
 	
 	public function classHome( $class, $start = 0, $limit = 12, $sort = "touch", $langCode = false)
 	{
 		$lang = ($langCode == false)?$this->currentLang:$langCode;
-		
+
 		if( $class ===  false )
 		{
 			$sql = "SELECT *,
@@ -104,7 +104,7 @@ class Faq_model extends My_Model {
 							AND `".$this->table."`.`flag` = ?
 						ORDER BY  `".$this->table."`.`{$sort}` DESC 
 						LIMIT {$start}, {$limit} ";
-			$result = $this->db->query($sql,array("news",$lang,"1"))->result_array();
+			$result = $this->db->query($sql,array("faq",$lang,"1"))->result_array();
 		}
 		else
 		{
@@ -124,9 +124,11 @@ class Faq_model extends My_Model {
 							AND `".$this->table."`.`flag` = ?
 						ORDER BY  `".$this->table."`.`{$sort}` DESC 
 						LIMIT {$start}, {$limit} ";	
-			$result = $this->db->query($sql,array($class,"news",$lang,"1"))->result_array();
+			$result = $this->db->query($sql,array($class,"faq",$lang,"1"))->result_array();
 		}
-		$this->load->model("User_model","mUser");	
+
+		$this->load->model("User_model","mUser");
+
 		foreach( $result as &$row )
 		{
 			$row['cvalue'] 	= json_decode($row['cvalue'],true);

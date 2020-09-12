@@ -1,18 +1,33 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class Faq extends Web_Controller {
 
+    private $limit = 4;
+    private $page = 1;
+    private $maxPage = 0;
+    private $layout = "grid";
+    private $pSort = "timeDesc";
+
+    function __construct()
+    {
+        parent::__construct();
+        $this->load->model("Faq_model","Faq_model");
+
+        $this->data["pSort"]    = $this->pSort = isset($_GET["s"])? urldecode($_GET["s"]):"timeDesc";
+        $this->data["limit"]    = $this->limit = isset($_GET["l"])? $_GET["l"]: $this->limit;
+        $this->data["page"]     = $this->page = isset($_GET["p"])? $_GET["p"]:1;
+        $this->data["layout"]   = $this->layout = isset($_GET["ly"])? urldecode($_GET["ly"]):"grid";
+    }
+
     public function index($class=false)
     {
         if( $class !== false )
         {
-            $this->data['objLang']['catelog'] = $this->loadLang( "page/catelog/" );
-            //活動廣告輪播
-            $this->data["activityWidgetSlider"] = $this->mWidget->find("activityWidgetSlider");
-
+//            $this->data['objLang']['catelog'] = $this->loadLang( "page/catelog/" );
             $this->data["objLang"]["function_bar"] = $this->loadLang("widget/function_bar/");
-            $this->data["objLang"]["bloger"] = $this->loadLang("widget/blog/");
-            $this->load->model("Article_model");
-            $allClass = $this->Article_model->allClass();
+//            $this->data["objLang"]["bloger"] = $this->loadLang("widget/blog/");
+
+            $this->load->model("Faq_model");
+            $allClass = $this->Faq_model->allClass();
             $newAllClass = array();
             $currentClass = array();
             foreach( $allClass AS $record )
@@ -23,54 +38,46 @@ class Faq extends Web_Controller {
                     $currentClass = $record;
                 }
             }
+
             if( array_key_exists($class, $newAllClass) )
             {
                 $this->data['objLang']['catelog'] = $this->loadLang( "page/catelog/" );
-                //活動廣告輪播
-                $this->data["activityWidgetSlider"] = $this->mWidget->find("activityWidgetSlider");
 
                 rsort($newAllClass);
                 $this->data["allClass"]  = $newAllClass;
                 $this->data["currentClass"] = $currentClass;
 
-                $page  = isset($_GET["p"])?$_GET["p"]:1;
-                $limit = isset($_GET["l"])?$_GET["l"]:12;
+                $page  = isset($_GET["p"])? $_GET["p"]:1;
+                $limit = isset($_GET["l"])? $_GET["l"]:4;
                 $start = ( $page - 1 ) * $limit;
 
-                $coutClassArtical = $this->Article_model->countClassHome( $currentClass["id"], true );
+                $coutClassArtical = $this->Faq_model->countClassHome( $currentClass["id"] );
                 $lastPage = ceil( $coutClassArtical  / $limit );
 
                 $showPrev = ( $page - 1 === 0 ) ? false : true;
-                $showNext = ( $page == $lastPage || $lastPage == 0 ) ? false : true;
+                $showNext = ( $page >= $lastPage ) ? false : true;
 
-                $this->data["page"] = $page;
-                $this->data["totalPage"] = $lastPage;
-                $this->data["showPrev"] = $showPrev;
-                $this->data["showNext"] = $showNext;
-
-                $this->data["listStory"] = $this->Article_model->classHome( $currentClass["id"], $start, $limit, "markDate" );
-                $listStory = $this->Article_model->classHome( $currentClass["id"], $start, $limit, "markDate" );
-                foreach( $listStory AS &$story )
-                {
-                    $bloger = $this->mUser->findUserById($story["author"]);
-                    $bloger[0]["picture"] = json_decode($bloger[0]["picture"],true);
-                    $story['bloger'] = $bloger[0];
-                }
+                $listStory = $this->Faq_model->classHome( $currentClass["id"], $start, $limit, "markDate" );
                 $this->data["listStory"] = $listStory;
+                $this->maxPage = $lastPage;
+                $this->init_pagination();
 
-                $this->data["hotStory"]  = $this->Article_model->classHome( $currentClass["id"], 0, 5 );
+                $this->data["hotStory"]  = $this->Faq_model->classHome( $currentClass["id"], 0, 5 );
 
-                $allBloger  = $this->Article_model->allBloger();
+                $allBloger  = $this->Faq_model->allBloger();
                 $classBloger = array();
                 foreach($allBloger AS $bloger)
                 { ( in_array($currentClass["id"], $bloger["arrBClass"]))?$classBloger[]=$bloger:""; }
                 $this->data["classBloger"]  = $classBloger;
 
                 $this->data["layout"] = isset($_GET["lyt"])?$_GET["lyt"]:"list";
-                $this->data["TotalRaty"] = $this->mOption->readString("TotalRaty");
+
+                if($_GET['s_year']!=''){
+                    $this->data['s_year'] = $_GET['s_year'];
+                }
 
                 $this->load->view('inc/head',$this->data);
-                $this->load->view('blog/home',$this->data);
+                $this->load->view('faq/homeIndex',$this->data);
                 $this->load->view('inc/footer',$this->data);
             }
             else
@@ -81,12 +88,8 @@ class Faq extends Web_Controller {
         else
         {
             $this->load->model("Faq_model");
-            $faq_list = $this->Faq_model->findAll("faq", $this->currentLang, $this->admin["id"]);
-            $this->data['faq_list'] = $faq_list;
-
-            $this->load->view('inc/head',$this->data);
-            $this->load->view('faq/homeIndex',$this->data);
-            $this->load->view('inc/footer',$this->data);
+            $allClass = $this->Faq_model->allClass();
+            redirect("/faq/index/".$allClass[0]['key'],"location","301");
         }
     }
 
@@ -369,6 +372,25 @@ class Faq extends Web_Controller {
         {
             redirect("/","location","301");
         }
+    }
+
+    private function init_pagination()
+    {
+        if( $this->maxPage > 0 )
+        {
+            $this->data["currentPage"] 	= $this->page;
+            $this->data["prevPage"] 	= ($this->page == 1)? false:$this->page-1;
+            $this->data["nextPage"] 	= ($this->page == $this->maxPage)?false:$this->page+1;
+            $this->data["maxPage"] 		= $this->maxPage;
+        }
+        else
+        {
+            $this->data["currentPage"] 	= 1;
+            $this->data["prevPage"] 	= false;
+            $this->data["nextPage"] 	= false;
+            $this->data["maxPage"] 		= 1;
+        }
+//echo "<br>currentPage=".$this->data["currentPage"].", prevPage=".$this->data["prevPage"].", nextPage=".$this->data["nextPage"].", maxPage=".$this->data["maxPage"];
     }
 }
 /* End of file welcome.php */

@@ -107,7 +107,7 @@ input[type="search"]{
 							<div class="panel">
 								<div class="panel-heading text-center">
 									<div class="caption">
-										編輯區塊
+										Edit Zone
 										<div class="pull-right">
 											<!--
 											<div class="btn btn-success fileinput-button">
@@ -118,7 +118,7 @@ input[type="search"]{
 											</div>
 											-->
 											<button type="button" class="btn ladda-button btn-info page-save" data-style="zoom-in">
-												<span class="ladda-label"><span class="glyphicons glyphicons-file_import"></span> 儲存</span>
+												<span class="ladda-label"><span class="glyphicons glyphicons-file_import"></span> Save </span>
 												<span class="ladda-spinner"></span>
 											</button>
 										</div>
@@ -195,7 +195,7 @@ input[type="search"]{
 														{
 															$isSel = $record["flag"] == $k ? "selected" : "";
 													?>
-															<option value="<?php echo $k;?>" <?php echo $isSel;?>><?php echo $Flag;?></option>													
+															<option value="<?php echo $k;?>" <?php echo $isSel;?>><?php echo $Flag;?></option>
 													<?php
 														}
 													?>
@@ -214,7 +214,7 @@ input[type="search"]{
 													<td>
 														<a href="<?php echo $edit_url;?>?id=<?php echo $record["id"];?>" class="btn btn-success btn-xs">Edit</a>
 														<a onclick="del(<?php echo $record["id"];?>);" class="btn btn-danger btn-xs btn-delete">Delete</a>
-														<a target="_blank" href="/blog/detail/<?php echo $record["id"];?>" class="btn btn-default btn-xs">View</a>
+<!--														<a target="_blank" href="/faq/detail/--><?php //echo $record["id"];?><!--" class="btn btn-default btn-xs">View</a>-->
 													</td>
 												</tr>
 											<?php
@@ -288,7 +288,7 @@ input[type="search"]{
 			if(confirm("確定修改？"))
 			{
 				$.ajax({
-					url: "<?php echo base_url('/admin/blog/changeFlag');?>",
+					url: "<?php echo base_url('/admin/faq/changeFlag');?>",
 					async:true,
 					cache:false,
 					method:"POST",
