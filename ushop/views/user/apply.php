@@ -171,7 +171,7 @@
 <style>
     .Wdate {
         border: #445266 1px solid;
-         width: inherit;
+         width: 100%;
         background-color: #445266;
     }
 </style>
