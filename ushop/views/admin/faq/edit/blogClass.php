@@ -64,10 +64,10 @@ ul {
                 <div class="topbar-left">
                     <ol class="breadcrumb">
                         <li class="crumb-active">
-                            <a>最新消息分類</a>
+                            <a>Faq Catalog</a>
                         </li>
                         <li class="crumb-active">
-                            <a>編輯</a>
+                            <a>Edit</a>
                         </li>
                     </ol>
                 </div>
@@ -92,9 +92,9 @@ ul {
 							<div class="panel" id="spy3">
 								<div class="panel-heading">
 									<span class="panel-title">
-										<span class="glyphicons glyphicons-table"></span>最新消息分類列表
+										<span class="glyphicons glyphicons-table"></span>Faq Catalog List
 										<div class="pull-right">
-											<div class="btn btn-info btn-xs" onclick="createClass();">新增</div>
+											<div class="btn btn-info btn-xs" onclick="createClass();">Create</div>
 										</div>
 									</span>
 								</div>
@@ -104,8 +104,8 @@ ul {
 											<tr>
 												<th>#</th>
 												<th>URI</th>
-												<th>名稱</th>
-												<th>操作</th>
+												<th>Name</th>
+												<th>Action</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -115,11 +115,11 @@ ul {
 										?>
 											<tr>
 												<td><?php echo $k+1;?></td>
-												<td><a href="/news/index/<?php echo $class["key"];?>">/news/index/<?php echo $class["key"];?></a></td>
-												<td><?php echo (isset($class["value"][$Lang]["title"]))?$class["value"][$Lang]["title"]:"";?></td>
+												<td><a href="/faq/index/<?php echo $class["key"];?>">/faq/index/<?php echo $class["key"];?></a></td>
+												<td><?php echo (isset($class["value"][$Lang]["title"]))? $class["value"][$Lang]["title"]:"";?></td>
 												<td>
-													<a class="btn btn-danger btn-xs" href="/admin/news/newsClass/edit?key=<?php echo $class["key"];?>">編輯</a>
-													<a class="btn btn-warning btn-xs" onclick="del('<?php echo $class["id"];?>')">刪除</a>
+													<a class="btn btn-danger btn-xs" href="/admin/faq/newsClass/edit?key=<?php echo $class["key"];?>"> Edit </a>
+													<a class="btn btn-warning btn-xs" onclick="del('<?php echo $class["id"];?>')"> Delete </a>
 												</td>
 											</tr>
 										<?php
@@ -211,7 +211,7 @@ ul {
 	
 	function createClass()
 	{
-		var name=prompt("請輸入新最新消息分類的KEY？","")
+		var name=prompt("Please enter the key of the faq catalog!","")
 		if (name!=null && name!="")
 		{
 			//defaultLang
@@ -225,7 +225,7 @@ ul {
 			banner[defaultLang] = {"slider":[{"url":"/uploads/sample-icon.png"}],"langCode":defaultLang};
 			
 			$.ajax({
-				url: "/admin/news/newsClass/save",
+				url: "/admin/faq/newsClass/save",
 				async:true,
 				cache:false,
 				method:"POST",

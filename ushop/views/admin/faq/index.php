@@ -176,7 +176,7 @@ input[type="search"]{
 																}
 																else
 																{	 
-																	echo isset($arr_class[$record["class"]]["value"][$Lang]["title"])?$arr_class[$record["class"]]["value"][$Lang]["title"]:$arr_class[$record["class"]]["key"];
+																	echo isset($arr_class[$record["class"]]["value"][$Lang]["title"])? $arr_class[$record["class"]]["value"][$Lang]["title"]:$arr_class[$record["class"]]["key"];
 																}
 															?>
 														</div>

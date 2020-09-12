@@ -139,39 +139,32 @@ input[type="search"]{
 											<tfoot>
 												<tr>
                                                     <th>#</th>
-                                                    <th>TC Number</th>
-                                                    <th>Name</th>
-                                                    <th>Birth</th>
+                                                    <th>Fullname</th>
+                                                    <th>Nickname</th>
+                                                    <th>Birthday</th>
                                                     <th>Status</th>
                                                     <th>Action</th>
 												</tr>
 											</tfoot>
 											<tbody>
 											<?php 
-												foreach( $listData AS $rec ) 
+												foreach( $listData AS $i => $rec )
 												{
                                             ?>
 												<tr>
-                                                    <td><?php echo $rec["id"];?></td>
-													<td><?php echo $rec["ctcid"];?></td>
-													<td><?php echo $rec["cname"];?></td>
-													<td><?php echo $rec["cbirth"];?></td>
+                                                    <td><?php echo ($i+1);?></td>
+													<td><?php echo $rec["fullname"];?></td>
+													<td><?php echo $rec["nickname"];?></td>
+													<td><?php echo $rec["birthday"];?></td>
 													<td>
-													<?php 
-													if ( $rec["group_id"] != 5 )
-													{
-													?>
-														<select class="form-control" onchange="changeFlag('<?php echo $rec["id"];?>', this);"><?php 
-														foreach( $FlagSelOpt AS $k=>$opt )
+														<select class="form-control" onchange="changeResumeStatus('<?php echo $rec["id"];?>', this);"><?php
+														foreach( $FlagSelOpt AS $k => $opt )
 														{
-															$isSelected = ( $rec["flag"]["title"] == $opt["title"] ) ? "selected" : "";
+															$isSelected = ( $rec["status"] == $k ) ? "selected" : "";
 															echo "<option value=\"".$k."\" ".$isSelected.">".$opt["title"]."</option>";
 														}
 														?>
 														</select>
-													<?php
-													}
-													?>
 													</td>
 													<td>
                                                         <a href="/admin/user/detailresume?id=<?php echo $rec["id"];?>" class="btn btn-info btn-xs">Details</a>
@@ -295,24 +288,24 @@ input[type="search"]{
 		});
 	}
 	
-	function changeFlag(id, self)
+	function changeResumeStatus(id, self)
 	{
         var ajaxData = {
             "saveData" : {
 				"id"   : id,
-				"flag" : $(self).val()
+				"status" : $(self).val()
 			}
         };
 		$.ajax({
-			url: "/admin/user/changeInfo",
+			url: "/admin/user/changeResumeStatus",
 			async:true,
 			cache:false,
 			method:"POST",
 			data:ajaxData,
 			success:function(data, status, xhr){
-				PM.show({ title: "會員管理", text: '修改完成！', type: "info" });
+				PM.show({ title: "Resume Manage", text: 'Success！', type: "info" });
 				setTimeout(function(){
-					location.reload();
+					// location.reload();
 				},500);
 			},
 			error:function(xhr, stauts, err){ PM.erro(); }

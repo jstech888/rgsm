@@ -119,10 +119,10 @@ ul {
                 <div class="topbar-left">
                     <ol class="breadcrumb">
                         <li class="crumb-active">
-                            <a>最新消息分類</a>
+                            <a>Faq Catalog</a>
                         </li>
                         <li class="crumb-active">
-                            <a>編輯</a>
+                            <a>Edit</a>
                         </li>
                         <li class="crumb-active">
                             <a><?php echo $key;?></a>
@@ -142,7 +142,7 @@ ul {
 					<div class="panel">
 						<div class="panel-heading">
 							<!-- title -->
-							<h3 class="panel-title text-muted text-center mt10 fw400">分類編輯區</h3>
+							<h3 class="panel-title text-muted text-center mt10 fw400">Catalog Edit Zone</h3>
 							<!-- /title -->
 						</div>
 						<div class="panel-body">	
@@ -156,7 +156,7 @@ ul {
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="inputTouch" class="col-lg-2 control-label">人氣</label>
+									<label for="inputTouch" class="col-lg-2 control-label">Popular</label>
 									<div class="col-lg-8">
 										<div id="touch"></div>
 										<span class="help-block mt5">不可修改，當前分類被訪問的累積人氣總數</span>
@@ -522,7 +522,7 @@ ul {
 			var l = Ladda.create(this);
 			l.start();
 			$.ajax({
-				url: "/admin/news/newsClass/save",
+				url: "/admin/faq/newsClass/save",
 				async:true,
 				cache:false,
 				method:"POST",

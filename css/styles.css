@@ -169,8 +169,11 @@ a:hover {
 }
 
 .btn-solid-lg:hover {
-	background-color: transparent;
-	color: #91d343;
+	background-color: #5d8e23;
+    border-color: #5d8e23;
+    color: #fff;
+    /*background-color: transparent;*/
+	/*color: #91d343;*/
 }
 
 .btn-solid-reg.btn-lg {

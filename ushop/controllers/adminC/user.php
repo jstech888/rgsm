@@ -941,6 +941,25 @@ class User extends Admin_Controller {
 			}
 		}
 	}
+
+	public function changeResumeStatus()
+	{
+		if(isset($_POST["saveData"]))
+		{
+			$saveData = $_POST["saveData"];
+			if( isset($saveData["id"]) )
+			{
+				$this->load->model("User_model");
+				$result = $this->User_model->save_resume($saveData);
+
+				$JSONData = array();
+				$JSONData["code"] 		= "1";
+				$JSONData["message"] 	= "操作完成";
+				$JSONData["POST"] 		= $_POST;
+				$JSONData["result"] 	= $result;
+			}
+		}
+	}
 }
 /* End of file welcome.php */
 /* Location: ./application/controllers/welcome.php */

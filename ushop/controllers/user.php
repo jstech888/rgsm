@@ -822,8 +822,31 @@ class User extends Web_Controller {
 			redirect("/","location",301);
 		}
 
+		$this->load->model("User_model");
+        $resume = $this->User_model->get_resume($this->self['id']);
+        $this->data['resume'] = $resume[0];
+
 		$this->load->view('inc/head',$this->data);
 		$this->load->view('user/apply',$this->data);
+		$this->load->view('inc/footer',$this->data);
+	}
+
+	public function applyStep2($rid)
+	{
+		$this->data["objLang"]["function_bar"] = $this->loadLang("widget/function_bar/");
+		$this->data["objLang"]["userApplyStep2"] = $this->loadLang("page/userApplyStep2/");
+
+		if( $this->self === false )
+		{
+			redirect("/","location",301);
+		}
+
+//        $this->load->model("User_model");
+//        $result = $this->User_model->getResume($this->self[id]);
+        $this->data['resumeid'] = $rid;
+
+		$this->load->view('inc/head',$this->data);
+		$this->load->view('user/applyStep2',$this->data);
 		$this->load->view('inc/footer',$this->data);
 	}
 
@@ -853,28 +876,30 @@ class User extends Web_Controller {
 
         if($id == '')
         {
-            $new_user['user_id'] 	    = $this->self['id'];
-            $new_user['ctcid'] 			= $this->input->post('ctcid');
-            $new_user['cname'] 	 		= $this->input->post('cname');
-            $new_user['cbirth'] 		= $this->input->post('cbirth');
-            $new_user['cplace'] 		= $this->input->post('cplace');
-            $new_user['caddress'] 		= $this->input->post('caddress');
-            $new_user['ccity'] 			= $this->input->post('ccity');
-            $new_user['cdistrict'] 		= $this->input->post('cdistrict');
-            $new_user['cnationality'] 	= $this->input->post('cnationality');
-            $new_user['ccitizenship'] 	= $this->input->post('ccitizenship');
-            $new_user['cgender'] 		= $this->input->post('cgender');
-            $new_user['cmobile'] 		= $this->input->post('cmobile');
-            $new_user['cemail'] 		= $this->input->post('cemail');
-            $new_user['education'] 		= $this->input->post('education');
+            $new_user['user_id'] 	            = $this->self['id'];
+            $new_user['fullname'] 			    = $this->input->post('fullname');
+            $new_user['nickname'] 	 		    = $this->input->post('nickname');
+            $new_user['gender'] 		        = $this->input->post('gender');
+            $new_user['birthday'] 		        = $this->input->post('birthday');
+            $new_user['mobile'] 		        = $this->input->post('mobile');
+            $new_user['address'] 			    = $this->input->post('address');
+            $new_user['nationality'] 		    = $this->input->post('nationality');
+            $new_user['hasIdCard'] 	            = implode("!@#$", $this->input->post('hasIdCard'));
+            $new_user['education'] 	            = $this->input->post('education');
+            $new_user['study_status'] 		    = $this->input->post('study_status');
+            $new_user['military_service_status']= $this->input->post('military_service_status');
+            $new_user['disability_status'] 		= $this->input->post('disability_status');
+            $new_user['pipeline'] 		        = $this->input->post('pipeline');
 //var_dump($new_user);
+//echo "<script>top.$('#wait').hide();top.$('#wait_content').hide();alert('新增成功！');</script>";
+//exit;
             $this->load->model("User_model");
             $result = $this->User_model->save_resume($new_user);
 //echo "<br>result=".$result;
             if($result > 0)
             {
                 echo "<script>top.$('#wait').hide();top.$('#wait_content').hide();alert('新增成功！');</script>";
-                echo "<script>top.location.href='/user/uploadcv/".$result."';</script>";
+                echo "<script>top.location.href='/user/applyStep2/".$result."';</script>";
             }
             else
             {
@@ -884,19 +909,71 @@ class User extends Web_Controller {
         else
         {
             $updatedata = array();
+            $updatedata['id'] 	                    = $id;
+            $updatedata['user_id'] 	                = $this->self['id'];
+            $updatedata['fullname'] 			    = $this->input->post('fullname');
+            $updatedata['nickname'] 	 		    = $this->input->post('nickname');
+            $updatedata['gender'] 		            = $this->input->post('gender');
+            $updatedata['birthday'] 		        = $this->input->post('birthday');
+            $updatedata['mobile'] 		            = $this->input->post('mobile');
+            $updatedata['address'] 			        = $this->input->post('address');
+            $updatedata['nationality'] 		        = $this->input->post('nationality');
+            $updatedata['hasIdCard'] 	            = implode("!@#$", $this->input->post('hasIdCard'));
+            $updatedata['education'] 	            = $this->input->post('education');
+            $updatedata['study_status'] 		    = $this->input->post('study_status');
+            $updatedata['military_service_status']  = $this->input->post('military_service_status');
+            $updatedata['disability_status'] 		= $this->input->post('disability_status');
+            $updatedata['pipeline'] 		        = $this->input->post('pipeline');
 
             $this->load->model("User_model");
             $result = $this->User_model->save_resume($updatedata);
 
-            if($result==1)
+            if($result > 0)
             {
                 echo "<script>top.$('#wait').hide();top.$('#wait_content').hide();alert('編輯完成！');</script>";
-                echo "<script>top.location.href='/user/personal_information';</script>";
+                echo "<script>top.location.href='/user/applyStep2/".$result."';</script>";
             }
             else
             {
-                echo "<script>top.$('#wait').hide();top.$('#wait_content').hide();alert('新增失敗，姓名或是身分證字號有重複，請聯絡管理員！');</script>";
+                echo "<script>top.$('#wait').hide();top.$('#wait_content').hide();alert('新增失敗，請聯絡管理員！');</script>";
             }
+        }
+    }
+
+    public function add_resume_step2()
+    {
+        $newObject = array();
+        $resumeid = $this->input->post('id');
+
+        if($resumeid != '')
+        {
+            $newObject['id'] 			    = $resumeid;
+            $newObject['language'] 			= implode("!@#$", $this->input->post('language'));
+            $newObject['skill_level']       = $this->input->post('skill_level');
+            $newObject['design_skills']     = implode("!@#$", $this->input->post('design_skills'));
+            $newObject['develope_skills'] 	= implode("!@#$", $this->input->post('develope_skills'));
+            $newObject['interest_industry'] = implode("!@#$", $this->input->post('interest_industry'));
+            $newObject['department'] 		= implode("!@#$", $this->input->post('department'));
+            $newObject['job_application'] 	= implode("!@#$", $this->input->post('job_application'));
+//var_dump($newObject);
+//echo "<script>top.$('#wait').hide();top.$('#wait_content').hide();alert('新增成功！');</script>";
+//exit;
+            $this->load->model("User_model");
+            $result = $this->User_model->save_resume($newObject);
+
+            if($result > 0)
+            {
+                echo "<script>top.$('#wait').hide();top.$('#wait_content').hide();alert('編輯成功！');</script>";
+                echo "<script>top.location.href='/';</script>";
+            }
+            else
+            {
+                echo "<script>top.$('#wait').hide();top.$('#wait_content').hide();alert('新增失敗，請聯絡管理員！');</script>";
+            }
+        }
+        else
+        {
+            redirect("/","location",301);
         }
     }
 

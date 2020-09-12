@@ -19,8 +19,8 @@ class Faq extends Admin_Controller {
 			$this->data["css_include"] 	= "article";
 			$this->data['widget'] 		= array();
 			
-			$this->load->model("News_class_model");
-			$arr_class = $this->News_class_model->loadAll();
+			$this->load->model("Faq_class_model");
+			$arr_class = $this->Faq_class_model->loadAll();
 			$this->data['arr_class'] = $arr_class;
 			
 			$this->load->view('admin/inc/head',$this->data);
@@ -35,8 +35,8 @@ class Faq extends Admin_Controller {
 				$this->data["css_include"] 	= "article";
 				$this->data['widget'] 		= array();
 				
-				$this->load->model("News_class_model");
-				$aClass = $this->News_class_model->find( $_GET["key"] );
+				$this->load->model("Faq_class_model");
+				$aClass = $this->Faq_class_model->find( $_GET["key"] );
 				$this->data['aClass'] = $aClass;
 				$this->data["back_url"] = "/admin/faq/newsClass";
 				
@@ -99,11 +99,11 @@ class Faq extends Admin_Controller {
 			}
 			//( $break === true )?redirect("/","location",301):"";
 						
-			$this->load->model("News_class_model");
+			$this->load->model("Faq_class_model");
 			
 			$this->jsonRS['code'] 		= '1';
 			$this->jsonRS['message'] 	= '操作完成';
-			$this->jsonRS['resp'] 		= $this->News_class_model->save($postData);
+			$this->jsonRS['resp'] 		= $this->Faq_class_model->save($postData);
 			
 			header('Content-Type: application/json; charset=utf-8');
 			echo json_encode($this->jsonRS);

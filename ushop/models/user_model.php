@@ -249,10 +249,12 @@ class User_model extends My_Model {
         {
             $updateData = array();
             $updateData = $data;
+            unset($updateData['id']);
             $updateData['updatedtime'] = date("Y-m-d H:i:s");
-
+//echo "\r\n updateData=";var_dump($updateData);
             $this->db->update($this->table2, $updateData, array("id" => $data['id']));
-            return $this->db->affected_rows();
+
+            return $data['id'];
         }
     }
 		
@@ -321,5 +323,13 @@ class User_model extends My_Model {
 			return $this->db->last_query() . "," . $this->db->affected_rows();
 		}
 	}
+
+    function get_resume($uid)
+    {
+        $sql = "SELECT * FROM `".$this->table2."` WHERE user_id = ? ORDER BY createdtime DESC LIMIT 1 ";
+        $result = $this->db->query($sql,array($uid))->result_array();
+
+        return $result ;
+    }
 
 }

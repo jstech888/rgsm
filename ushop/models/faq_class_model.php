@@ -69,10 +69,9 @@ class Faq_class_model extends My_Model {
 	
 	public function loadAll()
 	{
-		$sql = "SELECT * FROM `".$this->table."`";		
-		
+		$sql = "SELECT * FROM `".$this->table."`";
 		$result = $this->db->query($sql)->result_array();
-		
+
 		foreach( $result as &$row )
 		{
 			$row["value"] 	= json_decode($row["value"], 	true);
