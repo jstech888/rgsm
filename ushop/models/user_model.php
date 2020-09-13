@@ -332,4 +332,12 @@ class User_model extends My_Model {
         return $result ;
     }
 
+    function get_resume_by_id($id)
+    {
+        $sql = "SELECT * FROM `".$this->table2."` WHERE id = ? ORDER BY createdtime DESC LIMIT 1 ";
+        $result = $this->db->query($sql,array($id))->result_array();
+
+        return $result ;
+    }
+
 }

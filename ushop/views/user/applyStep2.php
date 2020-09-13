@@ -1,9 +1,13 @@
+
+<?php include(VIEWPATH . "widget" . DIRECTORY_SEPARATOR . "home" . DIRECTORY_SEPARATOR . "preloader.php"); ?>
+<?php include(VIEWPATH . "widget" . DIRECTORY_SEPARATOR . "home" . DIRECTORY_SEPARATOR . "navbar.php"); ?>
+
 <!-- Header -->
 <header id="header" class="ex-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h1>Personal Information</h1>
+                <h1> <?php echo $objLang["userapply"]['panelTitle'];?> </h1>
             </div>
             <!-- end of col -->
         </div>
@@ -20,9 +24,9 @@
         <div class="row">
             <div class="col-md-12">
                 <ul class="breadcrumbs list-unstyled list-inline">
-                    <li class="list-inline-item"><a class="underline" href="index.html">Home</a></li>
+                    <li class="list-inline-item"><a class="underline" href="index.html"> <?php echo $objLang['function_bar']['home'];?> </a></li>
                     <li class="list-inline-item"><i class="fa fa-angle-double-right"></i></li>
-                    <li class="list-inline-item">Personal Information</li>
+                    <li class="list-inline-item"> <?php echo $objLang["userapply"]['panelTitle'];?> </li>
                 </ul>
             </div>
             <!-- end of col -->
@@ -197,162 +201,162 @@
                                 <label class="form-check-label">C++</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="2">
+                                <input class="form-check-input" type="checkbox" id="develope_skills02" name="develope_skills[]" value="2">
                                 <label class="form-check-label">C#</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="3">
+                                <input class="form-check-input" type="checkbox" id="develope_skills03" name="develope_skills[]" value="3">
                                 <label class="form-check-label">ASP</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="4">
+                                <input class="form-check-input" type="checkbox" id="develope_skills04" name="develope_skills[]" value="4">
                                 <label class="form-check-label">PHP</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="5">
+                                <input class="form-check-input" type="checkbox" id="develope_skills05" name="develope_skills[]" value="5">
                                 <label class="form-check-label">JSP</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="6">
+                                <input class="form-check-input" type="checkbox" id="develope_skills06" name="develope_skills[]" value="6">
                                 <label class="form-check-label">ASP.NET</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="7">
+                                <input class="form-check-input" type="checkbox" id="develope_skills07" name="develope_skills[]" value="7">
                                 <label class="form-check-label">ASP.NET Core</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="8">
+                                <input class="form-check-input" type="checkbox" id="develope_skills08" name="develope_skills[]" value="8">
                                 <label class="form-check-label">Java</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="9">
+                                <input class="form-check-input" type="checkbox" id="develope_skills09" name="develope_skills[]" value="9">
                                 <label class="form-check-label">Node.js
                             </div>
                             </label>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="10">
+                                <input class="form-check-input" type="checkbox" id="develope_skills10" name="develope_skills[]" value="10">
                                 <label class="form-check-label">Python
                             </div>
                             </label>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="11">
+                                <input class="form-check-input" type="checkbox" id="develope_skills11" name="develope_skills[]" value="11">
                                 <label class="form-check-label">Go
                             </div>
                             </label>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="12">
+                                <input class="form-check-input" type="checkbox" id="develope_skills12" name="develope_skills[]" value="12">
                                 <label class="form-check-label">AWS Cloud
                             </div>
                             </label>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="13">
+                                <input class="form-check-input" type="checkbox" id="develope_skills13" name="develope_skills[]" value="13">
                                 <label class="form-check-label">GCP Cloud
                             </div>
                             </label>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="14">
+                                <input class="form-check-input" type="checkbox" id="develope_skills14" name="develope_skills[]" value="14">
                                 <label class="form-check-label">Windows
                             </div>
                             </label>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="15">
+                                <input class="form-check-input" type="checkbox" id="develope_skills15" name="develope_skills[]" value="15">
                                 <label class="form-check-label">Linux
                             </div>
                             </label>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="16">
+                                <input class="form-check-input" type="checkbox" id="develope_skills16" name="develope_skills[]" value="16">
                                 <label class="form-check-label">Azure
                             </div>
                             </label>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="17">
+                                <input class="form-check-input" type="checkbox" id="develope_skills17" name="develope_skills[]" value="17">
                                 <label class="form-check-label">Ali Cloud
                             </div>
                             </label>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="18">
+                                <input class="form-check-input" type="checkbox" id="develope_skills18" name="develope_skills[]" value="18">
                                 <label class="form-check-label">Docker
                             </div>
                             </label>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="19">
+                                <input class="form-check-input" type="checkbox" id="develope_skills19" name="develope_skills[]" value="19">
                                 <label class="form-check-label">kubernetes
                             </div>
                             </label>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="20">
+                                <input class="form-check-input" type="checkbox" id="develope_skills20" name="develope_skills[]" value="20">
                                 <label class="form-check-label">MySQL</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="21">
+                                <input class="form-check-input" type="checkbox" id="develope_skills21" name="develope_skills[]" value="21">
                                 <label class="form-check-label">MSSQL</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="22">
+                                <input class="form-check-input" type="checkbox" id="develope_skills22" name="develope_skills[]" value="22">
                                 <label class="form-check-label">SqlLite</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="23">
+                                <input class="form-check-input" type="checkbox" id="develope_skills23" name="develope_skills[]" value="23">
                                 <label class="form-check-label">Oracle</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="24">
+                                <input class="form-check-input" type="checkbox" id="develope_skills24" name="develope_skills[]" value="24">
                                 <label class="form-check-label">Firebase</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="25">
+                                <input class="form-check-input" type="checkbox" id="develope_skills25" name="develope_skills[]" value="25">
                                 <label class="form-check-label">MongoDB</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="26">
+                                <input class="form-check-input" type="checkbox" id="develope_skills26" name="develope_skills[]" value="26">
                                 <label class="form-check-label">Cassandra</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="27">
+                                <input class="form-check-input" type="checkbox" id="develope_skills27" name="develope_skills[]" value="27">
                                 <label class="form-check-label">GraphQL</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="28">
+                                <input class="form-check-input" type="checkbox" id="develope_skills28" name="develope_skills[]" value="28">
                                 <label class="form-check-label">Machine Learning</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="29">
+                                <input class="form-check-input" type="checkbox" id="develope_skills29" name="develope_skills[]" value="29">
                                 <label class="form-check-label">React</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="30">
+                                <input class="form-check-input" type="checkbox" id="develope_skills30" name="develope_skills[]" value="30">
                                 <label class="form-check-label">Angular</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="31">
+                                <input class="form-check-input" type="checkbox" id="develope_skills31" name="develope_skills[]" value="31">
                                 <label class="form-check-label">PostgreSQL</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="32">
+                                <input class="form-check-input" type="checkbox" id="develope_skills32" name="develope_skills[]" value="32">
                                 <label class="form-check-label">CouchDB</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="33">
+                                <input class="form-check-input" type="checkbox" id="develope_skills33" name="develope_skills[]" value="33">
                                 <label class="form-check-label">ES6</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="34">
+                                <input class="form-check-input" type="checkbox" id="develope_skills34" name="develope_skills[]" value="34">
                                 <label class="form-check-label">ES5</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="35">
+                                <input class="form-check-input" type="checkbox" id="develope_skills35" name="develope_skills[]" value="35">
                                 <label class="form-check-label">Symfony(PHP)</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="36">
+                                <input class="form-check-input" type="checkbox" id="develope_skills36" name="develope_skills[]" value="36">
                                 <label class="form-check-label">Laravel(PHP)</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="37">
+                                <input class="form-check-input" type="checkbox" id="develope_skills37" name="develope_skills[]" value="37">
                                 <label class="form-check-label">DJango</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="develope_skills01" name="develope_skills[]" value="38">
+                                <input class="form-check-input" type="checkbox" id="develope_skills38" name="develope_skills[]" value="38">
                                 <label class="form-check-label">Others</label>
                             </div>
                         </div>
@@ -366,83 +370,83 @@
                                 <label class="form-check-label">媒體和互聯網</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="interest_industry01" name="interest_industry[]" value="2">
+                                <input class="form-check-input" type="checkbox" id="interest_industry02" name="interest_industry[]" value="2">
                                 <label class="form-check-label">傳產製造業</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="interest_industry01" name="interest_industry[]" value="3">
+                                <input class="form-check-input" type="checkbox" id="interest_industry03" name="interest_industry[]" value="3">
                                 <label class="form-check-label">公共服務供應</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="interest_industry01" name="interest_industry[]" value="4">
+                                <input class="form-check-input" type="checkbox" id="interest_industry04" name="interest_industry[]" value="4">
                                 <label class="form-check-label">資訊科技業</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="interest_industry01" name="interest_industry[]" value="5">
+                                <input class="form-check-input" type="checkbox" id="interest_industry05" name="interest_industry[]" value="5">
                                 <label class="form-check-label">精密技工</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="interest_industry01" name="interest_industry[]" value="6">
+                                <input class="form-check-input" type="checkbox" id="interest_industry06" name="interest_industry[]" value="6">
                                 <label class="form-check-label">人力資源跟企劃</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="interest_industry01" name="interest_industry[]" value="7">
+                                <input class="form-check-input" type="checkbox" id="interest_industry07" name="interest_industry[]" value="7">
                                 <label class="form-check-label">資訊科技業</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="interest_industry01" name="interest_industry[]" value="8">
+                                <input class="form-check-input" type="checkbox" id="interest_industry08" name="interest_industry[]" value="8">
                                 <label class="form-check-label">精密技工</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="interest_industry01" name="interest_industry[]" value="9">
+                                <input class="form-check-input" type="checkbox" id="interest_industry09" name="interest_industry[]" value="9">
                                 <label class="form-check-label">人力資源跟企劃</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="interest_industry01" name="interest_industry[]" value="10">
+                                <input class="form-check-input" type="checkbox" id="interest_industry10" name="interest_industry[]" value="10">
                                 <label class="form-check-label">液壓專家</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="interest_industry01" name="interest_industry[]" value="11">
+                                <input class="form-check-input" type="checkbox" id="interest_industry11" name="interest_industry[]" value="11">
                                 <label class="form-check-label">物流倉儲業</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="interest_industry01" name="interest_industry[]" value="12">
+                                <input class="form-check-input" type="checkbox" id="interest_industry12" name="interest_industry[]" value="12">
                                 <label class="form-check-label">工業自動化</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="interest_industry01" name="interest_industry[]" value="13">
+                                <input class="form-check-input" type="checkbox" id="interest_industry13" name="interest_industry[]" value="13">
                                 <label class="form-check-label">媒體出版業</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="interest_industry01" name="interest_industry[]" value="14">
+                                <input class="form-check-input" type="checkbox" id="interest_industry14" name="interest_industry[]" value="14">
                                 <label class="form-check-label">運輸和物流</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="interest_industry01" name="interest_industry[]" value="15">
+                                <input class="form-check-input" type="checkbox" id="interest_industry15" name="interest_industry[]" value="15">
                                 <label class="form-check-label">精密儀器操作</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="interest_industry01" name="interest_industry[]" value="16">
+                                <input class="form-check-input" type="checkbox" id="interest_industry16" name="interest_industry[]" value="16">
                                 <label class="form-check-label">專業科學教學</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="interest_industry01" name="interest_industry[]" value="17">
+                                <input class="form-check-input" type="checkbox" id="interest_industry17" name="interest_industry[]" value="17">
                                 <label class="form-check-label">現場技術員電機工程</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="interest_industry01" name="interest_industry[]" value="18">
+                                <input class="form-check-input" type="checkbox" id="interest_industry18" name="interest_industry[]" value="18">
                                 <label class="form-check-label">醫療保健</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="interest_industry01" name="interest_industry[]" value="19">
+                                <input class="form-check-input" type="checkbox" id="interest_industry19" name="interest_industry[]" value="19">
                                 <label class="form-check-label">藝術、娛樂及休閒服務業</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="interest_industry01" name="interest_industry[]" value="20">
+                                <input class="form-check-input" type="checkbox" id="interest_industry20" name="interest_industry[]" value="20">
                                 <label class="form-check-label">執法</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="interest_industry01" name="interest_industry[]" value="21 ">
+                                <input class="form-check-input" type="checkbox" id="interest_industry21" name="interest_industry[]" value="21 ">
                                 <label class="form-check-label">商業/諮詢/管理
                             </div>
                             </label>
@@ -671,6 +675,81 @@
 <script src="/js/scripts.js"></script> <!-- Custom scripts -->
 
 <script>
+    $(function () {
+
+        <?php
+            if($resume['language']) {
+                $language_arr = explode("!@#$", $resume['language']);
+                foreach ($language_arr as $language) {
+        ?>
+            $('#language<?php echo sprintf("%02d", $language);?>').prop('checked', true);
+        <?php
+                }
+            }
+        ?>
+
+        <?php if($resume['skill_level']) { ?>
+            $('input[name=skill_level][value=<?php echo $resume['skill_level'];?>]').prop('checked', true);
+        <?php } ?>
+
+        <?php
+            if($resume['design_skills']) {
+                $design_skills_arr = explode("!@#$", $resume['design_skills']);
+                foreach ($design_skills_arr as $design_skills) {
+        ?>
+            $('#design_skills<?php echo sprintf("%02d", $design_skills);?>').prop('checked', true);
+        <?php
+                }
+            }
+        ?>
+
+        <?php
+            if($resume['develope_skills']) {
+                $develope_skills_arr = explode("!@#$", $resume['develope_skills']);
+                foreach ($develope_skills_arr as $develope_skills) {
+        ?>
+            $('#develope_skills<?php echo sprintf("%02d", $develope_skills);?>').prop('checked', true);
+        <?php
+                }
+            }
+        ?>
+
+        <?php
+            if($resume['interest_industry']) {
+                $interest_industry_arr = explode("!@#$", $resume['interest_industry']);
+                foreach ($interest_industry_arr as $interest_industry) {
+        ?>
+            $('#interest_industry<?php echo sprintf("%02d", $interest_industry);?>').prop('checked', true);
+        <?php
+                }
+            }
+        ?>
+
+        <?php
+            if($resume['department']) {
+                $department_arr = explode("!@#$", $resume['department']);
+                foreach ($department_arr as $department) {
+        ?>
+            $('#department<?php echo sprintf("%02d", $department);?>').prop('checked', true);
+        <?php
+                }
+            }
+        ?>
+
+        <?php
+            if($resume['job_application']) {
+                $job_application_arr = explode("!@#$", $resume['job_application']);
+                foreach ($job_application_arr as $job_application) {
+        ?>
+            $('#job_application<?php echo sprintf("%02d", $job_application);?>').prop('checked', true);
+        <?php
+                }
+            }
+        ?>
+
+
+    });
+
     function doSubmit()
     {
         /*

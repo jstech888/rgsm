@@ -833,16 +833,20 @@ class User extends Web_Controller {
 
 	public function applyStep2($rid)
 	{
-		$this->data["objLang"]["function_bar"] = $this->loadLang("widget/function_bar/");
-		$this->data["objLang"]["userApplyStep2"] = $this->loadLang("page/userApplyStep2/");
+        $this->data["objLang"]["function_bar"] = $this->loadLang("widget/function_bar/");
+        $this->data["objLang"]["userapply"] = $this->loadLang("page/userapply/");
 
-		if( $this->self === false )
+
+        if( $this->self === false )
 		{
 			redirect("/","location",301);
 		}
 
 //        $this->load->model("User_model");
 //        $result = $this->User_model->getResume($this->self[id]);
+        $this->load->model("User_model");
+        $resume = $this->User_model->get_resume_by_id($rid);
+        $this->data['resume'] = $resume[0];
         $this->data['resumeid'] = $rid;
 
 		$this->load->view('inc/head',$this->data);
