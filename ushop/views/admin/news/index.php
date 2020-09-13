@@ -80,7 +80,10 @@ input[type="search"]{
                 <div class="topbar-left">
                     <ol class="breadcrumb">
                         <li class="crumb-active">
-                            <a>最新消息管理</a>
+                            <a> <?php echo $bkmt_name;?> </a>
+                        </li>
+                        <li class="crumb-active">
+                            <a> <?php echo $bkm_name;?> </a>
                         </li>
                     </ol>
                 </div>
@@ -97,14 +100,14 @@ input[type="search"]{
 					<div class="panel">
 						<div class="panel-heading">
 							<!-- title -->
-							<h3 class="panel-title text-muted text-center mt10 fw400">最新消息管理</h3>
+							<h3 class="panel-title text-muted text-center mt10 fw400"> <?php echo $bkmt_name;?> </h3>
 							<!-- /title -->
 						</div>
 						<div class="panel-body">
 							<div class="panel">
 								<div class="panel-heading text-center">
 									<div class="caption">
-										編輯區塊
+										Edit Zone
 										<div class="pull-right">
 											<!--
 											<div class="btn btn-success fileinput-button">
@@ -115,7 +118,7 @@ input[type="search"]{
 											</div>
 											-->
 											<button type="button" class="btn ladda-button btn-info page-save" data-style="zoom-in">
-												<span class="ladda-label"><span class="glyphicons glyphicons-file_import"></span> 儲存</span>
+												<span class="ladda-label"><span class="glyphicons glyphicons-file_import"></span> Save </span>
 												<span class="ladda-spinner"></span>
 											</button>
 										</div>
@@ -129,33 +132,33 @@ input[type="search"]{
 							<div class="tabs-content main-tab-content">
 									<div class="panel-heading">
 										<div class="panel-title hidden-xs">
-											<span class="glyphicon glyphicon-tasks"></span>最新消息列表</div>
+											<span class="glyphicon glyphicon-tasks"></span> <?php echo $bkm_name;?> </div>
 									</div>
 									<div class="panel-body pn">
 										<table class="table table-striped table-hover" id="datatable3" cellspacing="0" width="100%">
 											<thead>
 												<tr>
-													<th>日期</th>
-													<th>標題</th>
-<!--													<th>首圖</th>-->
-													<?php if( !isset($isBrand) ) { ?><th>分類</th><?php } ?>
-													<?php if($flag != "hide"){ ?><th>狀態</th><?php } ?>
-													<th>操作</th>
+													<th>Date</th>
+													<th>Title</th>
+                                                    <!-- <th>首圖</th>-->
+													<?php if( !isset($isBrand) ) { ?><th>Catalog</th><?php } ?>
+													<?php if($flag != "hide"){ ?><th>Status</th><?php } ?>
+													<th>Action</th>
 												</tr>
 											</thead>
 											<tfoot>
 												<tr>
-													<th>日期</th>
-													<th>標題</th>
-<!--													<th>首圖</th>-->
-													<?php if( !isset($isBrand) ) { ?><th>分類</th><?php } ?>
-													<?php if($flag != "hide"){ ?><th>狀態</th><?php } ?>
-													<th>操作</th>
+                                                    <th>Date</th>
+                                                    <th>Title</th>
+                                                    <!-- <th>首圖</th>-->
+                                                    <?php if( !isset($isBrand) ) { ?><th>Catalog</th><?php } ?>
+                                                    <?php if($flag != "hide"){ ?><th>Status</th><?php } ?>
+                                                    <th>Action</th>
 												</tr>
 											</tfoot>
 											<tbody>
 											<?php 
-												$flagVar = array("待審","通過","違規","異常");
+												$flagVar = array("Pending","Pass","Violate","Abnormal");
 												$flagBtn = array("btn-default","btn-success","btn-danger","btn-warning");
 												foreach( $articles AS $record ) {													
 											?>
@@ -169,7 +172,7 @@ input[type="search"]{
 															<?php 
 																if($record["class"] == 0)
 																{
-																	echo "隱藏";
+																	echo "Hidden";
 																}
 																else
 																{	 
@@ -209,9 +212,9 @@ input[type="search"]{
 												}
 											?>
 													<td>
-														<a href="<?php echo $edit_url;?>?id=<?php echo $record["id"];?>" class="btn btn-success btn-xs">編輯</a>
-														<a onclick="del(<?php echo $record["id"];?>);" class="btn btn-danger btn-xs btn-delete">刪除</a>
-														<a target="_blank" href="/blog/detail/<?php echo $record["id"];?>" class="btn btn-default btn-xs">檢視</a>
+														<a href="<?php echo $edit_url;?>?id=<?php echo $record["id"];?>" class="btn btn-success btn-xs"> Edit </a>
+														<a onclick="del(<?php echo $record["id"];?>);" class="btn btn-danger btn-xs btn-delete"> Delete </a>
+														<a target="_blank" href="/news/detail/<?php echo $record["id"];?>" class="btn btn-default btn-xs"> View </a>
 													</td>
 												</tr>
 											<?php
@@ -227,7 +230,7 @@ input[type="search"]{
 							
 							<div class="pull-right mt10">
 								<button type="button" class="btn ladda-button btn-info page-save" data-style="zoom-in">
-									<span class="ladda-label"><span class="glyphicons glyphicons-file_import"></span> 儲存</span>
+									<span class="ladda-label"><span class="glyphicons glyphicons-file_import"></span> Save </span>
 									<span class="ladda-spinner"></span>
 								</button>
 							</div>
@@ -285,7 +288,7 @@ input[type="search"]{
 			if(confirm("確定修改？"))
 			{
 				$.ajax({
-					url: "<?php echo base_url('/admin/blog/changeFlag');?>",
+					url: "<?php echo base_url('/admin/news/changeFlag');?>",
 					async:true,
 					cache:false,
 					method:"POST",
@@ -297,6 +300,10 @@ input[type="search"]{
 						var type = data.code == 1?"info":"danger";
 						var text = data.code == 1?'修改完成！':"修改失敗！";
 						PM.show({"title":data.message,"type":type,"text":text});
+                        setTimeout(function(){
+                            location.reload();
+                        },500);
+
 					},
 					error:function(xhr, stauts, err){
 						PM.erro();

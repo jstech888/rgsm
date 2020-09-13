@@ -305,7 +305,7 @@ input[type="search"]{
 			success:function(data, status, xhr){
 				PM.show({ title: "Resume Manage", text: 'Success！', type: "info" });
 				setTimeout(function(){
-					// location.reload();
+					location.reload();
 				},500);
 			},
 			error:function(xhr, stauts, err){ PM.erro(); }

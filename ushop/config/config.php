@@ -362,5 +362,21 @@ error_reporting(0);
 
 $config['upload_path_personal_information'] = "/Applications/MAMP/htdocs/rgsm/uploads/personal_information/";       // 人事資料
 
+$config['personalInfo']['zh-hant']['gender']        = array(1=>'男', 2=>'女');
+$config['personalInfo']['zh-hant']['nationality']   = array(1=>'台灣', 2=>'印尼', 3=>'越南');
+$config['personalInfo']['zh-hant']['hasIdCard']     = array(1=>'本國身分證', 2=>'護照', 3=>'居留證', 4=>'其他國家身分證件');
+$config['personalInfo']['zh-hant']['education']     = array(1=>'高中職以下', 2=>'高中職', 3=>'專科', 4=>'四技', 5=>'二技', 6=>'高中職', 7=>'大學', 8=>'碩士', 9=>'博士');
+$config['personalInfo']['zh-hant']['study_status']  = array(1=>'就學中', 2=>'肄業');
+$config['personalInfo']['zh-hant']['military_service_status'] = array(1=>'役畢', 2=>'服役中');
+$config['personalInfo']['zh-hant']['disability_status'] = array(1=>'無', 2=>'輕度殘障', 3=>'中度殘障');
+$config['personalInfo']['zh-hant']['pipeline']          = array(1=>'人才庫', 2=>'員工推薦', 3=>'內部員工', 4=>'Partner推薦', 5=>'員工推薦', 6=>'104人力銀行', 7=>'1111人力銀行', 8=>'其他人力銀行');
+$config['personalInfo']['zh-hant']['language']          = array(1=>'台語', 2=>'英文', 3=>'德文', 4=>'俄文', 5=>'義大利文', 6=>'葡萄牙文', 7=>'阿拉伯文', 8=>'法文', 9=>'西班牙文', 10=>'印尼語', 11=>'馬來語', 12=>'粵語', 13=>'越語', 14=>'印度語', 15=>'日文');
+$config['personalInfo']['zh-hant']['skill_level']       = array(1=>'精通', 2=>'中等', 3=>'略懂', 4=>'不會');
+$config['personalInfo']['zh-hant']['design_skills']     = array(1=>'Sketch', 2=>'InVision', 3=>'Figma', 4=>'Photoshop', 5=>'PhotoImpact', 6=>'AutoCAD', 7=>'Maya', 8=>'Scrum', 9=>'Others');
+$config['personalInfo']['zh-hant']['develope_skills']   = array(1=>'C++', 2=>'C#', 3=>'ASP', 4=>'PHP', 5=>'JSP', 6=>'ASP.NET', 7=>'ASP.NET Core', 8=>'Java', 9=>'Node.js', 10=>'Python', 11=>'Go', 12=>'AWS Cloud', 13=>'GCP Cloud', 14=>'Windows', 15=>'Linux', 16=>'Azure', 17=>'Ali Cloud', 18=>'Docker', 19=>'kubernetes', 20=>'MySQL', 21=>'MSSQL', 22=>'SqlLite', 23=>'Oracle', 24=>'Firebase', 25=>'MongoDB', 26=>'Cassandra', 27=>'GraphQL', 28=>'Machine Learning', 29=>'React', 30=>'Angular', 31=>'PostgreSQL', 32=>'CouchDB', 33=>'ES6', 34=>'ES5', 35=>'Symfony(PHP)', 36=>'Laravel(PHP)', 37=>'DJango', 38=>'Others');
+$config['personalInfo']['zh-hant']['interest_industry'] = array(1=>'媒體和互聯網', 2=>'傳產製造業', 3=>'公共服務供應', 4=>'資訊科技業', 5=>'精密技工', 6=>'人力資源跟企劃', 7=>'資訊科技業', 8=>'精密技工', 9=>'人力資源跟企劃', 10=>'液壓專家', 11=>'物流倉儲業', 12=>'工業自動化', 13=>'媒體出版業', 14=>'運輸和物流', 15=>'精密儀器操作', 16=>'專業科學教學', 17=>'現場技術員電機工程', 18=>'醫療保健', 19=>'藝術、娛樂及休閒服務業', 20=>'執法', 21=>'商業/諮詢/管理');
+$config['personalInfo']['zh-hant']['department']        = array(1=>'資工', 2=>'電機', 3=>'航太工程', 4=>'機械', 5=>'化工', 6=>'材料', 7=>'設計學類', 8=>'工程', 9=>'物理', 10=>'數學及統計學類', 11=>'遊戲設計', 12=>'化學', 13=>'生命科學學類', 14=>'建築及都市規劃學類', 15=>'農林食品科學學類', 16=>'運輸服務學類', 17=>'醫藥衛生學類', 18=>'運輸服務學類', 19=>'獸醫學類', 20=>'計算語言學', 21=>'環境保護學類', 22=>'機械電子學', 23=>'工藝技術員金屬冶金', 24=>'通訊工程', 25=>'動力機械群');
+$config['personalInfo']['zh-hant']['job_application']   = array(1=>'人工智能（AI）/機器學習工程師', 2=>'資安工程師', 3=>'電腦研究工程師', 4=>'軟體開發工程師', 5=>'前端開發工程師', 6=>'後端開發工程師', 7=>'全端開發工程師', 8=>'DevOps工程師', 9=>'物流網工程師', 10=>'工業自動化工程', 11=>'系統分析師DBA', 12=>'軟體開發工程師', 13=>'Java 開發工程師', 14=>'電腦硬體工程師', 15=>'移動應用開發工程師', 16=>'Web Designer (UI/UX Designer)', 17=>'技術銷售工程師', 18=>'Python開發工程師', 19=>'網路系統工程師');
+
 /* End of file config.php */
 /* Location: ./application/config/config.php */

@@ -811,7 +811,13 @@ class User extends Admin_Controller {
 			{
 				$selfData = $listData[0];
 
-				$this->data["selfData"] = $selfData;
+                $personalInfoAll = $this->config->item('personalInfo');
+                $personalInfo = $personalInfoAll[$this->currentLang];
+
+				$this->data["selfData"]     = $selfData;
+				$this->data["personalInfo"] = $personalInfo;
+                $this->data["FlagSelOpt"]   = $this->arr_flag;
+
 				$this->load->view('admin/inc/head',$this->data);
 				$this->load->view('admin/user/detailresume',$this->data);
 			}

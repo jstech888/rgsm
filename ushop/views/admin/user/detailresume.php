@@ -16,6 +16,13 @@
 #invoice-item th {
   font-size: large;
 }
+.form-group {
+    margin-bottom: 0px;
+}
+.shiftDown {
+    position: relative;
+    top: 12px;
+}
 </style>
     <!-- Start: Main -->
     <div id="main">
@@ -62,75 +69,205 @@
                     <div class="panel-body p20" id="invoice-item">
 						<form class="form-horizontal" role="form">
 							<div class="form-group">
-								<label for="inputName" class="col-lg-2 control-label">Tc Identification Number</label>
-								<div class="col-lg-8">
-									<p id="inputName" class="form-control-static text-muted"><?php echo $selfData["ctcid"];?></p>
+								<label for="inputName" class="col-lg-2 control-label"> Fullname </label>
+								<div class="col-lg-8 shiftDown" >
+									<p id="inputName" class="form-control-static text-muted"><?php echo $selfData["fullname"];?></p>
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="inputMail" class="col-lg-2 control-label">Name</label>
-								<div class="col-lg-8">
-									<p id="inputName" class="form-control-static text-muted"><?php echo $selfData["cname"];?></p>
+								<label for="inputMail" class="col-lg-2 control-label">Nickname</label>
+								<div class="col-lg-8 shiftDown">
+									<p id="inputName" class="form-control-static text-muted"><?php echo $selfData["nickname"];?></p>
 								</div>
 							</div>
                             <div class="form-group">
+                                <label for="inputMail" class="col-lg-2 control-label">Gender</label>
+                                <div class="col-lg-8 shiftDown">
+                                    <p id="inputName" class="form-control-static text-muted"><?php echo $personalInfo['gender'][$selfData["gender"]];?></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
 								<label for="inputMail" class="col-lg-2 control-label">Birthday</label>
-								<div class="col-lg-8">
-									<p id="inputName" class="form-control-static text-muted"><?php echo $selfData["cbirth"];?></p>
+								<div class="col-lg-8 shiftDown">
+									<p id="inputName" class="form-control-static text-muted"><?php echo $selfData["birthday"];?></p>
 								</div>
 							</div>
+                            <div class="form-group">
+                                <label for="inputMail" class="col-lg-2 control-label">Mobile Phone</label>
+                                <div class="col-lg-8 shiftDown">
+                                    <p id="inputName" class="form-control-static text-muted"><?php echo $selfData["mobile"];?></p>
+                                </div>
+                            </div>
 							<div class="form-group">
-								<label for="input-nickname" class="col-lg-2 control-label">姓名</label>
-								<div class="col-lg-8">
-									<input id="input-nickname" class="form-control" value="<?php echo $selfData["nickname"];?>" onkeyup="saveTempData( 'nickname', this );"/>
+								<label for="input-nickname" class="col-lg-2 control-label">Address</label>
+                                <div class="col-lg-8 shiftDown">
+                                    <p id="inputName" class="form-control-static text-muted"><?php echo $selfData["address"];?></p>
+                                </div>
+							</div>
+                            <div class="form-group">
+                                <label for="inputMail" class="col-lg-2 control-label">Nationality</label>
+                                <div class="col-lg-8 shiftDown">
+                                    <p id="inputName" class="form-control-static text-muted"><?php echo $personalInfo['nationality'][$selfData["nationality"]];?></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputMail" class="col-lg-2 control-label">Has ID Card ? </label>
+                                <div class="col-lg-8 shiftDown">
+                                    <p id="inputName" class="form-control-static text-muted"><?php
+                                        $hasIdCard_Array = explode("!@#$", $selfData["hasIdCard"]);
+                                        foreach ($hasIdCard_Array as $hasIdCardIdx) {
+                                            $hasIdCard_Array2[] = $personalInfo['hasIdCard'][$hasIdCardIdx];
+                                        }
+                                        echo implode(" , ", $hasIdCard_Array2);
+                                    ?></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputMail" class="col-lg-2 control-label">Education</label>
+                                <div class="col-lg-8 shiftDown">
+                                    <p id="inputName" class="form-control-static text-muted"><?php echo $personalInfo['education'][$selfData["education"]];?></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputMail" class="col-lg-2 control-label">Study Status</label>
+                                <div class="col-lg-8 shiftDown">
+                                    <p id="inputName" class="form-control-static text-muted"><?php echo $personalInfo['study_status'][$selfData["study_status"]];?></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputMail" class="col-lg-2 control-label">Military Service Status</label>
+                                <div class="col-lg-8 shiftDown">
+                                    <p id="inputName" class="form-control-static text-muted"><?php echo $personalInfo['military_service_status'][$selfData["military_service_status"]];?></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputMail" class="col-lg-2 control-label">Disability Status</label>
+                                <div class="col-lg-8 shiftDown">
+                                    <p id="inputName" class="form-control-static text-muted"><?php echo $personalInfo['disability_status'][$selfData["disability_status"]];?></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputMail" class="col-lg-2 control-label">Pipeline</label>
+                                <div class="col-lg-8 shiftDown">
+                                    <p id="inputName" class="form-control-static text-muted"><?php echo $personalInfo['pipeline'][$selfData["pipeline"]];?></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputMail" class="col-lg-2 control-label"> Language </label>
+                                <div class="col-lg-8 shiftDown">
+                                    <p id="inputName" class="form-control-static text-muted">
+                                    <?php
+                                        $language_Array = explode("!@#$", $selfData["language"]);
+                                        foreach ($language_Array as $language) {
+                                            $language_Array2[] = $personalInfo['language'][$language];
+                                        }
+                                        echo implode(" , ", $language_Array2);
+                                    ?>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputMail" class="col-lg-2 control-label">Skill Level</label>
+                                <div class="col-lg-8 shiftDown">
+                                    <p id="inputName" class="form-control-static text-muted"><?php echo $personalInfo['skill_level'][$selfData["skill_level"]];?></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputMail" class="col-lg-2 control-label"> Design Skills </label>
+                                <div class="col-lg-8 shiftDown">
+                                    <p id="inputName" class="form-control-static text-muted">
+                                        <?php
+                                        $design_skills_Array = explode("!@#$", $selfData["design_skills"]);
+                                        foreach ($design_skills_Array as $design_skills) {
+                                            $design_skills_Array2[] = $personalInfo['design_skills'][$design_skills];
+                                        }
+                                        echo implode(" , ", $design_skills_Array2);
+                                        ?>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputMail" class="col-lg-2 control-label"> Develope Skills </label>
+                                <div class="col-lg-8 shiftDown">
+                                    <p id="inputName" class="form-control-static text-muted">
+                                        <?php
+                                        $develope_skills_Array = explode("!@#$", $selfData["develope_skills"]);
+                                        foreach ($develope_skills_Array as $develope_skills) {
+                                            $develope_skills_Array2[] = $personalInfo['develope_skills'][$develope_skills];
+                                        }
+                                        echo implode(" , ", $develope_skills_Array2);
+                                        ?>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputMail" class="col-lg-2 control-label"> Interest Industry </label>
+                                <div class="col-lg-8 shiftDown">
+                                    <p id="inputName" class="form-control-static text-muted">
+                                        <?php
+                                        $interest_industry_Array = explode("!@#$", $selfData["interest_industry"]);
+                                        foreach ($interest_industry_Array as $interest_industry) {
+                                            $interest_industry_Array2[] = $personalInfo['interest_industry'][$interest_industry];
+                                        }
+                                        echo implode(" , ", $interest_industry_Array2);
+                                        ?>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputMail" class="col-lg-2 control-label"> Department </label>
+                                <div class="col-lg-8 shiftDown">
+                                    <p id="inputName" class="form-control-static text-muted">
+                                        <?php
+                                        $department_Array = explode("!@#$", $selfData["department"]);
+                                        foreach ($department_Array as $department) {
+                                            $department_Array2[] = $personalInfo['department'][$department];
+                                        }
+                                        echo implode(" , ", $department_Array2);
+                                        ?>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputMail" class="col-lg-2 control-label"> Job Application </label>
+                                <div class="col-lg-8 shiftDown">
+                                    <p id="inputName" class="form-control-static text-muted">
+                                        <?php
+                                        $job_application_Array = explode("!@#$", $selfData["job_application"]);
+                                        foreach ($job_application_Array as $job_application) {
+                                            $job_application_Array2[] = $personalInfo['job_application'][$job_application];
+                                        }
+                                        echo implode(" , ", $job_application_Array2);
+                                        ?>
+                                    </p>
+                                </div>
+                            </div>
+
+							<div class="form-group">
+								<label for="input-nickname" class="col-lg-2 control-label">Status</label>
+								<div class="col-lg-8 shiftDown">
+                                    <select class="form-control" onchange="changeResumeStatus('<?php echo $selfData["id"];?>', this);"><?php
+                                        foreach( $FlagSelOpt AS $k=>$opt )
+                                        {
+                                            $isSelected = ( $selfData["status"] == $k ) ? "selected" : "";
+                                            echo "<option value=\"".$k."\" ".$isSelected.">".$opt["title"]."</option>";
+                                        }
+                                        ?>
+                                    </select>
 									<span class="help-block mt5"></span>
 								</div>
 							</div>
-							<div class="form-group">
-								<label for="input-gender" class="col-lg-2 control-label">性別</label>
-								<div class="col-lg-8" style="position: relative;top: 15px;">
-									<input  type="radio" name="gender" id="gender" value="M" <?php echo ($selfData["gender"] === "M")? "checked" :""; ?> onclick="saveTempData( 'gender', this );" required> 男
-									<input  type="radio" name="gender" id="gender" value="F" <?php echo ($selfData["gender"] === "F")? "checked" :""; ?> onclick="saveTempData( 'gender', this );" required> 女
-									<span class="help-block mt5"></span>
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="input-phone" class="col-lg-2 control-label">電話</label>
-								<div class="col-lg-8">
-									<input id="input-phone" class="form-control" value="<?php echo $selfData["phone"];?>" onkeyup="saveTempData( 'phone', this );" maxlength="15"/>
-									<span class="help-block mt5"></span>
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="input-birthday" class="col-lg-2 control-label">生日</label>
-								<div class="col-lg-8">
-									<input id="input-birthday" class="form-control date birthday" value="<?php echo $selfData["birthday"];?>" onchange="saveTempData( 'birthday', this );"/>
-									<span class="help-block mt5"></span>
-								</div>
-							</div>
-							<?php /* if ( isset( $selfData["region"] ) ){?>
-								<div class="form-group">
-									<label for="input-birthday" class="col-lg-2 control-label">地址</label>
-									<div class="col-lg-8">
-										<?php 
-										if ( $selfData["region"] == "0"  ){
-											echo ($selfData["zip"]==0)?"":$selfData["zip"].$selfData["address"] ; 
-										}
-										else {
-											echo $selfData["address"] ; 
-										}
-										?>
-									</div>
-								</div>
-							<?php } */?>
-							<div class="form-group">	
+
+							
+                            <div class="form-group">
 								<div class="col-lg-12">
 									<div class="btn-group pull-right">
-										<a class="btn btn-info" onclick="pageSave();">儲存</a>	
-										<a class="btn btn-default" onclick="location.href = '/admin/user/listPage';">返回</a>	
+										<?php /* <a class="btn btn-info" onclick="pageSave();"> Save </a> */ ?>
+										<a class="btn btn-default" onclick="location.href = '/admin/user/listResume';"> Back </a>
 									</div>
 								</div>
 							</div>
+
 						</form>
                     </div>
                 </div>
@@ -243,6 +380,30 @@
 	{
 		selfData[key] = $(self).val();
 	}
+
+    function changeResumeStatus(id, self)
+    {
+        var ajaxData = {
+            "saveData" : {
+                "id"   : id,
+                "status" : $(self).val()
+            }
+        };
+        $.ajax({
+            url: "/admin/user/changeResumeStatus",
+            async:true,
+            cache:false,
+            method:"POST",
+            data:ajaxData,
+            success:function(data, status, xhr){
+                PM.show({ title: "Resume Manage", text: 'Success！', type: "info" });
+                setTimeout(function(){
+                    location.reload();
+                },500);
+            },
+            error:function(xhr, stauts, err){ PM.erro(); }
+        });
+    }
 	</script>
 	
 </body>

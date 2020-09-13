@@ -64,13 +64,13 @@ ul {
                 <div class="topbar-left">
                     <ol class="breadcrumb">
                         <li class="crumb-active">
-                            <a>最新消息管理</a>
+                            <a> <?php echo $bkmt_name;?> </a>
                         </li>
                         <li class="crumb-active">
-                            <a>編輯</a>
+                            <a> <?php echo $bkm_name;?> </a>
                         </li>
                         <li class="crumb-active">
-                            <a></a>
+                            <a> Edit </a>
                         </li>
                     </ol>
                 </div>
@@ -107,13 +107,13 @@ ul {
 								<div class="panel">
 									<div class="panel-heading text-center">
 										<div class="caption">
-											編輯區塊
+											Edit Zone
 										</div>
 									</div>
 									<div class="panel-body">
 										<div class="col-sm-12" style="margin-bottom:15px;">
 											<div class="form-group">
-												<label for="blog-title" class="col-xs-4 col-md-3 col-lg-1 control-label" style="line-height: 38px;font-size: 20px;margin-bottom: 0;text-align: right;">標題</label>
+												<label for="blog-title" class="col-xs-4 col-md-3 col-lg-1 control-label" style="line-height: 38px;font-size: 20px;margin-bottom: 0;text-align: right;"> Title </label>
 												<div class="col-xs-7 col-md-8 col-lg-10">
 													<input type="text" id="blog-title" class="form-control" placeholder="" value="<?php echo $article["blog-title"];?>">
 												</div>
@@ -124,7 +124,7 @@ ul {
                                         <?php if(!isset($isBrand)) { ?>
 										<div class="col-sm-12" style="margin-bottom:15px;">
 											<div class="form-group">
-												<label for="blog-title" class="col-xs-4 col-md-3 col-lg-1 control-label" style="line-height: 38px;font-size: 20px;margin-bottom: 0;text-align: right;">標籤</label>
+												<label for="blog-title" class="col-xs-4 col-md-3 col-lg-1 control-label" style="line-height: 38px;font-size: 20px;margin-bottom: 0;text-align: right;"> Tag </label>
 												<div class="col-xs-7 col-md-8 col-lg-10">
 													<input type="text" id="blog-tag" class="form-control" placeholder="" value="<?php echo $article["tag"];?>">
 													<p class="help-block">以逗點分隔，設定自己所需要的分類標籤</p>
@@ -134,11 +134,11 @@ ul {
 										</div>
 										<div class="col-sm-12" style="margin-bottom:15px;">
 											<div class="form-group">
-												<label for="blog-class" class="col-xs-4 col-md-3 col-lg-1 control-label" style="line-height: 38px;font-size: 20px;margin-bottom: 0;text-align: right;">類別</label>
+												<label for="blog-class" class="col-xs-4 col-md-3 col-lg-1 control-label" style="line-height: 38px;font-size: 20px;margin-bottom: 0;text-align: right;"> Catalog </label>
 												<div class="col-xs-7 col-md-8 col-lg-10">
 													<?php $isSel = $article["class"] == 0 ? "selected" : ""; ?>
 													<select id="blog-class" class="form-control">
-														<option value="0" <?php echo $isSel;?>>隱藏</option>
+														<option value="0" <?php echo $isSel;?>> Hidden </option>
 													<?php
 														foreach( $arr_class AS $class )
 														{
@@ -157,7 +157,7 @@ ul {
 
 										<div class="col-sm-12" style="margin-bottom:15px;">
 											<div class="form-group">
-												<label for="blog-date" class="col-xs-4 col-md-3 col-lg-1 control-label" style="line-height: 38px;font-size: 20px;margin-bottom: 0;text-align: right;">日期</label>
+												<label for="blog-date" class="col-xs-4 col-md-3 col-lg-1 control-label" style="line-height: 38px;font-size: 20px;margin-bottom: 0;text-align: right;"> Date </label>
 												<div class="col-xs-7 col-md-8 col-lg-10" id="datetimepicker3">
 													<input type="text" id="blog-date" class="form-control" placeholder="" value="<?php echo $article["raw-date"];?>">
 												</div>
@@ -169,7 +169,7 @@ ul {
 										?>
 										<div class="col-sm-12" style="margin-bottom:15px;<?php echo $isShowLang;?>">
 											<div class="form-group">
-												<label for="langCode" class="col-xs-4 col-md-3 col-lg-1 control-label" style="line-height: 38px;font-size: 20px;margin-bottom: 0;text-align: right;">語言</label>
+												<label for="langCode" class="col-xs-4 col-md-3 col-lg-1 control-label" style="line-height: 38px;font-size: 20px;margin-bottom: 0;text-align: right;"> Language </label>
 												<div class="col-xs-7 col-md-8 col-lg-10">
 													<select type="text" id="langCode" class="form-control"><?php echo $optListLang;?></select>
 												</div>
@@ -180,11 +180,11 @@ ul {
                                         <?php if($hasMainPic) { ?>
 										<div class="col-sm-12" style="margin-bottom:15px;">
 											<div class="form-group">
-												<label for="blog-date" class="col-xs-4 col-md-3 col-lg-1 control-label" style="line-height: 38px;font-size: 20px;margin-bottom: 0;text-align: right;">首圖</label>
+												<label for="blog-date" class="col-xs-4 col-md-3 col-lg-1 control-label" style="line-height: 38px;font-size: 20px;margin-bottom: 0;text-align: right;"> Main Picture </label>
 												<div class="col-xs-7 col-md-8 col-lg-10 text-center">
 													<a class="btn btn-success btn-block" onclick="selectMediaStack();">
 														<i class="glyphicon glyphicon-plus"></i>
-														<span>選擇照片</span>
+														<span>Select</span>
 													</a>
 												</div>
 												<div class="clearfix"></div>
@@ -211,7 +211,7 @@ ul {
 										<?php if( $self === false ) { ?>										
 										<div class="col-sm-12" style="margin-bottom:15px;">
 											<div class="form-group">
-												<label for="summary" class="col-xs-4 col-md-3 col-lg-1 control-label" style="line-height: 38px;font-size: 20px;margin-bottom: 0;text-align: right;">作者</label>
+												<label for="summary" class="col-xs-4 col-md-3 col-lg-1 control-label" style="line-height: 38px;font-size: 20px;margin-bottom: 0;text-align: right;"> Author </label>
 												<div class="col-xs-7 col-md-8 col-lg-10">
 													<input type="text" id="blog-author" class="form-control" placeholder="" value="<?php echo $article["author"];?>">
 												</div>
@@ -229,10 +229,10 @@ ul {
 								
 								<div class="pull-right mt10">
 									<button type="button" class="btn ladda-button btn-info page-save" data-style="zoom-in">
-										<span class="ladda-label"><span class="glyphicons glyphicons-file_import"></span> 儲存</span>
+										<span class="ladda-label"><span class="glyphicons glyphicons-file_import"></span> Save </span>
 										<span class="ladda-spinner"></span>
 									</button>
-									<a type="button" class="btn btn-default" href="<?php echo $back_url;?>">返回</a>
+									<a type="button" class="btn btn-default" href="<?php echo $back_url;?>"> Back </a>
 								</div>
 							
 						</div>

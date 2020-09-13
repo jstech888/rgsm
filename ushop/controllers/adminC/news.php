@@ -4,7 +4,12 @@ class News extends Admin_Controller {
 	function __construct()
 	{
 		parent::__construct();	
-		$this->forceLogin();	
+		$this->forceLogin();
+
+        $bkm_data = $this->mBKM->find($_SERVER['REQUEST_URI']);
+        $bkmt_data = $this->mBKMT->find($bkm_data[0]['type_id']);
+        $this->data["bkm_name"] = $bkm_data[0]['name'];
+        $this->data["bkmt_name"] = $bkmt_data[0]['name'];
 	}
 
 	public function newsClass($method = "index")
@@ -177,6 +182,11 @@ class News extends Admin_Controller {
 
 	public function edit()
 	{
+        $bkm_data = $this->mBKM->find("/admin/news/listPage");
+        $bkmt_data = $this->mBKMT->find($bkm_data[0]['type_id']);
+        $this->data["bkm_name"] = $bkm_data[0]['name'];
+        $this->data["bkmt_name"] = $bkmt_data[0]['name'];
+
 		if(isset($_GET['id']))
 		{
 			$this->data["css_include"] 	= "article";
@@ -187,6 +197,8 @@ class News extends Admin_Controller {
 			$arr_article = $this->News_model->admin_find("news", $_GET['id'] );
 			$this->data["article"] = $arr_article[0];			
 			$this->data["isNew"]   = false;
+            $this->data["isBrand"] = false;
+            $this->data["hasMainPic"] = false;
 			
 			$this->data["refer_uri"] = "/admin/news/listPage";	
 			$this->data["save_url"]  = "/admin/news/save";		
@@ -294,7 +306,25 @@ class News extends Admin_Controller {
 		$this->load->view('admin/inc/head',$this->data);
 		$this->load->view('admin/news/index',$this->data);
 	}
-	
+
+    public function changeFlag()
+    {
+        $this->jsonRS["POST"] = $_POST;
+        if( isset($_POST["id"]) && isset($_POST["flag"]) )
+        {
+            $this->jsonRS['code'] 		= '1';
+            $this->jsonRS['message'] 	= '操作完成';
+
+            $this->load->model("News_model");
+            $this->jsonRS['resp'] = $this->News_model->save( array(
+                "id" => $_POST["id"],
+                "flag" => $_POST["flag"]
+            ) );
+        }
+
+        header('Content-Type: application/json; charset=utf-8');
+        echo json_encode($this->jsonRS);
+    }
 	
 }
 /* End of file news.php */
