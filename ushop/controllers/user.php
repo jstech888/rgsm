@@ -819,7 +819,8 @@ class User extends Web_Controller {
 
 		if( $this->self === false )
 		{
-			redirect("/","location",301);
+			redirect("/user/login","location",301);
+//			redirect("/","location",301);
 		}
 
 		$this->load->model("User_model");
@@ -900,7 +901,9 @@ class User extends Web_Controller {
             $this->load->model("User_model");
             $result = $this->User_model->save_resume($new_user);
 //echo "<br>result=".$result;
-            if($result > 0)
+            echo "<script>top.location.href='/user/applyStep2/".$result."';</script>";
+
+            /* if($result > 0)
             {
                 echo "<script>top.$('#wait').hide();top.$('#wait_content').hide();alert('新增成功！');</script>";
                 echo "<script>top.location.href='/user/applyStep2/".$result."';</script>";
@@ -908,7 +911,7 @@ class User extends Web_Controller {
             else
             {
                 echo "<script>top.$('#wait').hide();top.$('#wait_content').hide();alert('新增失敗，姓名或是身分證字號有重複，請聯絡管理員！');</script>";
-            }
+            } */
         }
         else
         {
@@ -932,7 +935,9 @@ class User extends Web_Controller {
             $this->load->model("User_model");
             $result = $this->User_model->save_resume($updatedata);
 
-            if($result > 0)
+            echo "<script>top.location.href='/user/applyStep2/".$result."';</script>";
+
+            /* if($result > 0)
             {
                 echo "<script>top.$('#wait').hide();top.$('#wait_content').hide();alert('編輯完成！');</script>";
                 echo "<script>top.location.href='/user/applyStep2/".$result."';</script>";
@@ -940,7 +945,7 @@ class User extends Web_Controller {
             else
             {
                 echo "<script>top.$('#wait').hide();top.$('#wait_content').hide();alert('新增失敗，請聯絡管理員！');</script>";
-            }
+            } */
         }
     }
 

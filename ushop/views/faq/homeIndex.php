@@ -39,9 +39,9 @@
                 <div class="list-group" id="list-tab" role="tablist">
                     <?php
                         foreach ($allClass as $key => $class) {
-                            $active = ($currentClass['key']==$key) ? " active ":"";
+                            $active = ($currentClass['key']==$key) ? "active":"";
                     ?>
-                        <a class="list-group-item list-group-item-action <?php echo $active;?>" data-toggle="collapse" href="/faq/index/<?php echo $class['key'];?>" role="tab" aria-controls="faq-<?php echo $class['id'];?>"> <?php echo $class['value'][$this->currentLang]['title'];?> </a>
+                        <a class="list-group-item list-group-item-action <?php echo $active;?>" href="/faq/index/<?php echo $class['key'];?>" role="tab" aria-controls="faq-<?php echo $class['id'];?>"> <?php echo $class['value'][$this->currentLang]['title'];?> </a>
                     <?php } ?>
 <!--                    <a class="list-group-item list-group-item-action active" data-toggle="collapse" href="#faq-1" role="tab" aria-controls="faq-1">介紹</a>-->
 <!--                    <a class="list-group-item list-group-item-action" data-toggle="collapse" href="#faq-2" role="tab" aria-controls="faq-2">常見問題</a>-->

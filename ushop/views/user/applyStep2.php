@@ -644,7 +644,8 @@
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="form-control-submit-button" onclick="return doSubmit();">下一步</button>
+                        <button type="submit" class="form-control-submit-button" onclick="return goBack();" style="width: 45%; margin-right: 5px;">上一步</button>
+                        <button type="submit" class="form-control-submit-button" onclick="return doSubmit();" style="width: 45%; margin-left: 5px;">下一步</button>
                     </div>
                     <div class="form-message">
                         <div id="cmsgSubmit" class="h3 text-center hidden"></div>
@@ -746,9 +747,11 @@
                 }
             }
         ?>
-
-
     });
+
+    function goBack() {
+        location.href = '/user/apply';
+    }
 
     function doSubmit()
     {

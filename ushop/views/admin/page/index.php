@@ -130,20 +130,26 @@ input[type="search"]{
 										<table class="table table-striped table-hover" id="datatable3" cellspacing="0" width="100%">
 											<thead>
 												<tr>
-													<th>URI</th>
+													<th>Name</th>
+													<th>Title</th>
+<!--													<th>URI</th>-->
 													<th>Action</th>
 												</tr>
 											</thead>
 											<tfoot>
 												<tr>
-													<th>URI</th>
+                                                    <th>Name</th>
+                                                    <th>Title</th>
+<!--													<th>URI</th>-->
 													<th>Action</th>
 												</tr>
 											</tfoot>
 											<tbody>
 											<?php foreach( $listPage AS $record ) { ?>
 												<tr>
-													<td><a href="/Page/<?php echo $record["key"];?>">/Page/<?php echo $record["key"];?></a></td>
+													<td><?php echo $record["key"];?></td>
+													<td><?php echo $record["title"];?></td>
+<!--													<td><a href="/Page/--><?php //echo $record["key"];?><!--">/Page/--><?php //echo $record["key"];?><!--</a></td>-->
 													<td>
 														<a href="/admin/page/edit?id=<?php echo $record["key"];?>" class="btn btn-success btn-xs">Edit</a>
 														<a onclick="deletePage('<?php echo $record["key"];?>');" class="btn btn-danger btn-xs btn-delete">Delete</a>

@@ -108,7 +108,7 @@ label {
 								<ul class="nav nav-tabs" role="tablist"><ul class="nav nav-tabs" role="tablist"><?php echo $htmlLang; ?></ul>
 							</div>
 							<div class="tabs-content main-tab-content">
-							
+<?php /*
 								<div class="panel panel-alert panel-border top">
 									<div class="panel-heading">
 										<span class="panel-title">META DATA</span>
@@ -148,9 +148,10 @@ label {
 										</div>
 									</div>
 								</div>
+ */ ?>
 								<div class="panel panel-alert panel-border top">
 									<div class="panel-heading">
-										<span class="panel-title">標題</span>
+										<span class="panel-title">Title</span>
 									</div>
 									<div class="panel-body">
 										<input type="text" class="form-control" onkeyup="saveTempData('title',this);" value="<?php echo (isset($infopage["title"]))?$infopage["title"]:''; ?>">
@@ -158,7 +159,7 @@ label {
 								</div>
 								<div class="panel panel-alert panel-border top">
 									<div class="panel-heading">
-										<span class="panel-title">首圖</span>
+										<span class="panel-title">Picture</span>
 									</div>
 									<div class="panel-body">
 										<div class="row table-layout" id="modal-content">
@@ -166,13 +167,13 @@ label {
 												<div class="row">
 													<div class="col-md-12 text-center">
 														<a class="btn btn-info" onclick="selectMediaStack();">
-															<i class="glyphicon glyphicon-plus"></i>選擇照片													
+															<i class="glyphicon glyphicon-plus"></i>Select
 														</a>
 													</div>
 													<?php if( isset($infopage["image"]["url"]) ) { ?> 
 													<div class="col-md-12 text-center mt15">
 														<a class="btn btn-danger" onclick="removeImage();">
-															<i class="glyphicon glyphicon-remove"></i>移除照片													
+															<i class="glyphicon glyphicon-remove"></i>Remove
 														</a>
 													</div>
 													<?php } ?>
@@ -194,7 +195,7 @@ label {
 										<div class="row table-layout">
 											<div class="col-xs-4 br-a br-light bg-light p30">
 												<div class="row">
-													<div class="col-md-12 text-center">描述</div>
+													<div class="col-md-12 text-center">Description</div>
 												</div>
 											</div>
 											<div class="col-xs-8 br-a br-light bg-light dark va-t p10">
@@ -211,7 +212,7 @@ label {
 								<div class="clearfix"></div>
 								<div class="panel panel-alert panel-border top">
 									<div class="panel-heading">
-										<span class="panel-title">內容</span>
+										<span class="panel-title">Content</span>
 									</div>
 									<div class="panel-body">
 										<textarea name="ckeditor1" id="ckeditor1" rows="12"><?php echo (isset($infopage["content"]))?$infopage["content"]:''; ?></textarea>
@@ -222,8 +223,8 @@ label {
 						</div>
 						<div class="panel-footer">
 							<div class="pull-right">
-								<a class="btn btn-success page-save">儲存</a>
-								<a class="btn btn-default" href="/admin/page/listPage">返回</a>
+								<a class="btn btn-success page-save"> Save </a>
+								<a class="btn btn-default" href="/admin/page/listPage"> Back </a>
 							</div>
 							<div class="clearfix"></div>
 						</div>
