@@ -240,7 +240,7 @@ class Faq extends Admin_Controller {
 				"status"     	=> $_POST['status'],
 				"tag"     		=> $_POST['tag'],
 				"author"     	=> isset($_POST['author'])?$_POST['author']:$this->admin["id"],
-				"flag"     		=> $_POST['flag'],
+//				"flag"     		=> $_POST['flag'],
 				"value"   	   	=> $_POST['raw-extra'],
 				"blog-content" 	=> $_POST['blog-content'],
 				"langCode" 		=> $_POST['langCode']

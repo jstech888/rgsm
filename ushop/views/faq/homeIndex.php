@@ -2,6 +2,12 @@
 <?php include(VIEWPATH . "widget" . DIRECTORY_SEPARATOR . "home" . DIRECTORY_SEPARATOR . "preloader.php"); ?>
 <?php include(VIEWPATH . "widget" . DIRECTORY_SEPARATOR . "home" . DIRECTORY_SEPARATOR . "navbar.php"); ?>
 
+<style>
+.innerHtml p {
+    color: inherit;
+}
+</style>
+
 <!-- Header -->
 <header id="header" class="ex-header">
     <div class="container">
@@ -54,7 +60,7 @@
                 <?php foreach ($listStory as $faq) { ?>
                 <div class="card mb-3">
                     <div class="card-header">Q：<?php echo $faq['blog-title'];?> </div>
-                    <div class="card-body">A：<div style="display: inline-table;"><?php echo $faq['blog-content'];?> </div></div>
+                    <div class="card-body">A：<div class="innerHtml" style="display: inline-table;"><?php echo $faq['blog-content'];?> </div></div>
                 </div>
                 <?php } ?>
                 <!-- end of faq -->
