@@ -13,8 +13,19 @@
                 </div>
                 <div class="col-lg-12 col-xl-6 offset-xl-6">
                     <div class="text-container">
-                        <h1 class="h1-large">We've Got Jobs For <span id="js-rotating">電機,資工,機械,化工,材料工程,數學,物理,生物科技化學</span></h1>
-                        <p class="p-large p-heading">Feeling that it's time for change in your career path? Check out our job listing and find your new challenge</p>
+                        <h1 class="h1-large">你知道嗎？剛畢業的你，其實就有百萬價值！出國一趟，我們一起圓薪願
+                            <span id="js-rotating" class="js-rotating">資工,電機,機械,化學工程,材料工程,數學,物理,生物科技化學</span>
+                        </h1>
+                        <p class="p-large p-heading js-rotating">
+                            軟體工程師、系統分析師、程式設計師、軟體設計工程師、系統維護工程師、系統管理師、銷售程師、資訊工程師、網路工程師、VLSI設計工程師、韌體工程師,
+                            硬體設計師、VLSI設計師、測試與維護工程師、電子製造、工程師、銷售工程師、系統設計師、網路工程師,
+                            結構工程師、機械工程師、機械設計/繪圖人員、生產技術/製程工程師、機械加工技術人員、生產設備工程師,
+                            電子製程工程師、品質管理師、材料分析師,
+                            光電工程師、積體電路工程師、電子材料工程師、電化學工程師,
+                            ,
+                            ,
+                        </p>
+                        <p class="p-large p-heading">你對你的薪水滿意嗎?</p>
                         <a class="btn-solid-lg page-scroll" href="#jobs">GET HIRED</a>
                     </div>
                 </div> <!-- end of col -->

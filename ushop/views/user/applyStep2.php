@@ -818,11 +818,11 @@
         }
         else
         { */
-        if(confirm('確定送出?')) {
+        // if(confirm('確定送出?')) {
             $('#wait_content').show();
             $('#wait').show();
 
             $('#StandardForm').submit();
-        }
+        // }
     }
 </script>

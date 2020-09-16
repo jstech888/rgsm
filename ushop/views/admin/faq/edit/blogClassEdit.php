@@ -199,7 +199,6 @@ ul {
 									</div>
 									<div class="clearfix"></div>
 								</div>
-								*/?>
 								
 								<div class="col-sm-12 mb15">
 									<div class="section-divider mb40 mt40"><span> BANNER </span></div>
@@ -223,6 +222,8 @@ ul {
 										<ol class="dd" id="nestable"></ol>
 									</div>
 								</div>
+                                */?>
+                                
 								<div class="clearfix"></div>
 							</div>
 						</div>

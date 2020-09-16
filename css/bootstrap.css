@@ -2943,11 +2943,6 @@ input[type="button"].btn-block {
   opacity: 0;
 }
 
-/* Added by Hank on 2020-09-06 */
-.fade.in {
-  opacity: 1;
-}
-
 .collapse:not(.show) {
   display: none;
 }
@@ -5364,24 +5359,6 @@ button.close {
   outline: 0;
 }
 
-/* Added by Hnak on 2020-09-05 */
-.modal.fade .modal-dialog {
-  -webkit-transition: -webkit-transform .3s ease-out;
-       -o-transition:      -o-transform .3s ease-out;
-          transition:         transform .3s ease-out;
-  -webkit-transform: translate(0, -25%);
-      -ms-transform: translate(0, -25%);
-       -o-transform: translate(0, -25%);
-          transform: translate(0, -25%);
-}
-/* Added by Hnak on 2020-09-05 */
-.modal.in .modal-dialog {
-  -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
-       -o-transform: translate(0, 0);
-          transform: translate(0, 0);
-}
-
 .modal-dialog {
   position: relative;
   width: auto;
@@ -5423,19 +5400,18 @@ button.close {
 }
 
 .modal-content {
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    width: 100%;
-    pointer-events: auto;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 0.3rem;
-    outline: 0;
-    margin-top: 100px;      /* Added by Hank on 2020-09-06 */
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
 }
 
 .modal-backdrop {
@@ -5452,35 +5428,10 @@ button.close {
   opacity: 0;
 }
 
-/* Added by Hnak on 2020-09-05 */
-.modal-backdrop.fade {
-  filter: alpha(opacity=0);
-  opacity: 0;
-}
-/* Added by Hnak on 2020-09-05 */
-.modal-backdrop.in {
-  filter: alpha(opacity=50);
-  opacity: .5;
-}
-
 .modal-backdrop.show {
   opacity: 0.5;
 }
 
-.modal-header {
-  min-height: 16.42857143px;
-  padding: 15px;
-  border-bottom: 1px solid #e5e5e5;
-}
-.modal-header .close {
-  margin-top: -2px;
-}
-.modal-title {
-  margin: 0;
-  line-height: 1.42857143;
-}
-
-/*
 .modal-header {
   display: -ms-flexbox;
   display: flex;
@@ -5502,7 +5453,7 @@ button.close {
 .modal-title {
   margin-bottom: 0;
   line-height: 1.5;
-} */
+}
 
 .modal-body {
   position: relative;
@@ -5540,8 +5491,8 @@ button.close {
 
 @media (min-width: 576px) {
   .modal-dialog {
-      max-width: 500px;
-      margin: 1.75rem auto;
+    max-width: 500px;
+    margin: 1.75rem auto;
   }
   .modal-dialog-centered {
     min-height: calc(100% - (1.75rem * 2));

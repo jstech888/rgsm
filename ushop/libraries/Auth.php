@@ -236,7 +236,7 @@ class Auth
 						
 			$this->CI->db->insert('user', $user); 
 			$userId = $this->CI->db->insert_id();
-			$user = $this->CI->db->affected_rows();
+			$userResult = $this->CI->db->affected_rows();
 						
 			$arr_info = array();
 			foreach( $data_user['info'] AS $k => $v )
@@ -255,11 +255,12 @@ class Auth
 				$this->activeLink($userId);
 			}
 			
-			if($user > 0 && $info > 0)
+			if($userResult > 0 && $info > 0)
 			{
 				$result = true;				
 			}
 		}
+
 		return $result;
 	}
 	
@@ -464,13 +465,12 @@ class Auth
 			
 			$memberActive["title"] 		= str_replace("_NAME_", $arr_record["nickname"], $memberActive["title"]);			
 			$memberActive["content"] 	= str_replace("_NAME_",	$arr_record["nickname"], $memberActive["content"]);
-			
-			$hostDNS = $_SERVER['SERVER_ADDR'] == "192.168.1.8" ? "http://medicalbeauty.mooo.com/" : "http://www.hrtmed-cosmetics.com/";
+
+            $hostDNS = $this->CI->config->item('server_hostname');
 			$activeLink = '<a href="'.$hostDNS.'?active='.$activeCode.'">啟用</a>';
 			$memberActive["title"] 		= str_replace("_ACTIVELINK_", $activeLink, $memberActive["title"]);			
 			$memberActive["content"] 	= str_replace("_ACTIVELINK_", $activeLink, $memberActive["content"]);
-			
-			
+
 			sendMailBySystemMail( $arr_record["mail"], $AdminMail["account"], $memberActive["title"], $memberActive["content"]);	
 
 			$mailto = array( 

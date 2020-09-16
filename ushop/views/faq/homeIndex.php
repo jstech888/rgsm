@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h1>FAQ</h1>
+                <h1>問與答</h1>
             </div> <!-- end of col -->
         </div> <!-- end of row -->
     </div> <!-- end of container -->

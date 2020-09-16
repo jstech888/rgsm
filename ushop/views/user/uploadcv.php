@@ -1,3 +1,7 @@
+
+<?php include(VIEWPATH . "widget" . DIRECTORY_SEPARATOR . "home" . DIRECTORY_SEPARATOR . "preloader.php"); ?>
+<?php include(VIEWPATH . "widget" . DIRECTORY_SEPARATOR . "home" . DIRECTORY_SEPARATOR . "navbar.php"); ?>
+
 <!-- Header -->
 <header id="header" class="ex-header">
     <div class="container">

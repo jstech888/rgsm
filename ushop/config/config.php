@@ -358,8 +358,9 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
-error_reporting(0);
+error_reporting(1);
 
+$config['server_hostname'] = "https://rgsm.mamp.hank/";
 $config['upload_path_personal_information'] = "/Applications/MAMP/htdocs/rgsm/uploads/personal_information/";       // 人事資料
 
 $config['personalInfo']['zh-hant']['gender']        = array(1=>'男', 2=>'女');

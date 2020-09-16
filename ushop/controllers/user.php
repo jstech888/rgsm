@@ -71,11 +71,12 @@ class User extends Web_Controller {
 	{
 		$result = $this->getOption($view);
 		$this->data['opt'] = $result;
+
 		if( !$result['status'] )
 		{
 			if( $view == "register" )
 			{
-
+//echo "<br>register...";
 				$this->load->model("Option_model");
 				$RegisterMoney = $this->Option_model->readString("RegisterMoney");
 				$isMemberCheckEmail = $this->Option_model->readVal("isMemberCheckEmail");
@@ -104,8 +105,8 @@ class User extends Web_Controller {
 				$username = $result['old']['mail'];
 				$password = $result['old']['password'];
 
-				$result = $this->auth->createUser($new_user,$isMemberCheckEmail);
-
+				$result = $this->auth->createUser($new_user, $isMemberCheckEmail);
+//echo "<br>result=".$result;
 				if($result)
 				{
 					$obj_register_lang = $this->loadLang("page/register/");
@@ -116,7 +117,6 @@ class User extends Web_Controller {
 							"content" 	=> $obj_register_lang['register_email_content'],
 							"auto" 		=> "30000"
 						);
-
 					}
 					else{
 						/*
@@ -969,6 +969,9 @@ class User extends Web_Controller {
 //exit;
             $this->load->model("User_model");
             $result = $this->User_model->save_resume($newObject);
+
+            echo "<script>top.location.href='/user/uploadcv/".$result."';</script>";
+            exit;
 
             if($result > 0)
             {

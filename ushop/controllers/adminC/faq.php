@@ -60,8 +60,8 @@ class Faq extends Admin_Controller {
 				$this->data["css_include"] 	= "article";
 				$this->data['widget'] 		= array();
 				
-				$this->load->model("News_class_model");
-				$aClass = $this->News_class_model->find( $_GET["key"] );
+				$this->load->model("Faq_class_model");
+				$aClass = $this->Faq_class_model->find( $_GET["key"] );
 				$this->data['aClass'] = $aClass;
 				
 				$this->load->view('admin/inc/head',$this->data);
@@ -113,10 +113,10 @@ class Faq extends Admin_Controller {
 			$this->jsonRS["POST"] = $_POST;
 			if( isset( $_POST["id"] ) )
 			{
-				$this->load->model("News_class_model");	
+				$this->load->model("Faq_class_model");	
 				$this->jsonRS['code'] 		= '1';
 				$this->jsonRS['message'] 	= '操作完成';
-				$this->jsonRS['resp'] 		= $this->News_class_model->delete($_POST["id"]);
+				$this->jsonRS['resp'] 		= $this->Faq_class_model->delete($_POST["id"]);
 			}
 			
 			header('Content-Type: application/json; charset=utf-8');
@@ -239,8 +239,8 @@ class Faq extends Admin_Controller {
 				"class"     	=> $_POST['class'],
 				"status"     	=> $_POST['status'],
 				"tag"     		=> $_POST['tag'],
-				"author"     	=> isset($_POST['author'])?$_POST['author']:$this->admin["id"],
-//				"flag"     		=> $_POST['flag'],
+				"author"     	=> isset($_POST['author']) ? $_POST['author']:$this->admin["id"],
+				"flag"     		=> "1",	//$_POST['flag'],
 				"value"   	   	=> $_POST['raw-extra'],
 				"blog-content" 	=> $_POST['blog-content'],
 				"langCode" 		=> $_POST['langCode']
@@ -248,7 +248,7 @@ class Faq extends Admin_Controller {
 
 			$this->load->model("faq_model");
 			$this->data["result"] = $this->faq_model->save($saveData);
-			
+
 			$this->jsonRS['code'] 		= '1';
 			$this->jsonRS['message'] 	= '操作完成';
 			$this->jsonRS['resp']		= $this->data["result"];

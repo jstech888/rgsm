@@ -15,6 +15,9 @@
         <li class="nav-item">
             <a class="nav-link page-scroll" href="/#contact">連絡我們</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link page-scroll" href="/user/register">求職者申請帳號</a>
+        </li>
 
         <?php if($self) { ?>
             <li class="nav-item">

@@ -138,8 +138,7 @@ ul {
 												<label for="blog-class" class="col-xs-4 col-md-3 col-lg-2 control-label" style="line-height: 38px;font-size: 20px;margin-bottom: 0;text-align: right;">Catalog</label>
 												<div class="col-xs-7 col-md-8 col-lg-10">
 													<?php $isSel = $article["class"] == 0 ? "selected" : ""; ?>
-													<select id="blog-class" class="form-control">
-														<option value="0" <?php echo $isSel;?>>Hide</option>
+													<select id="blog-class" class="form-control">														
 													<?php
 														foreach( $arr_class AS $class )
 														{
@@ -149,6 +148,7 @@ ul {
 													<?php
 														}
 													?>
+													<option value="0" <?php echo $isSel;?>>Hide</option>
 													</select>
 												</div>
 											</div>

@@ -255,9 +255,8 @@ ul {
 	{
 		if (confirm("確定要刪除？"))
 		{
-			
 			$.ajax({
-				url: "/admin/news/newsClass/delete",
+				url: "/admin/faq/newsClass/delete",
 				async:true,
 				cache:false,
 				method:"POST",
