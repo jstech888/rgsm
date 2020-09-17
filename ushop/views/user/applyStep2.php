@@ -39,10 +39,19 @@
 <!-- end of breadcrumbs -->
 
 <!-- Content -->
-<div class="form-3">
+<div class="ex-basic-2">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+
+            <div class="col-md-3 col-sm-12">
+                <div class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action" data-toggle="collapse" href="#faq-1" role="tab" aria-controls="dploma-1">英文畢業證書 / 履歷表</a>
+                    <a class="list-group-item list-group-item-action active" data-toggle="collapse" href="#faq-2" role="tab" aria-controls="dploma-2">個人履歷資料</a>
+                    <a class="list-group-item list-group-item-action" data-toggle="collapse" href="#faq-3" role="tab" aria-controls="dploma-3">應徵狀態查詢</a>
+                </div>
+            </div> <!-- end of col -->
+
+            <div class="col-md-9 col-sm-12">
                 <!-- Standard Form -->
                 <form id="StandardForm" data-toggle="validator" data-focus="false" data-disable="false" method="post" action="/user/add_resume_step2" target="actFrame" enctype="multipart/form-data">
                     <input type="hidden" id="id" name="id" value="<?php echo $resumeid;?>" />

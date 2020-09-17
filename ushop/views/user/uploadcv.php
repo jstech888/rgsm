@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h1>Diploma / CV</h1>
+                <h1>英文畢業證書 / 履歷表</h1>
             </div> <!-- end of col -->
         </div> <!-- end of row -->
     </div> <!-- end of container -->
@@ -23,7 +23,7 @@
                 <ul class="breadcrumbs list-unstyled list-inline">
                     <li class="list-inline-item"><a class="underline" href="index.html">Home</a></li>
                     <li class="list-inline-item"><i class="fa fa-angle-double-right"></i></li>
-                    <li class="list-inline-item">Diploma / CV</li>
+                    <li class="list-inline-item">英文畢業證書 / 履歷表</li>
                 </ul>
             </div> <!-- end of col -->
         </div> <!-- end of row -->
@@ -33,15 +33,25 @@
 
 
 <!-- Content -->
-<div class="form-3">
+<div class="ex-basic-2">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+
+            <div class="col-md-3 col-sm-12">
+                <div class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action active" data-toggle="collapse" href="#faq-1" role="tab" aria-controls="dploma-1">英文畢業證書 / 履歷表</a>
+                    <a class="list-group-item list-group-item-action" data-toggle="collapse" href="#faq-2" role="tab" aria-controls="dploma-2">個人履歷資料</a>
+                    <a class="list-group-item list-group-item-action" data-toggle="collapse" href="#faq-3" role="tab" aria-controls="dploma-3">應徵狀態查詢</a>
+                </div>
+            </div>
+            <!-- end of col -->
+
+            <div class="col-md-9 col-sm-12">
                 <!-- Standard Form -->
                 <form id="StandardForm" data-toggle="validator" data-disable="false" data-focus="false" method="post" action="/user/add_cv" target="actFrame" enctype="multipart/form-data">
                     <input type="hidden" id="id" name="id" value="<?php echo $resumeid;?>" />
                     <div class="form-group">
-                        <label class="col-sm-12" for="cdiploma"><span class="text-danger">*</span>Diploma Document(English Version)</label>
+                        <label class="col-sm-12" for="cdiploma"><span class="text-danger">*</span>上傳英文畢業證書</label>
                         <div class="col-sm-12">
                             <input type="file" class="form-control-input" id="uploadfile01" name="uploadfile01" required/>
                             <input type="hidden" id="uploadfile01_ori" name="uploadfile01_ori" value="<?php echo $uploadfiles->file01;?>"/>
@@ -49,7 +59,7 @@
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-12" for="ccover"><span class="text-danger">*</span>Cover Letter(2 Pages is enough for read.)</label>
+                        <label class="col-sm-12" for="ccover"><span class="text-danger">*</span>上傳履歷表</label>
                         <div class="col-sm-12">
                             <input type="file" class="form-control-input" id="uploadfile02" name="uploadfile02" required/>
                             <input type="hidden" id="uploadfile02_ori" name="uploadfile02_ori" value="<?php echo $uploadfiles->file02;?>"/>
@@ -57,10 +67,31 @@
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="form-control-submit-button" onclick="doSubmit();">Confirm Modification</button>
+                        <label class="col-sm-12" for="ccover"><span class="text-danger">*</span>證照</label>
+                        <div class="col-sm-12">
+                            <input type="file" class="form-control-input" id="ccover" required>
+                        </div>
+                        <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="form-control-submit-button">Send To RKM</button>
+                        <label class="col-sm-12" for="ccover"><span class="text-danger">*</span>證照2</label>
+                        <div class="col-sm-12">
+                            <input type="file" class="form-control-input" id="ccover" required>
+                        </div>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-12" for="ccover"><span class="text-danger">*</span>證照3</label>
+                        <div class="col-sm-12">
+                            <input type="file" class="form-control-input" id="ccover" required>
+                        </div>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="form-control-submit-button" onclick="return doSubmit();">Confirm Modification</button>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="form-control-purple-button">Send To RKM</button>
                     </div>
                     <div class="form-message">
                         <div id="cmsgSubmit" class="h3 text-center hidden"></div>

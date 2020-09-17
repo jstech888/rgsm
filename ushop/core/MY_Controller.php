@@ -533,7 +533,7 @@ class Web_Controller extends CI_Controller
         $hotNews = $this->mWidget->find("News");
         $listNews = ( count( $hotNews[0]["value"]["ids"] ) > 0 )? $this->mNews->findNews(implode(",",$hotNews[0]["value"]["ids"])):array();
         $newsCount = ( count( $hotNews[0]["value"]["ids"] ) > 0 )?count(implode(",",$hotNews[0]["value"]["ids"])):1 ;
-        $itemListNews = array_chunk($listNews,2);
+        $itemListNews = array_chunk($listNews,3);
         $this->data["NewsTitle"] = isset($hotNews[0]["value"]["title"])? $hotNews[0]["value"]["title"]:"";
         $this->data["itemListNews"] = $itemListNews[0];
 
