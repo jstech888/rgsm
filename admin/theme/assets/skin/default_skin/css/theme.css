@@ -4671,7 +4671,7 @@ html .halflings {
 	http://zocial.smcllns.com
 	by Sam Collins (@smcllns)
 	License: http://opensource.org/licenses/mit-license.php
-	
+
 	You are free to use and modify, as long as you keep this license comment intact or link back to zocial.smcllns.com on your site.
 */
 /* Button structure */
@@ -5826,7 +5826,7 @@ table.dataTable tr.row-label td {
 }
 /*
  * DataTable Modals
- * 
+ *
  */
 .DTE .DTE_Header {
   background-color: #fafafa;
@@ -6013,7 +6013,7 @@ table.dataTable tr.row-label td {
   display: none !important;
 }
 /*===============================================
-  Expose.js 
+  Expose.js
 ================================================= */
 /* overlay */
 .expose-overlay {
@@ -7076,7 +7076,7 @@ previous button's border...
   background-color: #3bafda !important;
   border-color: #3bafda !important;
 }
-/* ============================================== 
+/* ==============================================
  Colorpicker/Datepicker/DateRangePicker
 ================================================= */
 /*alter picker z-indexes if inside an overlay*/
@@ -10481,7 +10481,7 @@ select[multiple].input-lg {
   }
 }
 /*===============================================
-  B. Form Groups 
+  B. Form Groups
 ================================================= */
 .form-bordered .form-group {
   border-bottom: 1px solid #f2f2f2;
@@ -15164,7 +15164,7 @@ a.bg-white:hover {
 .nav-tabs.nav-tabs-right > li:first-child > a {
   margin-right: 0;
 }
-/* 
+/*
  * Alternate Tab Styles - Active Border
 */
 /* tabs default */
@@ -15187,7 +15187,7 @@ a.bg-white:hover {
   margin-bottom: -1px;
   border-bottom: 2px solid #666;
 }
-/* 
+/*
  * Alternate Tab Styles - Active Inverse Border
 */
 .tab-block .tabs-border-bottom.nav-tabs > li.active > a,
@@ -15199,7 +15199,7 @@ a.bg-white:hover {
   border-color: #DDD;
   border-bottom: 2px solid #666;
 }
-/* 
+/*
  * Alternate Tab Styles - Nav BG
 */
 /* tabs default */
@@ -15239,7 +15239,7 @@ a.bg-white:hover {
   E. PANEL TABS
   -----------------------------------------------
   Panel Tab Navigation must be placed inside
-  ".panel-heading" see Docs for example 
+  ".panel-heading" see Docs for example
 ================================================= */
 .panel-tabs {
   position: absolute;
@@ -15928,7 +15928,7 @@ div.switch.switch-dark input:checked + label {
 .iconsweets-5x {
   font-size: 5em;
 }
-/* Buttons with Icons 
+/* Buttons with Icons
 * Cross browser problems were creating problems when
 * an icon was given a larger font size than its sibling
 * text. To fix Line height, vertical align, and top
@@ -15947,9 +15947,9 @@ i.field-icon-right {
   right: 10px;
   top: 8px;
 }
-/* Icon Background and Borders 
+/* Icon Background and Borders
 * properly align icons that have been placed inside of titles
-* Useful for matching icon size to adjacent text 
+* Useful for matching icon size to adjacent text
 * Icon Background Shapes */
 .icon-circle {
   top: 0;
@@ -16040,7 +16040,7 @@ i.field-icon-right {
   vertical-align: middle;
 }
 /* Mildly styles a font awesome based icon group
- * used in occasionaly in panel heading. Look at 
+ * used in occasionaly in panel heading. Look at
  * message widget on index.html for example */
 .mini-action-icons .fa {
   position: relative;
@@ -18663,7 +18663,7 @@ on tables, feel free to add more*/
   min-width: 1000px !important;
 }
 /* ================================================
-  A. Table Styling Helpers 
+  A. Table Styling Helpers
 =================================================== */
 /* messaging table styles */
 table tbody tr.message-read td {
@@ -19059,29 +19059,29 @@ body.boxed-layout #toggle_sidemenu_r {
 }
 /*===============================================
   E. COLUMN ADJUSTMENTS - IMPORTANT
-================================================= 
- * IMPORTANT - Many pages have had the width of 
- * their columns completely altered. All pages 
+=================================================
+ * IMPORTANT - Many pages have had the width of
+ * their columns completely altered. All pages
  * requiring the same column adjustments have
- * been grouped together and then listed in a 
- * directory(see below). Percentages listed 
+ * been grouped together and then listed in a
+ * directory(see below). Percentages listed
  * below refer to the columns new width.
 * ---------------------------------------------
    PAGES REQUIRING 100% COLUMNS(in order):
    * DASHBOARD.HTML
-   * CHARTS.HTML 
-   * TABS.HTML 
-   * FORMS.HTML 
-   * EDITORS.HTML 
-   * MAPS.HTML 
-   * ELEMENTS.HTML 
-   * VALIDATION.HTML 
-   * WIZARD.HTML 
-   * PRICING-TABLES.HTML 
-   * FILE-MANAGERS.HTML 
-   * UPLOAD-TOOLS.HTML 
-   * DYNAMIC-GALLERY.HTML 
-   * IMAGE-TOOLS.HTML 
+   * CHARTS.HTML
+   * TABS.HTML
+   * FORMS.HTML
+   * EDITORS.HTML
+   * MAPS.HTML
+   * ELEMENTS.HTML
+   * VALIDATION.HTML
+   * WIZARD.HTML
+   * PRICING-TABLES.HTML
+   * FILE-MANAGERS.HTML
+   * UPLOAD-TOOLS.HTML
+   * DYNAMIC-GALLERY.HTML
+   * IMAGE-TOOLS.HTML
    * INVOICE-PAGE.HTML
    * WIDGETS.HTML
    * FAQ.HTML
@@ -19090,8 +19090,8 @@ body.boxed-layout #toggle_sidemenu_r {
 --------------------------------------------------
  * Notes: Most columns were targeted using the
  * direct descendant CSS operator as to not effect
- * other columns used further down the page. If 
- * you have changed a columns default 
+ * other columns used further down the page. If
+ * you have changed a columns default
  * HTML you will need to update this.
 -------------------------------------------------*/
 body.boxed-layout.dashboard-page .container > .row > .col-md-4,
@@ -19135,8 +19135,8 @@ body.boxed-layout.profile-page .container > .row > .col-lg-8 {
 }
 /* ----------------------------------------
    PAGES REQUIRING 50% COLUMNS(in order):
-   * PORTLETS.HTML 
-   * TYPOGRAPHY.HTML 
+   * PORTLETS.HTML
+   * TYPOGRAPHY.HTML
 ------------------------------------------*/
 @media (min-width: 1200px) {
   body.boxed-layout.portlets-page .container > .row > .col-lg-4.col-sm-6,
@@ -19171,9 +19171,9 @@ body.boxed-layout.icons-page .container > .row > .col-md-3 {
   float: left;
 }
 /* ----------------------------------------
- * All column changes have been listed 
- * above. The styles below are for pages 
- * which require adjustments to individual 
+ * All column changes have been listed
+ * above. The styles below are for pages
+ * which require adjustments to individual
  * elements(buttons, backgrounds, etc)
 /* ----------------------------------------
    PAGES LISTED BELOW INCLUDE(in order):
@@ -19322,18 +19322,18 @@ body.boxed-layout.screenlock-page #main:after {
 	  N. 404/500.html
 	  O. Icons.html
 	  P. Global Changes
-	  
+
  * This file is reserved for changes required only
  * for the themes demo. These styles may be vital
  * to themes appearance but often times will not
  * be useful in a true production environment.
- 
+
  * For example each slider in sliders.html has a
- * margin of 65px, a large number only needed 
- * because six sliders have been stacked on top 
- * of each other. This would most likely not 
+ * margin of 65px, a large number only needed
+ * because six sliders have been stacked on top
+ * of each other. This would most likely not
  * happen in a real enviroment.
-================================================= 
+=================================================
  A. Misc/Global
 ================================================= */
 .ajax-loading {
@@ -19725,10 +19725,10 @@ ul.sidebar-nav ul#sideEight.sub-nav > li > a:hover {
 	  B. Content
 	  C. Sidebar
 	  D. Dashboard.html
-	  	  
+
 * These styles control various aspects of the
-* site which benefit from being responsive 
-================================================= 
+* site which benefit from being responsive
+=================================================
   B. Content Responsive Styles
 ================================================= */
 #content {
@@ -19761,7 +19761,7 @@ ul.sidebar-nav ul#sideEight.sub-nav > li > a:hover {
     min-width: 0 !important;
   }
 }
-/*=============================================== 
+/*===============================================
   B. Topbar Responsive Styles
 ================================================= */
 @media (max-width: 815px) {
@@ -20600,10 +20600,10 @@ ul.tray-nav.tray-nav-arrow li:hover a:after {
 /*===============================================
    E. Tray Hover Settings
 
-   At <1000 window width javascript will add a 
+   At <1000 window width javascript will add a
    "tray-rescale" class to the document body. This
    will shift the menu over out of sight and
-   expand it only when the user hovers over the 
+   expand it only when the user hovers over the
    portion that's still visible
 ================================================= */
 body.tray-rescale .tray-left,
@@ -21078,7 +21078,7 @@ body.sb-l-m #sidebar_left.nano > .nano-content {
   right: 0 !important;
 }
 /*=======================================================
-  E. Sidebar Skins - Default Dark Skin 
+  E. Sidebar Skins - Default Dark Skin
 ========================================================= */
 /* Top Level Menu Item - BG color:hover */
 .sidebar-menu > li > a:hover,
@@ -21193,7 +21193,7 @@ body.sb-l-m #sidebar_left.nano > .nano-content {
 }
 /*=======================================================
   F. Sidebar Skins - Light Skin
-     Applied via class to "#sidebar" 
+     Applied via class to "#sidebar"
      eg: <aside id="sidebar_left" class="sidebar-light">
 ========================================================= */
 #sidebar_left.sidebar-light {
@@ -21524,9 +21524,9 @@ collapsed. As it's not accessible in this mode*/
 /*===============================================
   D. Mobile Menu Modifications
 ================================================= */
-/* At less than 1100px we collapse any open sidebars via 
+/* At less than 1100px we collapse any open sidebars via
 Media Queries. Theme Javscript will also add a a
-".mobile-view" class so that you can do any needed 
+".mobile-view" class so that you can do any needed
 manipulation using an html class aswell */
 @media (max-width: 1100px) {
   /* Sidebar Left Open/Default */
@@ -21722,10 +21722,10 @@ body.sb-r-o #toggle_sidemenu_r span.glyphicons {
 
  * This file is reserved for changes done on
  * a per-page basis. To create independent
- * page layouts an additional class was added 
+ * page layouts an additional class was added
  * to the pages body. For example ui-animations.html
  * has an extra body class of ".ui-animations-page"
- 
+
  * Note: Pages not listed here were made using
  * 100% reusable styles placed in theme.css
 =================================================
@@ -22488,7 +22488,7 @@ body.error-page .error-text {
 /*===============================================
   Animate Settings
 ================================================= */
-/* used in conjuction with "data-animate" 
+/* used in conjuction with "data-animate"
  * attr to create a delayed page animation
  * read docs for more info on proper use*/
 .animated-delay,
@@ -25298,4 +25298,15 @@ Copyright (c) 2014 Daniel Eden
 .slideOutUp {
   -webkit-animation-name: slideOutUp;
   animation-name: slideOutUp;
+}
+
+/* Added by Hank on 2020-09-17 */
+#sidebar_left {
+    width: 270px;
+}
+.sidebar-menu > li > ul {
+    width: auto;
+}
+.sb-l-o #content_wrapper {
+    margin-left: 270px;
 }

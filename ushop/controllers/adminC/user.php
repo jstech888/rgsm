@@ -966,6 +966,21 @@ class User extends Admin_Controller {
 			}
 		}
 	}
+
+	public function delete()
+	{
+		$this->load->model("User_model");
+		
+		$id = intval($_POST['id']);		
+		$this->User_model->delete($id);
+		
+		$this->jsonRS['code'] 		= '1';
+		$this->jsonRS['message'] 	= '操作完成';
+		$this->jsonRS['result'] 	= $result;
+		
+		header('Content-Type: application/json; charset=utf-8');
+		echo json_encode($this->jsonRS);
+	}
 }
 /* End of file welcome.php */
 /* Location: ./application/controllers/welcome.php */

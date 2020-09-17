@@ -105,6 +105,7 @@ ul {
 												<th>#</th>
 												<th>URI</th>
 												<th>Name</th>
+												<th>Name</th>
 												<th>Action</th>
 											</tr>
 										</thead>
@@ -116,7 +117,8 @@ ul {
 											<tr>
 												<td><?php echo $k+1;?></td>
 												<td><a href="/faq/index/<?php echo $class["key"];?>">/faq/index/<?php echo $class["key"];?></a></td>
-												<td><?php echo (isset($class["value"][$Lang]["title"]))? $class["value"][$Lang]["title"]:"";?></td>
+												<td><?php echo (isset($class["value"]['en']["title"]))? $class["value"]['en']["title"]:"";?></td>
+												<td><?php echo (isset($class["value"]['zh-hant']["title"]))? $class["value"]['zh-hant']["title"]:"";?></td>
 												<td>
 													<a class="btn btn-danger btn-xs" href="/admin/faq/newsClass/edit?key=<?php echo $class["key"];?>"> Edit </a>
 													<a class="btn btn-warning btn-xs" onclick="del('<?php echo $class["id"];?>')"> Delete </a>
@@ -255,6 +257,7 @@ ul {
 	{
 		if (confirm("確定要刪除？"))
 		{
+			
 			$.ajax({
 				url: "/admin/faq/newsClass/delete",
 				async:true,

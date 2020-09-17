@@ -21,7 +21,7 @@
 
         <?php if($self) { ?>
             <li class="nav-item">
-                <a class="nav-link page-scroll" href="/user/logout">登出</a>
+                <a class="nav-link page-scroll" href="/user/apply">我的帳號</a>
             </li>
         <?php } else { ?>
         <li class="nav-item">

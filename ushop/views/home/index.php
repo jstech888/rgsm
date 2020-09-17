@@ -24,9 +24,10 @@
                             光電工程師、積體電路工程師、電子材料工程師、電化學工程師,
                             ,
                             ,
+                            精密儀器操作技術員、機器構造電子工程師、機器構造射出人員、注塑操作人員,
                         </p>
                         <p class="p-large p-heading">你對你的薪水滿意嗎?</p>
-                        <a class="btn-solid-lg page-scroll" href="#jobs">GET HIRED</a>
+                        <a class="btn-solid-lg page-scroll" href="#pricing">GET HIRED</a>
                     </div>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -58,15 +59,14 @@
 <!-- Pricing Table -->
 <div id="pricing" class="cards-2">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
+        <div class="row">        	
+            <div class="col-lg-12">            	
                 <h2 class="text-white">整個過程如何運作？</h2>
-                <p class="p-heading p-large text-white">只要3個步驟，即可加入德國的工作</p>
+                <p class="p-heading p-large text-white">只要3個步驟，即可加入德國的工作</p>                
             </div> <!-- end of col -->
         </div> <!-- end of row -->
         <div class="row">
-            <div class="col-xs-12 col-lg-4">
-
+            <div class="col-xs-12 col-lg-4">            	
                 <!-- Card -->
                 <div class="card first min-h-400">
                     <div class="card-body">

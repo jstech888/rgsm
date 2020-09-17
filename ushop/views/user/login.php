@@ -50,7 +50,7 @@
 
                     <div class="form-group">
                         <input type="text" class="form-control-input" name="username" id="username" required>
-                        <label class="label-control" for="cusername"><?php echo $objLang["login"]['username_Label'];?></label>
+                        <label class="label-control" for="cusername">Email</label>
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
@@ -60,6 +60,9 @@
                     </div>
                     <div class="form-group">
                         <button type="submit" class="form-control-submit-button"> <?php echo $objLang["login"]['sign_in'];?> </button>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="form-control-submit-button"> <?php echo $objLang["login"]['forget_password'];?> </button>
                     </div>
                     <div class="form-message">
                         <div id="cmsgSubmit" class="h3 text-center hidden"></div>

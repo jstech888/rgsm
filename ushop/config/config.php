@@ -361,7 +361,8 @@ $config['proxy_ips'] = '';
 error_reporting(1);
 
 $config['server_hostname'] = "https://rgsm.mamp.hank/";
-$config['upload_path_personal_information'] = "/Applications/MAMP/htdocs/rgsm/uploads/personal_information/";       // 人事資料
+$config['upload_path_root'] = "/Applications/MAMP/htdocs/rgsm";       			        // 上傳根目錄
+$config['upload_path_personal_information'] = "/uploads/personal_information/";         // 人事資料
 
 $config['personalInfo']['zh-hant']['gender']        = array(1=>'男', 2=>'女');
 $config['personalInfo']['zh-hant']['nationality']   = array(1=>'台灣', 2=>'印尼', 3=>'越南');
@@ -370,7 +371,7 @@ $config['personalInfo']['zh-hant']['education']     = array(1=>'高中職以下'
 $config['personalInfo']['zh-hant']['study_status']  = array(1=>'就學中', 2=>'肄業');
 $config['personalInfo']['zh-hant']['military_service_status'] = array(1=>'役畢', 2=>'服役中');
 $config['personalInfo']['zh-hant']['disability_status'] = array(1=>'無', 2=>'輕度殘障', 3=>'中度殘障');
-$config['personalInfo']['zh-hant']['pipeline']          = array(1=>'人才庫', 2=>'員工推薦', 3=>'內部員工', 4=>'Partner推薦', 5=>'員工推薦', 6=>'104人力銀行', 7=>'1111人力銀行', 8=>'其他人力銀行');
+$config['personalInfo']['zh-hant']['pipeline']          = array(1=>'人才庫', 2=>'員工推薦', 3=>'內部員工', 4=>'Partner推薦', 5=>'104人力銀行', 6=>'1111人力銀行', 7=>'其他人力銀行');
 $config['personalInfo']['zh-hant']['language']          = array(1=>'台語', 2=>'英文', 3=>'德文', 4=>'俄文', 5=>'義大利文', 6=>'葡萄牙文', 7=>'阿拉伯文', 8=>'法文', 9=>'西班牙文', 10=>'印尼語', 11=>'馬來語', 12=>'粵語', 13=>'越語', 14=>'印度語', 15=>'日文');
 $config['personalInfo']['zh-hant']['skill_level']       = array(1=>'精通', 2=>'中等', 3=>'略懂', 4=>'不會');
 $config['personalInfo']['zh-hant']['design_skills']     = array(1=>'Sketch', 2=>'InVision', 3=>'Figma', 4=>'Photoshop', 5=>'PhotoImpact', 6=>'AutoCAD', 7=>'Maya', 8=>'Scrum', 9=>'Others');

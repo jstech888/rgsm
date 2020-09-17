@@ -199,7 +199,9 @@ class Auth
 		$infoKey = $this->GUID();
 		
 		$userName = ( strlen($data_user['name'])==0 )? "xxxxxxxxxx" : $data_user['name'] ;  //避免判斷為已存在
-		$exist = $this->isExist("`name` = '".$userName."' OR `mail` = '".$data_user['mail']."' ");
+		$exist = $this->isExist("`mail` = '".$data_user['mail']."' ");
+		// $exist = $this->isExist("`name` = '".$userName."' OR `mail` = '".$data_user['mail']."' ");
+
 		if($exist === false )
 		{
 			$flag = "1" ;

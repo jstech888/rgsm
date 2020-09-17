@@ -142,7 +142,7 @@ class User_model extends My_Model {
 
 	function findAllResumeOfUser()
 	{
-		$sql = "SELECT * FROM `".$this->table2."` WHERE 1 ORDER BY id ";
+		$sql = "SELECT * FROM `".$this->table2."` WHERE 1 AND `act` = 2 ORDER BY id ";
 		$result = $this->db->query($sql)->result_array();
 
 		return $result;
@@ -339,5 +339,16 @@ class User_model extends My_Model {
 
         return $result ;
     }
+
+    public function delete($id)
+	{
+		$sql = "SELECT * FROM `".$this->table."` WHERE id = ? ";
+		$result = $this->db->query($sql, array($id))->result_array();
+
+		if( count($result) > 0 )
+		{
+			$this->db->delete($this->table, array('id' => $id)); 
+		}
+	}
 
 }

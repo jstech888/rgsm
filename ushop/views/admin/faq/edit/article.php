@@ -148,7 +148,7 @@ ul {
 													<?php
 														}
 													?>
-													<option value="0" <?php echo $isSel;?>>Hide</option>
+														<option value="0" <?php echo $isSel;?>>Hide</option>
 													</select>
 												</div>
 											</div>
@@ -353,8 +353,7 @@ ul {
 			obj_item["class"] 			= $("#blog-class").val();
 			/* obj_item["blog-summary"] 	= $("#blog-summary").val(); */
 			obj_item["blog-content"] 	= CKEDITOR.instances.ckeditor1.getData();
-			obj_item["langCode"] 		= $("#langCode").val();
-			
+			obj_item["langCode"] 		= $("#langCode").val();			
 			
 			var l = Ladda.create(this);
 			l.start();

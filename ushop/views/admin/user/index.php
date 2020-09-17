@@ -131,7 +131,6 @@ input[type="search"]{
 													<th>#</th>
 													<th>Account</th>
 													<th>Role</th>
-													<th>Phone</th>
 													<th>Status</th>
 													<th>Action</th>
 												</tr>
@@ -141,20 +140,19 @@ input[type="search"]{
                                                     <th>#</th>
                                                     <th>Account</th>
                                                     <th>Role</th>
-                                                    <th>Phone</th>
                                                     <th>Status</th>
                                                     <th>Action</th>
 												</tr>
 											</tfoot>
 											<tbody>
 											<?php 
-												foreach( $listData AS $rec ) 
+												foreach( $listData AS $key => $rec ) 
 												{
 													if( ($rec["group_id"] != 5 && $admin["group_id"] != 5) || $admin["group_id"] == 5 )
 													{
 													?>
 												<tr>
-													<td><?php echo $rec["id"];?></td>
+													<td><?php echo ($key+1);?></td>
 													<td class="text-center">
 														<?php 
 														if( $rec["group_id"] == 2 || $rec["group_id"] == 5 ){
@@ -203,8 +201,7 @@ input[type="search"]{
 														{
 															echo $selector;
 														}
-													?></td>														
-													<td><?php echo $rec["phone"];?></td>
+													?></td>																										
 													<td>
 													<?php 
 													if ( $rec["group_id"] != 5 )
@@ -224,7 +221,8 @@ input[type="search"]{
 													</td>
 													<td>
                                                         <a href="/admin/user/detail?id=<?php echo $rec["id"];?>" class="btn btn-info btn-xs">Details</a>
-                                                        <a href="/admin/user/changePW?id=<?php echo $rec["id"];?>" class="btn btn-warning btn-xs">Change Password</a>
+                                                        <a href="javascript:void(0);" class="btn btn-danger btn-xs" onclick="doDelete(<?php echo $rec["id"];?>);">Delete</a>
+                                                        <a href="/admin/user/changePW?id=<?php echo $rec["id"];?>" class="btn btn-warning btn-xs">Change Password</a>                                                        
 													</td>
 												</tr>
 											<?php
@@ -369,11 +367,35 @@ input[type="search"]{
 			error:function(xhr, stauts, err){ PM.erro(); }
 		});
 	}
+
+	function doDelete(id)
+	{
+		if(confirm('確定刪除?'))
+		{
+			var ajaxData = {
+				"id": id,
+	        };
+			$.ajax({
+				url: "/admin/user/delete",
+				async:true,
+				cache:false,
+				method:"POST",
+				data:ajaxData,
+				success:function(data, status, xhr){
+					PM.show({ title: "會員管理", text: '刪除完成！', type: "info" });
+					setTimeout(function(){
+						// location.reload();
+					},500);
+				},
+				error:function(xhr, stauts, err){ PM.erro(); }
+			});
+		}        
+	}
 	
 	function init_DataTable()
 	{
 		$('#datatable3').dataTable({
-			"order": [[ 0, "desc" ]],
+			"order": [[ 0, "asc" ]],
 			"language": {
 				"lengthMenu"		: "Each Page _MENU_ items",
 				"search"			: "Keyword　",

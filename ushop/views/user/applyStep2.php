@@ -45,9 +45,10 @@
 
             <div class="col-md-3 col-sm-12">
                 <div class="list-group" id="list-tab" role="tablist">
-                    <a class="list-group-item list-group-item-action" data-toggle="collapse" href="#faq-1" role="tab" aria-controls="dploma-1">英文畢業證書 / 履歷表</a>
-                    <a class="list-group-item list-group-item-action active" data-toggle="collapse" href="#faq-2" role="tab" aria-controls="dploma-2">個人履歷資料</a>
-                    <a class="list-group-item list-group-item-action" data-toggle="collapse" href="#faq-3" role="tab" aria-controls="dploma-3">應徵狀態查詢</a>
+                    <a class="list-group-item list-group-item-action active" href="/user/apply" role="tab" aria-controls="dploma-1">個人履歷資料</a>
+                    <a class="list-group-item list-group-item-action" href="/user/uploadcv/<?php echo $resume['id'];?>" role="tab" aria-controls="dploma-2">英文畢業證書 / 履歷表</a>                    
+                    <a class="list-group-item list-group-item-action" href="" role="tab" aria-controls="dploma-3">應徵狀態查詢</a>
+                    <a class="list-group-item list-group-item-action" href="/user/logout" role="tab" aria-controls="dploma-4">登出</a>
                 </div>
             </div> <!-- end of col -->
 

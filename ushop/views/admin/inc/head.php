@@ -111,9 +111,11 @@
 	div.dataTables_length select {
 	  display: inline-block;
 	}
-
 	.sidebar-menu {
 		padding-top: 120px;
+	}
+	body, html {
+		font-size: 16px;
 	}
 	</style>
 </head>

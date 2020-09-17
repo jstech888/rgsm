@@ -76,7 +76,6 @@ class User extends Web_Controller {
 		{
 			if( $view == "register" )
 			{
-//echo "<br>register...";
 				$this->load->model("Option_model");
 				$RegisterMoney = $this->Option_model->readString("RegisterMoney");
 				$isMemberCheckEmail = $this->Option_model->readVal("isMemberCheckEmail");
@@ -101,12 +100,12 @@ class User extends Web_Controller {
 				);
 				$new_user['point'] 				= $RegisterMoney;   //註冊 禮金
 
-				$redirectURL	= isset($result['old']['redirectURL'])?$result['old']['redirectURL'] :"" ;
+				$redirectURL = isset($result['old']['redirectURL'])?$result['old']['redirectURL'] :"" ;
 				$username = $result['old']['mail'];
 				$password = $result['old']['password'];
 
 				$result = $this->auth->createUser($new_user, $isMemberCheckEmail);
-//echo "<br>result=".$result;
+
 				if($result)
 				{
 					$obj_register_lang = $this->loadLang("page/register/");
@@ -364,7 +363,9 @@ class User extends Web_Controller {
 
 				$username 		= $result['old']['username'];
 				$password 		= $result['old']['password'];
-				$redirectURL	= isset($result['old']['redirectURL'])? $result['old']['redirectURL'] :"" ;
+				$redirectURL	= "/user/apply";
+				//$redirectURL	= isset($result['old']['redirectURL'])? $result['old']['redirectURL'] :"" ;
+
 				if ($isMemberCheckEmail){
 					$result = $this->auth->login($username, $password,true);
 				}
@@ -384,6 +385,7 @@ class User extends Web_Controller {
 						"auto" 			=> "3000",
 						"redirectURL"	=> $redirectURL
 					);
+
 					redirect('/message?'.http_build_query($message),'location','301');
 				}
 				elseif($result == 0 )   // flag == "0" 審核 
@@ -819,8 +821,7 @@ class User extends Web_Controller {
 
 		if( $this->self === false )
 		{
-			redirect("/user/login","location",301);
-//			redirect("/","location",301);
+			redirect("/user/register","location",301);
 		}
 
 		$this->load->model("User_model");
@@ -865,9 +866,13 @@ class User extends Web_Controller {
 			redirect("/","location",301);
 		}
 
-//        $this->load->model("User_model");
-//        $result = $this->User_model->getResume($this->self[id]);
+        $this->load->model("User_model");
+        $resume = $this->User_model->get_resume_by_id($rid);
+        $this->data['resume'] = $resume[0];
         $this->data['resumeid'] = $rid;
+
+        $uploadfiles = json_decode($resume[0]['uploadfiles']);
+        $this->data['uploadfiles'] = $uploadfiles;
 
 		$this->load->view('inc/head',$this->data);
 		$this->load->view('user/uploadcv',$this->data);
@@ -992,15 +997,18 @@ class User extends Web_Controller {
     public function add_cv()
     {
         $resumeid = $this->input->post('id');
+        $act = $this->input->post('act');
         $isUpload = false;
 
-        if ($resumeid) {
+        if ($resumeid) 
+        {
             $this->load->library('upload');
-            $root = $this->config->item('upload_path_personal_information');
-            $path = $root . $resumeid . "/";
+            $root = $this->config->item('upload_path_root');
+            $updir = $this->config->item('upload_path_personal_information');
+            $path = $root . $updir . $resumeid . "/";
 
             $config['upload_path'] = $path;
-            $config['allowed_types'] = 'xlsx|xls|jpg|png|pdf';
+            $config['allowed_types'] = 'jpg|png|pdf';
             $config['remove_spaces'] = TRUE;
 
             $this->upload->initialize($config);
@@ -1008,12 +1016,18 @@ class User extends Web_Controller {
 
             $uploadfile01_ori = $this->input->post('uploadfile01_ori');
             $uploadfile02_ori = $this->input->post('uploadfile02_ori');
+            $uploadfile03_ori = $this->input->post('uploadfile03_ori');
+            $uploadfile04_ori = $this->input->post('uploadfile04_ori');
+            $uploadfile05_ori = $this->input->post('uploadfile05_ori');
 
             $uploadfiles = array();
             isset($uploadfile01_ori) ? $uploadfiles['file01'] = $uploadfile01_ori : '';
             isset($uploadfile02_ori) ? $uploadfiles['file02'] = $uploadfile02_ori : '';
+            isset($uploadfile03_ori) ? $uploadfiles['file03'] = $uploadfile03_ori : '';
+            isset($uploadfile04_ori) ? $uploadfiles['file04'] = $uploadfile04_ori : '';
+            isset($uploadfile05_ori) ? $uploadfiles['file05'] = $uploadfile05_ori : '';
 
-            for ($i=1; $i < 3 ; $i++)
+            for ($i=1 ; $i < 6 ; $i++)
             {
                 $data = array();
                 $num = sprintf("%02d", $i);
@@ -1041,13 +1055,14 @@ class User extends Web_Controller {
             if($isUpload)
             {
                 $updatedata['id'] 		    = $resumeid;
-                $updatedata['path'] 		= $path;                        //證件資料檔案路徑
+                $updatedata['act'] 		    = $act;    	                    //暫存:1 or 供給 RGSM:2
+                $updatedata['path'] 		= $updir.$resumeid."/";    	    //證件資料檔案路徑
                 $updatedata['uploadfiles']  = json_encode($uploadfiles);    //證件資料
 
                 $this->load->model("User_model");
                 $result = $this->User_model->save_resume($updatedata);
 
-                if($result==1)
+                if($result > 1)
                 {
                     echo "<script>top.$('#wait').hide();top.$('#wait_content').hide();alert('上傳完成！');</script>";
                     echo "<script>top.location.href='/';</script>";
@@ -1055,6 +1070,21 @@ class User extends Web_Controller {
                 else
                 {
                     echo "<script>top.$('#wait').hide();top.$('#wait_content').hide();alert('新增失敗，姓名或是身分證字號有重複，請聯絡管理員！');</script>";
+                }
+            }
+            else {
+
+                if($act==2) {
+                    $updatedata['id'] 		    = $resumeid;
+                    $updatedata['act'] 		    = $act;    	                    //暫存:1 or 供給 RGSM:2
+                    $this->load->model("User_model");
+                    $result = $this->User_model->save_resume($updatedata);
+
+                    echo "<script>top.$('#wait').hide();top.$('#wait_content').hide();alert('Send to RGSM！');</script>";
+                    echo "<script>top.location.href='/';</script>";
+                }
+                else {
+                    echo "<script>top.$('#wait').hide();top.$('#wait_content').hide();alert('您未上傳檔案！');</script>";
                 }
             }
         }
